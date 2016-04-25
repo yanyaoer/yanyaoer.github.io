@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{.Doc.title}} - {{.Host}}</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1 class="page-title">{{if .Doc.sitename}}{{.Doc.sitename}}{{else}}{{.Host}}{{end}}</h1></a>
+    </header>
+
+    <main>
+      {{range .Links}}
+        {{if ne .URL "/index.md" }}
+        <article>
+          <h3><a href="{{.URL}}">{{.Title}}</a></h3>
+          <p class="extra"><time>{{if .Date}}{{.Date}}{{end}}</time></p>
+          {{.Summary}}
+        </article>
+        {{end}}
+      {{end}}
+    </main>
+
+    <footer>
+      --- end ---
+      <footer>
+      </body>
+    </html>

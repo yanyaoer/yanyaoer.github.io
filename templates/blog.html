@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{.Doc.title}} - {{.Host}}</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1 class="page-title">{{.Host}}</h1></a>
+    </header>
+
+    <article>
+      <h1>{{.Doc.title}}</h1>
+      <p class="extra">{{.Host}}{{.URL}} post at: <time>{{if .Doc.date}}{{.Doc.date}}{{end}}</time></p>
+      {{.Doc.body}}
+    </article>
+  </body>
+</html>
