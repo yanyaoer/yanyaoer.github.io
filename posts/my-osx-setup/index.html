@@ -1,0 +1,64 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>my osx setup - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:title" content="my osx setup"><meta property="og:description" content="#setting
+# Enable full keyboard access for all controls defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 # Disable menu bar transparency defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons defaults write com.apple.finder QuitMenuItem -bool true # Avoid creating .DS_Store files on network volumes defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true # Disable the warning when changing a file extension defaults write com."><meta property="og:type" content="article"><meta property="og:url" content="http://y%C3%A1ny%C3%A0o.com/posts/my-osx-setup/"><meta property="article:published_time" content="2013-06-09T12:05:50+00:00"><meta property="article:modified_time" content="2013-06-09T12:05:50+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="my osx setup"><meta name=twitter:description content="#setting
+# Enable full keyboard access for all controls defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 # Disable menu bar transparency defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons defaults write com.apple.finder QuitMenuItem -bool true # Avoid creating .DS_Store files on network volumes defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true # Disable the warning when changing a file extension defaults write com."><link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=http://y%C3%A1ny%C3%A0o.com/css/normalize.css><link rel=stylesheet type=text/css media=screen href=http://y%C3%A1ny%C3%A0o.com/css/main.css><script src=http://y%C3%A1ny%C3%A0o.com/js/main.js></script></head><body><div class="container wrapper post"><div class=header><h1 class=site-title><a href=http://y%C3%A1ny%C3%A0o.com/>yányào.com</a></h1><div class=site-description><nav class="nav social"><ul class=flat></ul></nav></div><nav class=nav><ul class=flat></ul></nav></div><div class=post-header><h1 class=title>my osx setup</h1><div class=meta>Posted at &mdash; Jun 9, 2013</div></div><div class=markdown><p>#setting</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Enable full keyboard access for all controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Disable menu bar transparency
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+
+# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Enable tap to click (Trackpad)
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# Enable Safari’s debug menu
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+# To pin the dock to the right bottom
+defaults write com.apple.dock pinning -string end
+defaults write com.apple.dock orientation -string right
+
+# Only Show Open Applications In The Dock
+defaults write com.apple.dock static-only -bool true
+
+defaults write com.apple.dock tilesize -int 24
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# disable dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean true
+</code></pre></div><p>#<a href=http://itunes.apple.com/us/app/xcode/>xcode</a> with <a href=https://developer.apple.com/downloads>Command Line Tools</a></p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># xcode by appstore
+open /Applications/App\ Store.app
+
+# CUI Downloader of &#34;Command Line Tools for Xcode&#34;
+dlclt.py [dlclt]
+xcode-select --install
+</code></pre></div><p>#<a href=http://mxcl.github.io/homebrew/>homebrew</a></p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ruby -e <span style=color:#2aa198>&#34;</span><span style=color:#719e07>$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span style=color:#719e07>)</span><span style=color:#2aa198>&#34;</span>
+
+brew install coreutils fish tmux wget axel aria2 vim ctags git python3 node mysql mongodb redis
+</code></pre></div><p>#pyenv</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>git clone git://github.com/yyuu/pyenv.git .pyenv
+sudo easy_install -U setuptools <span style=color:#586e75>#upgrade setuptools for pip</span>
+sudo easy_install pip
+sudo pip install virtualenvwrapper
+
+<span style=color:#586e75>#optional use douban pypi mirror</span>
+vim ~/.pip/.pip.cof
+<span style=color:#719e07>[</span>global<span style=color:#719e07>]</span>
+index-url <span style=color:#719e07>=</span> http://pypi.douban.com/simple
+</code></pre></div><p>#application</p><p><a href=https://github.com/phinze/homebrew-cask>brew-cask</a></p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew tap phinze/homebrew-cask
+brew install brew-cask
+
+brew cask install iterm2 alfred macvim sourcetree nvalt xquartz sequel-pro bettertouchtool amethyst mplayerx google-chrome controlplane dropbox bittorrent-sync colors skim geektool keyremap4macbook pckeyboardhack
+
+<span style=color:#586e75>#install quicklook plugins</span>
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
+
+brew cask alfred
+</code></pre></div><p>none-cask</p><ul><li>dash</li><li>popclip</li><li>pocket</li></ul><p>#keyboard</p><p>remap caps lock as hyperkey to toggle alfred
+or hold like modify key with shift+ctrl+opt+cmd</p></div><div class=post-tags></div></div><div class="footer wrapper"><nav class=nav><div><a href=https://github.com/vividvilla/ezhil>Ezhil theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></nav></div></body></html>

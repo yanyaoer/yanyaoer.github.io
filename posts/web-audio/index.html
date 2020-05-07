@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>web audio - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:title" content="web audio"><meta property="og:description" content="照文档撸了一下 AudioContext 可视化音频
+桌面浏览器上 Safari 9, Chrome stable 绘制正常
+移动端只有微信的 webview 能工作, 纯玩票叻 ref: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
+<!DOCTYPE html> <html> <head> <meta charset=&#34;utf-8&#34;> <meta name=&#34;viewport&#34; content=&#34;width=device-width, user-scalable=no&#34;> <title>AV</title> </head> <body> <canvas id=&#34;vis&#34;></canvas> <audio id=&#34;av&#34; src=&#34;YOUR_AUDIO_FILE&#34;></audio> <script src=&#34;index.js&#34;></script> </body> </html> window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById('vis'); var canvasCtx = canvas.getContext('2d'); var isPlaying = true; var audio = document.getElementById('av'); var audioCtx = new AudioContext(); var analyser = audioCtx."><meta property="og:type" content="article"><meta property="og:url" content="http://y%C3%A1ny%C3%A0o.com/posts/web-audio/"><meta property="article:published_time" content="2016-06-15T14:34:08+00:00"><meta property="article:modified_time" content="2016-06-15T14:34:08+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="web audio"><meta name=twitter:description content="照文档撸了一下 AudioContext 可视化音频
+桌面浏览器上 Safari 9, Chrome stable 绘制正常
+移动端只有微信的 webview 能工作, 纯玩票叻 ref: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
+<!DOCTYPE html> <html> <head> <meta charset=&#34;utf-8&#34;> <meta name=&#34;viewport&#34; content=&#34;width=device-width, user-scalable=no&#34;> <title>AV</title> </head> <body> <canvas id=&#34;vis&#34;></canvas> <audio id=&#34;av&#34; src=&#34;YOUR_AUDIO_FILE&#34;></audio> <script src=&#34;index.js&#34;></script> </body> </html> window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById('vis'); var canvasCtx = canvas.getContext('2d'); var isPlaying = true; var audio = document.getElementById('av'); var audioCtx = new AudioContext(); var analyser = audioCtx."><link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=http://y%C3%A1ny%C3%A0o.com/css/normalize.css><link rel=stylesheet type=text/css media=screen href=http://y%C3%A1ny%C3%A0o.com/css/main.css><script src=http://y%C3%A1ny%C3%A0o.com/js/main.js></script></head><body><div class="container wrapper post"><div class=header><h1 class=site-title><a href=http://y%C3%A1ny%C3%A0o.com/>yányào.com</a></h1><div class=site-description><nav class="nav social"><ul class=flat></ul></nav></div><nav class=nav><ul class=flat></ul></nav></div><div class=post-header><h1 class=title>web audio</h1><div class=meta>Posted at &mdash; Jun 15, 2016</div></div><div class=markdown><p>照文档撸了一下 AudioContext 可视化音频<br>桌面浏览器上 Safari 9, Chrome stable 绘制正常<br>移动端只有微信的 webview 能工作, 纯玩票叻
+<img src=https://mdn.mozillademos.org/files/7977/wave.png alt=wave></p><p>ref:
+<a href=https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API>https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API</a></p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#719e07>&lt;!DOCTYPE html&gt;</span>
+&lt;<span style=color:#268bd2>html</span>&gt;
+  &lt;<span style=color:#268bd2>head</span>&gt;
+    &lt;<span style=color:#268bd2>meta</span> charset<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;utf-8&#34;</span>&gt;
+    &lt;<span style=color:#268bd2>meta</span> name<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;viewport&#34;</span> content<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;width=device-width, user-scalable=no&#34;</span>&gt;
+    &lt;<span style=color:#268bd2>title</span>&gt;AV&lt;/<span style=color:#268bd2>title</span>&gt;
+  &lt;/<span style=color:#268bd2>head</span>&gt;
+  &lt;<span style=color:#268bd2>body</span>&gt;
+    &lt;<span style=color:#268bd2>canvas</span> id<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;vis&#34;</span>&gt;&lt;/<span style=color:#268bd2>canvas</span>&gt;
+    &lt;<span style=color:#268bd2>audio</span> id<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;av&#34;</span> src<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;YOUR_AUDIO_FILE&#34;</span>&gt;&lt;/<span style=color:#268bd2>audio</span>&gt;
+    &lt;<span style=color:#268bd2>script</span> src<span style=color:#719e07>=</span><span style=color:#2aa198>&#34;index.js&#34;</span>&gt;&lt;/<span style=color:#268bd2>script</span>&gt;
+  &lt;/<span style=color:#268bd2>body</span>&gt;
+&lt;/<span style=color:#268bd2>html</span>&gt;
+</code></pre></div><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#b58900>window</span>.AudioContext <span style=color:#719e07>=</span> <span style=color:#b58900>window</span>.AudioContext <span style=color:#719e07>||</span> <span style=color:#b58900>window</span>.webkitAudioContext <span style=color:#719e07>||</span> <span style=color:#b58900>window</span>.mozAudioContext;
+
+<span style=color:#b58900>window</span>.onload <span style=color:#719e07>=</span> <span style=color:#268bd2>function</span>(){
+
+  <span style=color:#268bd2>var</span> canvas <span style=color:#719e07>=</span> <span style=color:#b58900>document</span>.getElementById(<span style=color:#2aa198>&#39;vis&#39;</span>);
+  <span style=color:#268bd2>var</span> canvasCtx <span style=color:#719e07>=</span> canvas.getContext(<span style=color:#2aa198>&#39;2d&#39;</span>);
+
+  <span style=color:#268bd2>var</span> isPlaying <span style=color:#719e07>=</span> <span style=color:#cb4b16>true</span>;
+  <span style=color:#268bd2>var</span> audio <span style=color:#719e07>=</span> <span style=color:#b58900>document</span>.getElementById(<span style=color:#2aa198>&#39;av&#39;</span>);
+  <span style=color:#268bd2>var</span> audioCtx <span style=color:#719e07>=</span> <span style=color:#719e07>new</span> AudioContext();
+  <span style=color:#268bd2>var</span> analyser <span style=color:#719e07>=</span> audioCtx.createAnalyser();
+  <span style=color:#268bd2>var</span> audioSrc <span style=color:#719e07>=</span> audioCtx.createMediaElementSource(audio);
+  audioSrc.connect(analyser);
+  analyser.connect(audioCtx.destination);
+
+  analyser.fftSize <span style=color:#719e07>=</span> <span style=color:#2aa198>2048</span>;
+  <span style=color:#268bd2>var</span> bufferLength <span style=color:#719e07>=</span> analyser.fftSize;
+  dataArray <span style=color:#719e07>=</span> <span style=color:#719e07>new</span> Uint8Array(bufferLength);
+  analyser.getByteTimeDomainData(dataArray);
+
+  WIDTH <span style=color:#719e07>=</span> <span style=color:#2aa198>500</span>;
+  HEIGHT <span style=color:#719e07>=</span> <span style=color:#2aa198>150</span>;
+  <span style=color:#268bd2>function</span> draw() {
+    requestAnimationFrame(draw);
+    <span style=color:#719e07>if</span> (<span style=color:#719e07>!</span>isPlaying) <span style=color:#719e07>return</span>;
+
+    analyser.getByteTimeDomainData(dataArray);
+
+    canvasCtx.fillStyle <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;rgb(200, 200, 200)&#39;</span>;
+    canvasCtx.fillRect(<span style=color:#2aa198>0</span>, <span style=color:#2aa198>0</span>, WIDTH, HEIGHT);
+    canvasCtx.lineWidth <span style=color:#719e07>=</span> <span style=color:#2aa198>2</span>;
+    canvasCtx.strokeStyle <span style=color:#719e07>=</span> <span style=color:#2aa198>&#39;rgb(0, 0, 0)&#39;</span>;
+    canvasCtx.beginPath();
+
+    <span style=color:#268bd2>var</span> sliceWidth <span style=color:#719e07>=</span> WIDTH <span style=color:#719e07>*</span> <span style=color:#2aa198>1.0</span> <span style=color:#719e07>/</span> bufferLength;
+    <span style=color:#268bd2>var</span> x <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>;
+
+    <span style=color:#719e07>for</span>(<span style=color:#268bd2>var</span> i <span style=color:#719e07>=</span> <span style=color:#2aa198>0</span>; i <span style=color:#719e07>&lt;</span> bufferLength; i<span style=color:#719e07>++</span>) {
+
+      <span style=color:#268bd2>var</span> v <span style=color:#719e07>=</span> dataArray[i] <span style=color:#719e07>/</span> <span style=color:#2aa198>128.0</span>;
+      <span style=color:#268bd2>var</span> y <span style=color:#719e07>=</span> v <span style=color:#719e07>*</span> HEIGHT<span style=color:#719e07>/</span><span style=color:#2aa198>2</span>;
+
+      <span style=color:#719e07>if</span>(i <span style=color:#719e07>===</span> <span style=color:#2aa198>0</span>) {
+        canvasCtx.moveTo(x, y);
+      } <span style=color:#719e07>else</span> {
+        canvasCtx.lineTo(x, y);
+      }
+
+      x <span style=color:#719e07>+=</span> sliceWidth;
+    }
+
+    canvasCtx.lineTo(canvas.width, canvas.height<span style=color:#719e07>/</span><span style=color:#2aa198>2</span>);
+    canvasCtx.stroke();
+  };
+
+  draw();
+  audio.play();
+
+  <span style=color:#b58900>document</span>.body.onclick <span style=color:#719e07>=</span> <span style=color:#268bd2>function</span>() {
+    console.log(audio, isPlaying);
+    <span style=color:#719e07>if</span> (isPlaying) {
+      audio.pause();
+      isPlaying <span style=color:#719e07>=</span> <span style=color:#cb4b16>false</span>;
+    } <span style=color:#719e07>else</span> {
+      audio.play();
+      isPlaying <span style=color:#719e07>=</span> <span style=color:#cb4b16>true</span>;
+    }
+  }
+}
+</code></pre></div></div><div class=post-tags></div></div><div class="footer wrapper"><nav class=nav><div><a href=https://github.com/vividvilla/ezhil>Ezhil theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></nav></div></body></html>
