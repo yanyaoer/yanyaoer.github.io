@@ -1,0 +1,8 @@
+baseURL = "http://yányào.com/"
+languageCode = "en-us"
+title = "yányào.com"
+theme = "ezhil"
+
+pygmentsstyle = "solarized-dark"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
