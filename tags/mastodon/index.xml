@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mastodon on yányào.com</title><link>http://y%C3%A1ny%C3%A0o.com/tags/mastodon/</link><description>Recent content in mastodon on yányào.com</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 15 May 2020 09:45:08 +0800</lastBuildDate><atom:link href="http://y%C3%A1ny%C3%A0o.com/tags/mastodon/index.xml" rel="self" type="application/rss+xml"/><item><title>Mastodon</title><link>http://y%C3%A1ny%C3%A0o.com/posts/mastodon/</link><pubDate>Fri, 15 May 2020 09:45:08 +0800</pubDate><guid>http://y%C3%A1ny%C3%A0o.com/posts/mastodon/</guid><description>Mastodon 长毛象1 &amp;ndash; 基于 rubyonrails/reactjs/nodejs 开发的分布式 &amp;amp; 去中心化 twiter clone。利用空闲时间在 aws lightsail 上开了个实例把服务跑了起来
 一开始走了些弯路，因为选机房和省钱的缘故，重建了若干次操作系统，最后的选择是 tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通不稳定
 安装步骤没有使用 docker 而是参考文档从源码安装2，原因和解决方案如下：
-机器是 $3.5/mo 512mem 最便宜的那档，~没错我又消费降级了~，出于 net/io 性能考虑，这里就不使用 docker 啦
+机器用 $3.5/mo 512mem 最便宜的那档消费降级，出于 net/io 性能考虑就不使 docker 啦
 内存问题，RAILS_ENV=production bundle exec rake mastodon:setup 这一步骤执行到 rails assets:precompile， 不管是在 docker 里跑还是直接运行都会报 swap 分区不足，找到两个方案来解决:
 # create swapfile &amp;lt;https://linuxize.com/post/create-a-linux-swap-file/&amp;gt; $ sudo fallocate -l 2G /swapfile $ sudo chmod 600 /swapfile $ sudo mkswap /swapfile $ sudo swapon /swapfile # verify active $ sudo swapon --show # optional: low value is better for production $ sudo sysctl vm.</description></item></channel></rss>
