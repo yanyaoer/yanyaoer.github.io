@@ -17,6 +17,10 @@ tags: [coffee]
 手法就比较随意了，主要参考下面两个视频，出品大概率我自己都还挺喜欢的
 **按比例加注水量翻倍**
 
+--- updated at 2020-0615 ---
+
+新购入 Mr.clever 聪明杯 [^clever]
+
 ### "4:6 method" by Tetsu Kasuya [^4-6method]
 {{< youtube wmCW8xSWGZY >}}
 
@@ -38,6 +42,9 @@ tags: [coffee]
 温度计、电子称就直接买厨房烘培用品就好，暂时没体会到高级版的必要性，
 毕竟没去追求操作一致性，高兴就好 🐬
 
+--- updated at 2020-0615 ---
+
+新购入 hario filter-in 冷萃瓶 [^hario-bottle]]
 
 ## 豆子来源目前有两个
 * fisher 会员每月发两包不一定啥豆子，小概率会冲出来很不错的
@@ -52,10 +59,12 @@ tags: [coffee]
 [^kalita]: http://kalita.ae/products/drippots/2868
 [^c40]: http://www.comandantegrinder.com/index.html#styles
 [^riverseek]: http://www.rivers.co.jp/en/product/wallmug-sleek/
+[^clever]: https://detail.tmall.com/item.htm?id=590498470388
 
 [^baratza-encore]: https://baratza.com/grinder/encore/
 [^kinto]: https://kinto.co.jp/collections/coffeeware/products/28901
 [^ikea-vardagen]: https://www.ikea.cn/cn/zh/p/vardagen-wa-da-en-liang-hu-bo-li-30323305/
 [^muji-mug]: https://www.muji.com.cn/cn/store/goods/269837
+[^hario-bottle]: https://www.hario.jp/seihin/productdetail.php?product=FIC-70-CBR
 
 [^4-6method]: https://kurasu.kyoto/blogs/kurasu-journal/2016-world-brewers-cup-champion-tetsu-kasuya
