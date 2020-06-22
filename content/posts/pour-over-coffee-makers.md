@@ -12,14 +12,18 @@ tags: [coffee]
 - kalita 700ml 细嘴壶 [^kalita]
 - rivers seek 随手杯 [^riverseek]
 
+--- updated at 2020-0615 ---
+
+新购入 Mr.clever 聪明杯 [^clever]
+
+--- updated at 2020-0622 ---
+
+新购入 hario drip kettle air [^hario-air]，用了两次手感轻水流控制得不稳 T_T
+
 每天一早 ~~中午~~ 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水
 
 手法就比较随意了，主要参考下面两个视频，出品大概率我自己都还挺喜欢的
 **按比例加注水量翻倍**
-
---- updated at 2020-0615 ---
-
-新购入 Mr.clever 聪明杯 [^clever]
 
 ### "4:6 method" by Tetsu Kasuya [^4-6method]
 {{< youtube wmCW8xSWGZY >}}
@@ -56,6 +60,7 @@ tags: [coffee]
 
 [^hario-dripper]: https://www.hario.jp/seihin/productdetail.php?product=VDG-02W
 [^hario-server]: https://www.hario.jp/seihin/productdetail.php?product=XGS-60TB
+[^hario-air]: https://www.hario.jp/seihin/productdetail.php?product=VKA-35-TB
 [^kalita]: http://kalita.ae/products/drippots/2868
 [^c40]: http://www.comandantegrinder.com/index.html#styles
 [^riverseek]: http://www.rivers.co.jp/en/product/wallmug-sleek/
