@@ -61,5 +61,24 @@ NEXT                        LEFT          LAST PASSED UNIT            ACTIVATES
 Tue 2020-06-23 12:00:00 UTC 1h 32min left n/a  n/a    rss2email.timer rss2email.service
 ```
 
+## 定制邮件样式
+
+默认的 configparser 参数会将 `#` 设为注释，于是 `rss2email/config.py` 和
+`$HOME/.config/rss2email.cfg` 中关于 `#entry {...} #body {...}`
+这几行一直显示不出来，临时解决方案把它们合并成一行可以先凑合着
+
+```
+css = ...
+    .footer {
+    background: #c3d9ff;
+    border-top: solid 4px #c3d9ff;
+    padding: 5px;
+    margin-bottom: 0px;
+    } #entry { border: solid 4px #c3d9ff; } #body { margin-left: 5px; margin-right: 5px; }
+    img { max-width: 90% } /* 避免邮件里展示原图将页面撑得太宽 */
+
+```
+
+[Lines removed in stylesheet and optionally link to external one](https://github.com/rss2email/rss2email/issues/7)
 
 [^issue]: https://github.com/rss2email/rss2email/issues/110
