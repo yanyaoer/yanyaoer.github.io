@@ -35,4 +35,15 @@ systemctl --user start rss2email.timer
 systemctl --user list-timers
 NEXT                        LEFT          LAST PASSED UNIT            ACTIVATES
 Tue 2020-06-23 12:00:00 UTC 1h 32min left n/a  n/a    rss2email.timer rss2email.service
-</code></pre></div><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p><a href=https://github.com/rss2email/rss2email/issues/110>https://github.com/rss2email/rss2email/issues/110</a> <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></div><div class=post-tags></div></div><div class="footer wrapper"><nav class=nav><div><a href=https://github.com/vividvilla/ezhil>Ezhil theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></nav></div></body></html>
+</code></pre></div><h2 id=定制邮件样式>定制邮件样式</h2><p>默认的 configparser 参数会将 <code>#</code> 设为注释，于是 <code>rss2email/config.py</code> 和
+<code>$HOME/.config/rss2email.cfg</code> 中关于 <code>#entry {...} #body {...}</code>
+这几行一直显示不出来，临时解决方案把它们合并成一行可以先凑合着</p><div class=highlight><pre style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>css = ...
+    .footer {
+    background: #c3d9ff;
+    border-top: solid 4px #c3d9ff;
+    padding: 5px;
+    margin-bottom: 0px;
+    } #entry { border: solid 4px #c3d9ff; } #body { margin-left: 5px; margin-right: 5px; }
+    img { max-width: 90% } /* 避免邮件里展示原图将页面撑得太宽 */
+
+</code></pre></div><p><a href=https://github.com/rss2email/rss2email/issues/7>Lines removed in stylesheet and optionally link to external one</a></p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p><a href=https://github.com/rss2email/rss2email/issues/110>https://github.com/rss2email/rss2email/issues/110</a> <a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></div><div class=post-tags></div></div><div class="footer wrapper"><nav class=nav><div><a href=https://github.com/vividvilla/ezhil>Ezhil theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></nav></div></body></html>
