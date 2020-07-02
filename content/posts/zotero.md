@@ -5,6 +5,8 @@ date: 2020-07-02T22:55:53+08:00
 
 [Zotero](https://www.zotero.org/) 常用于科研的文献管理，由 firefox 浏览器插件发展到现在有了独立的桌面和[移动客户端](https://github.com/mickstar/Zoo-For-Zotero)。
 
+![](/zotero.png)
+
 - 本身具备简易的 rss 订阅功能可以用来追踪论文的更新
 - 注册在线账户后支持导出资料库给其他同学订阅
 - 浏览器插件 [zotero connectors](https://github.com/zotero/zotero-connectors) 则类似各类笔记应用的 web clipper，方便导入各种资料。**注意科学上网加载完整页面后再进行保存**
