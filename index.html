@@ -30,7 +30,7 @@ GNU/Linux 下载安装 wget https://dl.min.io/server/minio/release/linux-amd64/m
 <span class=description>Mastodon 长毛象1 &ndash; 基于 rubyonrails/reactjs/nodejs 开发的分布式 & 去中心化 twiter clone。利用空闲时间在 aws lightsail 上开了个实例把服务跑了起来
 一开始走了些弯路，因为选机房和省钱的缘故，重建了若干次操作系统，最后的选择是 tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通不稳定
 安装步骤没有使用 docker 而是参考文档从源码安装2，原因和解决方案如下：
-机器用 $3.5/mo 512mem 最便宜的那档消费降级，出于 net/io 性能考虑就不使 docker 啦
+机器用 $3.5/mo 512mem 最便宜的那档消费降级(512M 内存重启会拉垮弱鸡，服务已迁移到 oraclecloud)，出于 net/io 性能考虑就不使 docker 啦
 内存问题，RAILS_ENV=production bundle exec rake mastodon:setup 这一步骤执行到 rails assets:precompile， 不管是在 docker 里跑还是直接运行都会报 swap 分区不足，找到两个方案来解决:
 # create swapfile &lt;https://linuxize.com/post/create-a-linux-swap-file/> $ sudo fallocate -l 2G /swapfile $ sudo chmod 600 /swapfile $ sudo mkswap /swapfile $ sudo swapon /swapfile # verify active $ sudo swapon --show # optional: low value is better for production $ sudo sysctl vm.&mldr;</span></div><div class=post><div class=meta>May 9, 2020</div><a class=title href=/posts/gitlab-repo/>Gitlab Repo</a> &mdash;
 <span class=description>gitlab 里面已经有十来个 group，几百个 project，虽然不一定会每个项目都参与， 但是为了快速同步代码，又捡起了 android 开发常用的 repo 命令来管理多项目代码。 这里使用了 gitlab graphql 接口来遍历项目生成分组的 manifest 文件
