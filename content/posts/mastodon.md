@@ -12,7 +12,7 @@ tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通
 
 安装步骤没有使用 docker 而是参考文档从源码安装[^ifs]，原因和解决方案如下：
 
-- 机器用 $3.5/mo 512mem 最便宜的那档消费降级，出于 net/io 性能考虑就不使 docker 啦
+- ~~机器用 $3.5/mo 512mem 最便宜的那档消费降级~~(512M 内存重启会拉垮弱鸡，服务已迁移到 oraclecloud)，出于 net/io 性能考虑就不使 docker 啦
 
 - 内存问题，`RAILS_ENV=production bundle exec rake mastodon:setup`
     这一步骤执行到 `rails assets:precompile`，
@@ -31,7 +31,8 @@ $ sudo swapon --show
 $ sudo sysctl vm.swappiness=10
 ```
 
----
+
+## 邮件配置
 
 ```bash
 # By default the memory limit in Node. js is 512 mb, 
@@ -39,8 +40,16 @@ $ sudo sysctl vm.swappiness=10
 $ NODE_OPTIONS="--max-old-space-size=4096" RAILS_ENV=production bundle exec rails assets:precompile
 ```
 
-- 直接配置 localhost 发送邮件无效，先用 [sendgrid](https://sendgrid.com/) 免费版顶着
-    一天 100 封邮件目前够用
+直接配置 localhost 发送邮件无效，先用 [sendgrid](https://sendgrid.com/) 免费版顶着, 一天 100 封邮件目前够用
+
+
+## 迁移机器后重建 feed
+
+postgresql/redis 都换到了新机器, 之前因为 sidekiq 占用资源过多清理过 redis 数据, 相关 timeline 全都空了, 需要重建
+
+```bash
+RAILS_ENV=production ./bin/tootctl feeds build
+```
 
 [^wiki]: https://github.com/tootsuite/mastodon
 [^ifs]: https://github.com/tootsuite/documentation/blob/master/content/en/admin/install.md
