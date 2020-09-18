@@ -12,9 +12,9 @@ https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https:/
 安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
 从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
 需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
-定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置
-定时器 rss2email.timer
-[Unit] Description=rss2email [Service] Type=oneshot ExecStart=/usr/bin/r2e run 执行文件 rss2email.&mldr;</span></div><div class=post><div class=meta>Jun 4, 2020</div><a class=title href=/posts/bitwarden_rs_with_podman/>Deploy bitwarden_rs with podman</a> &mdash;
+update: 2020-09-18 17:34:49
+修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
+定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.&mldr;</span></div><div class=post><div class=meta>Jun 4, 2020</div><a class=title href=/posts/bitwarden_rs_with_podman/>Deploy bitwarden_rs with podman</a> &mdash;
 <span class=description>bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现， dotnet 版本有点儿不太适合手头的部署环境
 这里用比较现代的 podman2 来运行 docker 服务
 podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT=8080 -p 8080:8080 bitwardenrs/server:latest podman generate systemd --name bitwarden --files mv container-bitwarden.service /etc/systemd/system/ systemctl --user enable /etc/systemd/system/container-bitwarden.service systemctl --user start container-bitwarden.service 然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端
