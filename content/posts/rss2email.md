@@ -14,6 +14,7 @@ date: 2020-06-23T18:58:30+08:00
 
 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
 
+
 ## 安装配置
 rss2email 的安装到简单，参考 [官方文档](https://github.com/rss2email/rss2email)
 直接 `apt install rss2email`，默认配置会发送文本邮件，修改 `html-mail=True`，
@@ -23,6 +24,10 @@ rss2email 的安装到简单，参考 [官方文档](https://github.com/rss2emai
 从 feedly 导出 opml 文件然后 `r2e opmlimport` 完事大吉
 
 需要注意的是，在 `r2e run` 的执行过程中对配置文件进行修改非常容易被覆盖 [^issue]，不要同时搞太多操作就好，
+
+**update: 2020-09-18 17:34:49**
+
+修改参数 `force-from = True`，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
 
 
 ## 定时任务
