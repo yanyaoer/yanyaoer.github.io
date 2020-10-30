@@ -6,3 +6,5 @@ theme = "ezhil"
 pygmentsstyle = "solarized-dark"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+
+googleAnalytics = "G-LYFRPQF0H9"
