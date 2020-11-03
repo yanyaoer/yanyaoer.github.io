@@ -17,11 +17,13 @@ tags: [coffee]
 - 2020-0615 新购入 Mr.clever 聪明杯 [^clever]
 - 2020-0622 新购入 hario drip kettle air [^hario-air]，
   用了两次手感偏轻水流控制得不稳 T_T
+  
+- 2020-1027 新购入 fellow ode 电动磨豆机 [^fellow-ode]
 
 
 每天一早 ~~中午~~ 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水
 
-手法就比较随意了，主要参考下面两个视频，出品大概率我自己都还挺喜欢的
+手法就比较 ~~随意~~ 业余啦，主要参考下面两个视频，出品大概率自己都还挺喜欢的
 **按比例加注水量翻倍**
 
 ### "4:6 method" by Tetsu Kasuya [^4-6method]
@@ -64,6 +66,7 @@ tags: [coffee]
 [^c40]: http://www.comandantegrinder.com/index.html#styles
 [^riverseek]: http://www.rivers.co.jp/en/product/wallmug-sleek/
 [^clever]: https://detail.tmall.com/item.htm?id=590498470388
+[^fellow-ode]: https://fellowproducts.com/products/ode-brew-grinder
 
 [^baratza-encore]: https://baratza.com/grinder/encore/
 [^kinto]: https://kinto.co.jp/collections/coffeeware/products/28901
