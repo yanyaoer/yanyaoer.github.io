@@ -19,7 +19,7 @@ tags: [coffee]
   用了两次手感偏轻水流控制得不稳 T_T
   
 - 2020-1027 新购入 fellow ode 电动磨豆机 [^fellow-ode]
-
+- 2020-1109 新购入 fellow stagg ekg 温控壶 [^fellow-stagg]
 
 每天一早 ~~中午~~ 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水
 
@@ -67,6 +67,7 @@ tags: [coffee]
 [^riverseek]: http://www.rivers.co.jp/en/product/wallmug-sleek/
 [^clever]: https://detail.tmall.com/item.htm?id=590498470388
 [^fellow-ode]: https://fellowproducts.com/products/ode-brew-grinder
+[^fellow-stagg]: https://fellowproducts.com/products/staggekg
 
 [^baratza-encore]: https://baratza.com/grinder/encore/
 [^kinto]: https://kinto.co.jp/collections/coffeeware/products/28901
