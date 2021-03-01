@@ -23,3 +23,7 @@ date: 2020-05-07T16:00:01+08:00
 - https://github.com/haoel/haoel.github.io
 - https://github.com/ginuerzh/gost
 - https://github.com/xausky/ShadowsocksGostPlugin
+
+
+
+**update 2021-03-01** 由于 shawdowsocks 的 android 客户端升级导致插件不可用，另外部署了 [brook](https://github.com/txthinking/brook) wsserver 给手机使用
