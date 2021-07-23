@@ -42,7 +42,7 @@ podman run --rm -it -v /data/maddy:/data --entrypoint /bin/maddyctl yanyaoer/mad
 ```
 
 参考文档配置[^setting-up] 完后发送邮件对方可收，本地 thunderbird 接收回复邮件时有问题
-- [ ] spf 验证无法通过，暂时禁用待修复
+- [x] spf 验证无法通过，暂时禁用待修复
 - [x] 接收时报错 "Unexpected EOF when reciving from Steam"，等 0.4.3 发布 [^issues-300]
 
 ## workaround
@@ -62,6 +62,10 @@ index a76f6b6..b6e2eb2 100755
      export CGO_CXXFLAGS="-g -O2 -D_FORTIFY_SOURCE=2 $CXXFLAGS"
      export LDFLAGS="-Wl,-z,relro,-z,now $LDFLAGS"
 ```
+
+** update: 2021-07-23 **
+[v0.4.4](https://github.com/foxcpp/maddy/releases/tag/v0.4.4)
+直接下载解压以上功能正常使用，不再使用 podman 部署
 
 
 [^changelog]: https://changelog.com/news/maddy-a-composable-allinone-mail-server-ljEe
