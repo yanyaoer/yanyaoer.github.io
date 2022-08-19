@@ -1,12 +1,12 @@
 ---
-title: "Flair-58x Espresso Maker"
+title: "Flair-58 Espresso Maker"
 date: 2022-02-08T15:55:00+08:00
 tags: [coffee]
 ---
 
 ## flair-58
 
-<https://flairespresso.com/product/flair-58x/>
+<https://flairespresso.com/product/flair-58/>
 
 ![](/flair-coffee.jpg)
 
@@ -28,3 +28,10 @@ PlanB: 微波炉加热 + [宜家 ¥9.9 手持奶泡器](https://www.ikea.cn/cn/z
 试了下用冰的屈臣氏做 coffee soda，难喝🤢
 
 好多想买的配件：拉花奶缸、粉锤、布粉器、鼠尾粉碗、粉饼垃圾盒
+
+
+**update: 2022-08-19 14:09:08**
+
+买了新的拉花缸和称，但是懒到完全不想碰牛奶，only pure coffee and water...
+
+早晨的冲煮开始逐渐暴躁，直接磨58g粉分3次装填、下压、出液到一个杯里，再加冰块分装成两份 long black 出门，少洗两次杯子动作也更流畅～大概15-20分钟完成
