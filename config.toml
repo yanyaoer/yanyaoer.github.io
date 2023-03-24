@@ -26,6 +26,11 @@ url = "/tags"
 weight = 3
 
 [[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
+
+[[params.social]]
 name = "Bar"
 icon = "bar"
 url = "/daydayup/"
