@@ -10,6 +10,10 @@ pygmentscodefencesguesssyntax = true
 googleAnalytics = "G-LYFRPQF0H9"
 
 
+[params]
+subtitle = "looks like a wood sprite dancing through the forest"
+
+
 [[menu.main]]
 name = "Home"
 url = "/"
@@ -31,22 +35,22 @@ icon = "rss"
 url = "/index.xml"
 
 [[params.social]]
-name = "Bar"
-icon = "bar-chart-2"
+name = "Status"
+icon = "activity"
 url = "/daydayup/"
 
 [[params.social]]
-name = "Radio"
+name = "microfeed"
 icon = "radio"
 url = "https://yankuiyi.com/"
 
 [[params.social]]
-name = "Inbox"
+name = "Logseq"
 icon = "inbox"
 url = "https://fouland.com/"
 
 
 [[params.social]]
-name = "Wind"
-icon = "wind"
+name = "Mastodon"
+icon = "at-sign"
 url = "https://at.yadanhe.com/"
