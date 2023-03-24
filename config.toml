@@ -25,3 +25,23 @@ name = "Tags"
 url = "/tags"
 weight = 3
 
+[[params.social]]
+name = "status"
+icon = "bar"
+url = "/daydayup/"
+
+[[params.social]]
+name = "daughter"
+icon = "radio"
+url = "https://yankuiyi.com/"
+
+[[params.social]]
+name = "inbox"
+icon = "inbox"
+url = "https://fouland.com/"
+
+
+[[params.social]]
+name = "mastodon"
+icon = "wind"
+url = "https://at.yadanhe.com/"
