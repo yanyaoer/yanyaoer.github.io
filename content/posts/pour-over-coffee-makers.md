@@ -21,6 +21,8 @@ tags: [coffee]
 - 2020-1027 新购入 fellow ode 电动磨豆机 [^fellow-ode]
 - 2020-1109 新购入 fellow stagg ekg 温控壶 [^fellow-stagg]
 
+- 2023-half 新购入 hoop 澡盆滤杯 [^hoop]，类似聪明杯但会拉长萃取时间
+
 每天一早 ~~中午~~ 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水
 
 手法就比较 ~~随意~~ 业余啦，主要参考下面两个视频，出品大概率自己都还挺喜欢的
@@ -55,7 +57,7 @@ tags: [coffee]
 * fisher 会员每月发两包不一定啥豆子，小概率会冲出来很不错的
 * m2m 低端便宜豆买来当口粮，比如 70块 250g 的意式拼配，拿来做手冲解乏效果相当不赖  
     最近出的云南豆也很喜欢，酸甜口感层次丰富，闻起来还有一点点日晒发酵的酒香，海豹鼓掌
-
+* 海淘 ona - raspberry candy[^ona-raspberry]
 
 ## 无推广相关商品链接
 
@@ -68,6 +70,7 @@ tags: [coffee]
 [^clever]: https://detail.tmall.com/item.htm?id=590498470388
 [^fellow-ode]: https://fellowproducts.com/products/ode-brew-grinder
 [^fellow-stagg]: https://fellowproducts.com/products/staggekg
+[^hoop]: https://coffee.ceado.com/en/products/86-hoop_coffee_brewer/56-hoop_coffee_brewer
 
 [^baratza-encore]: https://baratza.com/grinder/encore/
 [^kinto]: https://kinto.co.jp/collections/coffeeware/products/28901
@@ -76,3 +79,4 @@ tags: [coffee]
 [^hario-bottle]: https://www.hario.jp/seihin/productdetail.php?product=FIC-70-CBR
 
 [^4-6method]: https://kurasu.kyoto/blogs/kurasu-journal/2016-world-brewers-cup-champion-tetsu-kasuya
+[^ona-raspberry]: https://onacoffee.com.au/products/raspberry-candy
