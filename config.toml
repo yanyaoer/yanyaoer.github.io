@@ -7,7 +7,7 @@ pygmentsstyle = "solarized-dark"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-googleAnalytics = "G-LYFRPQF0H9"
+# googleAnalytics = "G-LYFRPQF0H9"
 
 
 [params]

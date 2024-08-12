@@ -1,9 +1,14 @@
 ---
 title: "Pandoc generate pdf from markdown"
+#title: \vspace{-5ex}Pandoc generate pdf from markdown\vspace{-5ex}
+#title: \vspace{-5ex}Sample title\vspace{-5ex}
 date: 2024-07-25T14:52:12+08:00
 lang: zh-CN
 mainfont: "PingFang SC"
-monofont: "FantasqueSansM Nerd Font Mono"
+#monofont: "FantasqueSansM Nerd Font Mono"
+monofont: "Sarasa Mono SC"
+fontsize: 12px
+monofontoptions: 'Scale=0.75'
 geometry:
 - margin=2cm
 ---
@@ -31,8 +36,10 @@ title: "Your article title here"
 date: 2023-02-20
 fontsize: 12pt
 # fc-list :lang=zh
-mainfont: "PingFang SC"
-monofont: "FantasqueSansM Nerd Font Mono"
+#mainfont: "PingFang SC"
+mainfont: "Sarasa Mono SC"
+# monofont: "FantasqueSansM Nerd Font Mono"
+monofont: "Sarasa Mono SC"
 # 中文换行支持
 lang: zh-CN
 geometry: margin=2cm
@@ -54,7 +61,8 @@ $ pandoc --pdf-engine=xelatex -H head.tex -f gfm input.md -o output.pdf
 ```
 
 ```latex
-% head.tex，使用文档内联的 header-includes 指令一直运行不成功，求指导~
+% head.tex，使用文档内联的 header-includes 指令一直运行不成功，
+% 替换为 command-line 的参数 `-V header-includes='\pagenumbering{gobble}'`
 
 \pagenumbering{gobble}
 ```
