@@ -1,13 +1,12 @@
-baseURL = "https://yányào.com/"
+baseURL = "https://xn--ynyo-2nad.com/"
 languageCode = "en-us"
 title = "yányào.com"
-theme = "ezhil"
+theme = "archie"
 
 pygmentsstyle = "solarized-dark"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-# googleAnalytics = "G-LYFRPQF0H9"
 
 
 [params]
