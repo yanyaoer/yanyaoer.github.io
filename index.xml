@@ -1,128 +1,1016 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yányào.com</title><link>https://xn--ynyo-2nad.com/</link><description>Recent content on yányào.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 25 Jul 2024 14:52:12 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
-wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈 Setup 首先完整安装 latex 包
-$ brew uninstall --cask basictex $ brew install --cask mactex Latex template --- title: &amp;#34;Your article title here&amp;#34; date: 2023-02-20 fontsize: 12pt # fc-list :lang=zh #mainfont: &amp;#34;PingFang SC&amp;#34; mainfont: &amp;#34;Sarasa Mono SC&amp;#34; # monofont: &amp;#34;FantasqueSansM Nerd Font Mono&amp;#34; monofont: &amp;#34;Sarasa Mono SC&amp;#34; # 中文换行支持 lang: zh-CN geometry: margin=2cm # 设置双栏 # classoption=twocolumn --- 在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于</description></item><item><title>Flair-58 Espresso Maker</title><link>https://xn--ynyo-2nad.com/posts/flair-58/</link><pubDate>Tue, 08 Feb 2022 15:55:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/flair-58/</guid><description>flair-58 https://flairespresso.com/product/flair-58/
-周末浪费了2天豆子，终于折腾出比较理想的设定
-预热：浅烘 = 3档，中烘 = 2档，深烘 = 1档 磨豆：C40 调到 8 格(浅烘豆 +=1) 奶泡机没到位，先用娃的小奶锅煮 200ml Oatly 燕麦奶，稍热就好，没有打出泡沫也就无所谓拉花了
-PlanB: 微波炉加热 + 宜家 ¥9.9 手持奶泡器
-我买的优化后版本默认配无底手柄 + 58mm 18g粉碗，而上半年批次的好像是 20g粉碗，底部没有凹弧线，然后分水网和冲煮头是一体的，每杯都得拆下来清理，现在只需要拆手柄洗洗粉碗和分水网就好，方便连续出杯(但是对于没有多个手柄和粉碗的初阶用户来说，重新填粉加水的操作并不连续 -.-)
-群里有大佬改装了底座和支架的方案，解决下压前倾问题和使用12cm+的秤
-而无底手柄安装还不太熟练，经常要弯腰低头去看小翅膀有没有卡到位，然后注水再安装压力表(顺便当预浸泡)，18g豆出 36g液体，如果粉磨得过细，下压会很费劲
-虽然目前 5-9bar 之间压的曲线还不太稳定，偶尔通道也不太顺滋到杯外，但是香浓的 crema 已然远超预期(其实很容易过萃，但是家属喝不出来😂)
-试了下用冰的屈臣氏做 coffee soda，难喝🤢
-好多想买的配件：拉花奶缸、粉锤、布粉器、鼠尾粉碗、粉饼垃圾盒
-update: 2022-08-19 14:09:08
-买了新的拉花缸和称，但是懒到完全不想碰牛奶，only pure coffee and water&amp;hellip;
-早晨的冲煮开始逐渐暴躁，直接磨58g粉分3次装填、下压、出液到一个杯里，再加冰块分装成两份 long black 出门，少洗两次杯子动作也更流畅～大概15-20分钟完成</description></item><item><title>剁手好物推荐</title><link>https://xn--ynyo-2nad.com/posts/toy/</link><pubDate>Fri, 24 Sep 2021 22:28:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/toy/</guid><description> Insta360 GO2 拇指运动相机 巷贩小酒 - 东方甄选金酒 Reebok royal techque 板鞋 ALTRA Escalante 2.5 轻量零落差跑鞋 SENNHEISER IE300 耳机 PhD 能量棒</description></item><item><title>Volvo v60</title><link>https://xn--ynyo-2nad.com/posts/volvo-v60/</link><pubDate>Wed, 30 Jun 2021 21:10:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/volvo-v60/</guid><description>因为家庭新成员加入，所以买车的优先级提了上来。一开始考虑大尺寸6/7座suv，能装全家人短途出行，比如highlander, outlander, explorer, Pajero&amp;hellip;后来因为今年各种新款上市，到最终提车时间有点晚，再加上城市拥堵和停车问题，回归到最初的选项也是一直种草的旅行车Volvo v60
-中间还去看过Jaguar和Alfa Romeo，可惜后排空间有点小，对外型内饰非常满意，动力和操控也很可以，尤其Julie的前脸颜值太命中我了，一直对mx5这类笑脸无法抗拒…
-V60在4s店试驾的豪华版，刚开始还挺不适应转向手感和油门刹车的，感觉都很沉很重。比起来以前开过的各种小钢炮和家用轿车，沉着有余灵活不够，前期不熟悉的时候操作起来都得小心翼翼。
-最后订车选了致远焰影蓝运动款，因为厂家直销的关系也没讲价，就跟销售要了行车记录仪和儿童座椅。目前开两个月小一千公里的行程，大概总结些点吧
-外观线条比例，审美观因人而异，但是V60各处都在我的区间内 nappa皮座椅舒适和支撑都很到位，前排有可调的腿拖和腰撑。对豪华版的实木装饰水晶档杆其实没啥需求，氛围灯也蛮简约，没有那么夜店风。可惜选配的交车时间太长，不然座椅通风、冬季包、米色内饰都想加 后排空间坐两人还行，但是中间的地台太高，不适合长途5人出行 后备箱就不用夸了，狗子的航空箱一直塞在里面，出去玩很方便，去宜家就把后座放平。6月份搬家就跑了两趟，上次搬家借老王的a3可拉了56趟 48v电机+autohold，起步平顺没有纯燃油车型起步轰发动机那个颤抖 低转油门动力响应略有延迟，升档不算很迅速，不过相比起golf，508要好很多 油耗市区日常11升百公里，跑机场高速能到6.1左右，平时一个月加一次满箱油，推荐95号 方向盘虚位明显，过弯会习惯性多打一些位置，转向比hatchback车型都要重许多。前脸两侧的存在感明显，低坐姿的时候会开得谨慎，反而不会觉得屁股有什么阻碍 底盘确实在开过的车里算得上优秀，过弯和滤震都很扎实。静音实属一般，风噪胎噪在后排(或者车速超过100)尤其明显，所以也就不考虑顶上行李箱 autopilot 模式在跑高速时非常愉悦，车道保持比我打方向顺滑多了，跟前车保持车距也很可靠，另外养成了并线前一定先打灯的习惯，否则车子会自己修正。能称为瑕疵的就是自动刹车不够线性，乘客会有明显的拉扯感甚至点头；拥堵路段还得切回手动模式，跟车距离在我这边太容易被加塞</description></item><item><title>Self Host Maddy Mail Server</title><link>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</link><pubDate>Tue, 01 Dec 2020 20:34:44 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</guid><description>maddy Composable all-in-one mail server. https://github.com/foxcpp/maddy
-准备自建系列服务替换掉 google 全家桶，先试了传统的 Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC 套餐，但是本人水平菜，机器配置也不高，折腾两天还没跑起来，正好看到订阅的 changelog 推荐了 maddy 1 于是搓搓手气试试这个邮局方案，以下是满足个人喜好的优点
-基于 golang 生态依赖少，方便打镜像 验证数据存在 sqlite 里也很轻量 没有 web 端，只需要 imap + thunderbird 即可 配置文件相对简单 install mkdir -p /data/maddy # hard link caddy&amp;#39;s crt and key to maddy ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/${domain}/${domain}.crt /data/maddy/${domain}.crt ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/${domain}/${domain}.key /data/maddy/${domain}.key # foxcpp/maddy:v0.4.2 podman run \ --name maddy \ -v /data/maddy:/data \ -p 25:25 \ -p 143:143 \ -p 587:587 \ -p 993:993 \ -p 465:465 \ yanyaoer/maddy:master # add user podman run --rm -it -v /data/maddy:/data --entrypoint /bin/maddyctl yanyaoer/maddy:master creds create yanyao@mail.</description></item><item><title>Utteranc Comments</title><link>https://xn--ynyo-2nad.com/posts/utteranc-comments/</link><pubDate>Fri, 30 Oct 2020 11:49:39 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/utteranc-comments/</guid><description>utterances - A lightweight comments widget built on GitHub issues. Use GitHub issues for blog comments, wiki pages and more!
-install install utterances on your repo
-add the script to your template
-&amp;lt;script src=&amp;#34;https://utteranc.es/client.js&amp;#34; repo=&amp;#34;[ENTER REPO HERE]&amp;#34; issue-term=&amp;#34;pathname&amp;#34; theme=&amp;#34;github-light&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34; async&amp;gt; &amp;lt;/script&amp;gt; for exsamples https://github.com/yanyaoer/yanyaoer.github.io/commit/f2508ce7557d372f909f68ee32371f86895fd92f
-done.</description></item><item><title>Zotero as personal knowledge management</title><link>https://xn--ynyo-2nad.com/posts/zotero/</link><pubDate>Thu, 02 Jul 2020 22:55:53 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/zotero/</guid><description>Zotero 常用于科研的文献管理，由 firefox 浏览器插件发展到现在有了独立的桌面和移动客户端。
-本身具备简易的 rss 订阅功能可以用来追踪论文的更新 注册在线账户后支持导出资料库给其他同学订阅 浏览器插件 zotero connectors 则类似各类笔记应用的 web clipper，方便导入各种资料。注意科学上网加载完整页面后再进行保存 通过插件可以扩展出许多其他功能，比如文件同步、高级档案管理 quickstart brew cask install zotero 这里简单用 caddy2 搭建 webdav 来同步附件，就没用高级的 zotfile
-至于自带的笔记功能怎么说呢～ 已经适应不能这种风格了
-add-ons link quicklook https://github.com/mronkko/ZoteroQuickLook/releases markdown https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/ subscription https://arxiv.org/list/cs/recent 康奈尔大学提供的免费论文预览平台，主要订阅 cs.SD 音频相关更新
-https://scholar.google.com/
-https://academic.microsoft.com/ 谷歌学术、微软学术也可以用来搜索一些关键词并订阅推送
-https://www.storkapp.me/ 提供关键词订阅推送到邮箱
-https://sci-hub.tw/ 实在找不到的下载就靠毛子的共享服务
-将码农常用的文档工具 gitbook 转为 pdf
-brew cask install calibre sudo npm install -g gitbook-cli gitbook install # for gitbook plugin git clone https://github.com/prometheus/docs.git gitbook pdf ps: gitbook 开源版本已经很久不维护了，可以换到 honkit fork 的版本</description></item><item><title>Rss2email</title><link>https://xn--ynyo-2nad.com/posts/rss2email/</link><pubDate>Tue, 23 Jun 2020 18:58:30 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/rss2email/</guid><description>距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
-https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https://github.com/FreshRSS/FreshRSS https://git.tt-rss.org/fox/tt-rss 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
-安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
-从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
-需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
-update: 2020-09-18 17:34:49
-修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
-定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.</description></item><item><title>Deploy bitwarden_rs with podman</title><link>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</link><pubDate>Thu, 04 Jun 2020 19:05:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</guid><description>bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现， dotnet 版本有点儿不太适合手头的部署环境
-这里用比较现代的 podman2 来运行 docker 服务
-podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT=8080 -p 8080:8080 bitwardenrs/server:latest podman generate systemd --name bitwarden --files mv container-bitwarden.service /etc/systemd/system/ systemctl --user enable /etc/systemd/system/container-bitwarden.service systemctl --user start container-bitwarden.service 然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端
-brew install bitwarden-cli # npm install -g @bitwarden/cli bw config server https://bw.myserver.com update 2021-04-01 build bitwaden_rs from source
-# install rust apt install git make gcc libssl-dev pkg-config curl curl --proto &amp;#39;=https&amp;#39; --tlsv1.</description></item><item><title>Minio Storage Service</title><link>https://xn--ynyo-2nad.com/posts/minio-storage-service/</link><pubDate>Tue, 02 Jun 2020 09:47:48 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/minio-storage-service/</guid><description>min.io 来自前 glusterFS 团队的分布式存储项目， 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便， golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务
-没有生产环境的使用经验，以下仅用于业余尝鲜 六一节礼物
-GNU/Linux 下载安装 wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio chmod +x /user/local/bin/minio 添加用户、组和配置文件 groupadd --system minio useradd --system --gid minio --shell /usr/sbin/nologin --comment &amp;#34;Minio file server&amp;#34; minio mkdir -p /data/minio chown -R minio:minio /data/minio # replace minio.service with your own config, eg. User,Group wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service 配置端口和密钥 # optional. run `uuidgen` to creates AK/SK cat &amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; /tmp/minio MINIO_VOLUMES=&amp;#34;/data/minio/&amp;#34; MINIO_OPTS=&amp;#34;--address :9199&amp;#34; MINIO_ACCESS_KEY=`uuidgen` MINIO_SECRET_KEY=`uuidgen` EOF 启动服务 systemctl enable minio.</description></item><item><title>Pour Over Coffee Makers</title><link>https://xn--ynyo-2nad.com/posts/pour-over-coffee-makers/</link><pubDate>Fri, 15 May 2020 15:41:01 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pour-over-coffee-makers/</guid><description>办公室日常用品 hario v60 2人份玻璃滤杯 1 hario v60 600ml 云朵分享壶 2 comandante c40 手摇磨豆机 3 kalita 700ml 细嘴壶 4 rivers seek 随手杯 5 2020-0615 新购入 Mr.clever 聪明杯 6
-2020-0622 新购入 hario drip kettle air 7， 用了两次手感偏轻水流控制得不稳 T_T
-2020-1027 新购入 fellow ode 电动磨豆机 8
-2020-1109 新购入 fellow stagg ekg 温控壶 9
-2023-half 新购入 hoop 澡盆滤杯 10，类似聪明杯但会拉长萃取时间
-每天一早 中午 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水
-手法就比较 随意 业余啦，主要参考下面两个视频，出品大概率自己都还挺喜欢的 按比例加注水量翻倍
-&amp;ldquo;4:6 method&amp;rdquo; by Tetsu Kasuya 11 &amp;ldquo;The Ultimate V60 Technique&amp;rdquo; by James Hoffmann 家庭版 baratza encore 电动磨豆器 12 kinto OCT 2人份陶瓷滤杯 13 ikea vardagen 500ml 玻璃量杯 14 muji 万古烧马克杯 15 2020-0615 新购入 hario filter-in 冷萃瓶 已碎，21年夏再次购入 16 刚开始的时候装备上交了不少学费，比如：电动砍豆机、廉价手磨、aeropress， 虽然不能一概而论，实际上很大程度还是遵循一分钱一分货的原则，性能越好则价格呈指数上涨 条件允许的话尽量选择好一点的设备，毕竟也是天天要用的家伙事</description></item><item><title>Mastodon</title><link>https://xn--ynyo-2nad.com/posts/mastodon/</link><pubDate>Fri, 15 May 2020 09:45:08 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/mastodon/</guid><description>Mastodon 长毛象1 &amp;ndash; 基于 rubyonrails/reactjs/nodejs 开发的分布式 &amp;amp; 去中心化 twiter clone。利用空闲时间在 aws lightsail 上开了个实例把服务跑了起来
-一开始走了些弯路，因为选机房和省钱的缘故，重建了若干次操作系统，最后的选择是 tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通不稳定
-安装步骤没有使用 docker 而是参考文档从源码安装2，原因和解决方案如下：
-机器用 $3.5/mo 512mem 最便宜的那档消费降级(512M 内存重启会拉垮弱鸡，服务已迁移到 oraclecloud)，出于 net/io 性能考虑就不使 docker 啦
-内存问题，RAILS_ENV=production bundle exec rake mastodon:setup 这一步骤执行到 rails assets:precompile， 不管是在 docker 里跑还是直接运行都会报 swap 分区不足，找到两个方案来解决:
-# create swapfile &amp;lt;https://linuxize.com/post/create-a-linux-swap-file/&amp;gt; $ sudo fallocate -l 2G /swapfile $ sudo chmod 600 /swapfile $ sudo mkswap /swapfile $ sudo swapon /swapfile # verify active $ sudo swapon --show # optional: low value is better for production $ sudo sysctl vm.</description></item><item><title>Gitlab Repo</title><link>https://xn--ynyo-2nad.com/posts/gitlab-repo/</link><pubDate>Sat, 09 May 2020 19:34:06 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/gitlab-repo/</guid><description>gitlab 里面已经有十来个 group，几百个 project，虽然不一定会每个项目都参与， 但是为了快速同步代码，又捡起了 android 开发常用的 repo 命令来管理多项目代码。 这里使用了 gitlab graphql 接口来遍历项目生成分组的 manifest 文件
-#!/usr/bin/env python import argparse import json import os import urllib2 GITLAB_HOST = &amp;#34;gitlab.mydomain.com&amp;#34; GITLAB_SSH_URL = &amp;#34;ssh://git@&amp;#34; + GITLAB_HOST GITLAB_GRAPHQL_URL = &amp;#34;https://&amp;#34; + GITLAB_HOST + &amp;#34;/api/graphql&amp;#34; GITLAB_TOKEN = &amp;#34;&amp;#34; GITLAB_GROUP = [&amp;#34;&amp;#34;] BLACK_LIST = (&amp;#34;&amp;#34;,) # 以上配置修改为自己的设定 template = &amp;#34;&amp;#34;&amp;#34;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!-- autogen by gen.py, do not edit this file --&amp;gt; &amp;lt;manifest&amp;gt; &amp;lt;remote name=&amp;#34;origin&amp;#34; fetch=&amp;#34;{ssh_url}&amp;#34; /&amp;gt; &amp;lt;default revision=&amp;#34;master&amp;#34; remote=&amp;#34;origin&amp;#34; sync-c=&amp;#34;true&amp;#34; sync-j=&amp;#34;4&amp;#34; /&amp;gt; {content} &amp;lt;/manifest&amp;gt;&amp;#34;&amp;#34;&amp;#34; def write_file(content, filename=&amp;#34;default.</description></item><item><title>Dash Replacement with tmux</title><link>https://xn--ynyo-2nad.com/posts/dash-replacement/</link><pubDate>Thu, 07 May 2020 18:54:37 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/dash-replacement/</guid><description>通过 tmux 快捷集成替换 dash.app 查询开发文档
-$ brew install dasht $ dasht-docsets | tr &amp;#39;A-Z&amp;#39; &amp;#39;a-z&amp;#39; go javascript python_3 rust tornado # tmux.conf quick start bind -n S-up command-prompt -p &amp;#39;docset:&amp;#39; &amp;#34;splitw -h -fb -l 80 dasht &amp;#39;%%&amp;#39;&amp;#34;</description></item><item><title>Cloudflare Gost</title><link>https://xn--ynyo-2nad.com/posts/cloudflare-gost/</link><pubDate>Thu, 07 May 2020 16:00:01 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/cloudflare-gost/</guid><description>从清明节开始，稳定运行好几年的 ss 服务器终于阵亡了，所有端口全挂。一直蹭公司的 vpn 查资料也挺到了五一，实在拖延够够的就再另外开了一台机器中转过去迁移数据，不过嘛年纪大了又开始犯懒，企图拯救获得资格认证的机器，通过一番网上冲浪学习到了目前(实测可用)能满足我需求的方案。简单来说就是：cloudflare[后文简称为 cf] + websockets over gost，实际的客户端通过 cdn 代理再接入服务
-有几个需要注意的地方：
-gost 启动时绑定的 localhost 不直接对外访问，走了 caddy 的转发，而这一步和 cf 的 ssl 证书配置会造成不停的重定向跳转，需要将 cf 加密模式配置为 flexible
-然后修改 caddy 的域名配置为 http://domain.com https://domain.com { &amp;hellip; } 阻止 cf 和 caddy 之间的 http -&amp;gt; https
-gost 服务端监听 ws 协议，本地的 gost 客户端转发 wss 协议连接 cf_domain:443
-需要鉴权的方案使用 socks5+wss://username:password@domain:port
-android 客户端的设置，因为使用了 ws 协议，所以需要将域名写入到插件的配置里，直接用域名变量无法解析
-具体配置参考官方文档，一切浪费的时间都是源于没认真仔细看文档
-https://github.com/haoel/haoel.github.io https://github.com/ginuerzh/gost https://github.com/xausky/ShadowsocksGostPlugin update 2021-03-01 由于 shawdowsocks 的 android 客户端升级导致插件不可用，另外部署了 brook wsserver 给手机使用</description></item><item><title>webpack resolve local module</title><link>https://xn--ynyo-2nad.com/posts/webpack-resolve-local-module/</link><pubDate>Fri, 13 Jan 2017 23:19:49 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/webpack-resolve-local-module/</guid><description>最近的项目刚开始，设计的目录层级有点深
-经常会在好几层本地路径之间互相引用
-import Image from '../../../../components/image'
-这层层叠叠的路径写起来实在丑陋
-不由得想起 Python 从项目根目录引用模块
-然后研究了一下 Node.js 里的几种简易实现
-干脆利落的软连接: ln -s node_modules src
-修改环境变量: NODE_PATH=. node app
-从本地目录安装:
-// package.json // 需要运行 npm install { &amp;#34;name&amp;#34;: &amp;#34;baz&amp;#34;, &amp;#34;dependencies&amp;#34;: { &amp;#34;foo&amp;#34;: &amp;#34;file: ./src&amp;#34;, } } 另外还有些修改 global，或者引入其他 require 实现的方法就不再一一列出了
-最终选择的是修改 webpack 配置
-// webpack.config.js resolve: { modulesDirectories: [__dirname, &amp;#39;node_modules&amp;#39;], } https://gist.github.com/branneman/8048520 http://stackoverflow.com/questions/10860244/how-to-make-the-require-in-node-js-to-be-always-relative-to-the-root-folder-of-t/41078266#41078266 https://webpack.github.io/docs/configuration.html#resolve-modulesdirectories</description></item><item><title>Leonard Cohen - you want it darker</title><link>https://xn--ynyo-2nad.com/posts/leonard-cohen-you-want-it-darker/</link><pubDate>Tue, 25 Oct 2016 09:21:00 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/leonard-cohen-you-want-it-darker/</guid><description>年度最佳 you want it darker
-循环听了好几天
-干净低沉的嗓音加配乐
-愈发担心以后听不到了怎么办 😢～</description></item><item><title>web audio</title><link>https://xn--ynyo-2nad.com/posts/web-audio/</link><pubDate>Wed, 15 Jun 2016 14:34:08 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/web-audio/</guid><description>照文档撸了一下 AudioContext 可视化音频
-桌面浏览器上 Safari 9, Chrome stable 绘制正常
-移动端只有微信的 webview 能工作, 纯玩票叻 ref: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, user-scalable=no&amp;#34;&amp;gt; &amp;lt;title&amp;gt;AV&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;canvas id=&amp;#34;vis&amp;#34;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;audio id=&amp;#34;av&amp;#34; src=&amp;#34;YOUR_AUDIO_FILE&amp;#34;&amp;gt;&amp;lt;/audio&amp;gt; &amp;lt;script src=&amp;#34;index.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById(&amp;#39;vis&amp;#39;); var canvasCtx = canvas.getContext(&amp;#39;2d&amp;#39;); var isPlaying = true; var audio = document.getElementById(&amp;#39;av&amp;#39;); var audioCtx = new AudioContext(); var analyser = audioCtx.</description></item><item><title>move to caddy</title><link>https://xn--ynyo-2nad.com/posts/move-to-caddy/</link><pubDate>Tue, 26 Apr 2016 06:41:13 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/move-to-caddy/</guid><description>去年用 Hexo 搭建的日志已经好几个月没更新了，最近休假有点空闲就继续更新吧。
-先从 Github 迁移回自己的 Linode，然后安装一个 Caddyserver1 来渲染 markdown
-Caddy is a unique web server with a modern feature set. Think nginx or Apache, but written in Go. With Caddy, you can serve your websites over HTTP/2. It can act as a reverse proxy and load balancer. Front your PHP apps with it. You can even deploy your site with git push. Cool, right?2
-Download and install systemd wget -O &amp;#39;caddy.</description></item><item><title>mongodb backup</title><link>https://xn--ynyo-2nad.com/posts/mongodb-backup/</link><pubDate>Tue, 22 Dec 2015 13:30:24 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mongodb-backup/</guid><description>有台机器准备2月份下架 记一个 mongodb 备份小脚本 :)
-#!/bin/bash # vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8: MONGO_DATABASE=&amp;#34;_name_&amp;#34; MONGO_HOST=&amp;#34;_ip_&amp;#34; MONGO_PORT=&amp;#34;_prot_&amp;#34; TIMESTAMP=`date +%Y-%m-%dT%H:%M:%S` MONGODUMP_PATH=&amp;#34;/usr/bin/mongodump&amp;#34; BACKUPS_DIR=&amp;#34;/data/dumps/&amp;#34; BACKUP_NAME=&amp;#34;$MONGO_DATABASE-$TIMESTAMP&amp;#34; while test $# -gt 0 do case &amp;#34;$1&amp;#34; in -m) echo &amp;#34;backup mongthly and clear week_dir&amp;#34; #rm $BACKUPS_DIR&amp;#34;week/*&amp;#34; find $BACKUPS_DIR&amp;#34;week&amp;#34; -type f -name &amp;#39;*.tgz&amp;#39; -delete tar -czPf $BACKUPS_DIR&amp;#34;month/&amp;#34;$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE ;; -w) echo &amp;#34;backup weekly&amp;#34; echo &amp;#34;tar -czPf $BACKUPS_DIR&amp;#34;week/&amp;#34;$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE&amp;#34; ;; -d) echo &amp;#34;just dump&amp;#34; $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR ;; *) echo &amp;#34;do nothing&amp;#34; ;; esac shift done # crontab -e 10 3 * * * /bin/bash $HOME/bin/mongobackup.</description></item><item><title>let's encrypt</title><link>https://xn--ynyo-2nad.com/posts/let-s-encrypt/</link><pubDate>Mon, 14 Dec 2015 23:35:49 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/let-s-encrypt/</guid><description>Let&amp;rsquo;s Encrypt 已经公开测试，不需要再提交测试域名表单，直接就能申请
-小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦
-照 文档 做一遍给域名签上证书还挺简单的
-# 获取项目代码 git clone https://github.com/letsencrypt/letsencrypt cd letsencrypt # 安装依赖 ./letsencrypt-auto # 获取证书 ./letsencrypt-auto certonly --standalone -d www.example.com -d example.com # 配置 nginx server { listen 443 ; ssl on; ssl_certificate_key /etc/letsencrypt/live/youdomain/privkey.pem; ssl_certificate /etc/letsencrypt/live/youdomain/fullchain.pem; } 需要注意的是 dnspod 等国内服务解析域名有问题
-我这里直接切回 domains.google.com 就行了
-使用 standalone 模式需要先停掉默认的 nginx
-文档里提到可以使用 webroot 模式不用停 但我创建验证文件失败了 :(
-默认90天过期，建议 crontab 定时更新
-###Update
-使用 acme.sh
-An ACME protocol client written purely in Shell (Unix shell) language.</description></item><item><title>simple crawler</title><link>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</link><pubDate>Sat, 17 Oct 2015 12:06:21 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</guid><description>半夜看了本小说觉得翻页太累
-首先要解决的问题是找一个质量还过得去的小说站 然后写个脚本去把它爬下来章节合并到一起
-import fs from &amp;#34;fs&amp;#34;; import { argv } from &amp;#34;process&amp;#34;; import request from &amp;#34;request&amp;#34;; import cheerio from &amp;#34;cheerio&amp;#34;; import iconv from &amp;#34;iconv-lite&amp;#34;; import sanitize from &amp;#39;sanitize-html&amp;#39;; class main { constructor() { Object.assign(this, { path: &amp;#39;./chapter.json&amp;#39;, html: &amp;#39;./reader.html&amp;#39;, url: { list: &amp;#39;http://www.piaotian.net/html/6/6658/&amp;#39; }, store: [] }) } fetch(url, callback) { request.get(url, {encoding: null}, (error, response, body)=&amp;gt; { if (!error &amp;amp;&amp;amp; response.statusCode == 200) { let $ = cheerio.load(iconv.decode(body, &amp;#39;GBK&amp;#39;)); callback($, body); } else { console.</description></item><item><title>send notification when task finish</title><link>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</link><pubDate>Sun, 11 Oct 2015 00:38:23 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</guid><description>终端里运行长时间任务(比如 make systemimage)的时候经常会切换到其他环境做别的事情 容易忘记查看之前的任务是否完成, 查到一些方法用在任务结束时发出通知
-#C-z 切到后台运行 fg; tput bel # Mac OS X #系统弹窗 osascript -e &amp;#39;tell app &amp;#34;System Events&amp;#34; to display alert &amp;#34;Build Completed&amp;#34; message &amp;#34;The checkout and build have completed.&amp;#34;&amp;#39; say &amp;#34;Job finished&amp;#34; #语音播报 #notification center osascript -e &amp;#39;display notification &amp;#34;Job finished&amp;#34; with title &amp;#34;Alert&amp;#34;&amp;#39; sudo gem install terminal-notifier terminal-notifier -message &amp;#34;Job finished!&amp;#34; -title &amp;#34;Alert&amp;#34; # Ubuntu notify-send &amp;#34;Job finished!&amp;#34; # KDE kdialog --passivepopup &amp;#39;Job finished&amp;#39; 还有 iterm2 trigger 也能用来触发通知, 高亮文字</description></item><item><title>create CNAME with internationalized domain name</title><link>https://xn--ynyo-2nad.com/posts/cname-with-yanyao-com/</link><pubDate>Sun, 04 Oct 2015 20:52:56 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/cname-with-yanyao-com/</guid><description>前段时间买了个 idn: yányào.com 闲置了很长时间没动 趁着十一长假无所事事的机会, 把玩了一下 hexo 挂到 yanyaoer.github.io
-然后 CNAME 的时候掉坑了, 看到有人说30分钟生效傻傻等就不提了 实际上这个域名的 CNAME 内容应该用编码后的字符串而不是 yányào.com
-https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4
-diff --git a/CNAME b/CNAME index 6cb647c..92d166c 100644 --- a/CNAME +++ b/CNAME @@ -1 +1 @@ -yányào.com +xn--ynyo-2nad.com</description></item><item><title>xtag-and-shadowdom</title><link>https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/</link><pubDate>Sun, 04 Oct 2015 12:20:52 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/</guid><description>最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY
-可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类 inline 方式覆盖样式略嫌繁琐
-示例代码 xtag.js let dom = { shadow(el) { return el.createShadowRoot ? el.createShadowRoot() : el.webkitCreateShadowRoot(); }, attr(el, prefix=&amp;#39;&amp;#39;) { return Object.keys(el.dataset).map((d)=&amp;gt; `${prefix}${d}=&amp;#34;${el.dataset[d]}&amp;#34;`).join(&amp;#39; &amp;#39;) } } document.registerElement(&amp;#39;x-image&amp;#39;, { prototype: Object.create(HTMLElement.prototype, { createdCallback: { value() { //xtag 嵌套时这里读不到attr, 放到 attach console.log(&amp;#39;onCreate::image&amp;#39;); } }, attachedCallback: { value() { console.log(&amp;#39;onAttach::image&amp;#39;); let shadow = dom.shadow(this); shadow.innerHTML = `&amp;lt;style&amp;gt; img { max-width: 100%; } &amp;lt;/style&amp;gt; &amp;lt;img ${dom.</description></item><item><title>remote pbcopy with netcat</title><link>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</link><pubDate>Tue, 20 Jan 2015 11:45:53 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</guid><description>Quick start while (true); do nc -l 2224 | pbcopy; done #If your laptop is running linux, replacing pbcopy with xcopy should work: #while (true); do nc -l 2224 | xcopy; done echo &amp;#34;This text gets sent to clipboard&amp;#34; | nc localhost 2224 echo &amp;#34;RemoteForward 2224 localhost:2224&amp;#34; &amp;gt;&amp;gt; ~/.ssh/config ssh remote -t &amp;#39;cat blablabla | nc -q0 localhost 2224&amp;#39; Daemonizing pbcopy launchctl load ~/Library/LaunchAgents/local.pbcopy.plist
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple Computer//DTD PLIST 1.</description></item><item><title>forward email by postfix</title><link>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</link><pubDate>Mon, 06 Oct 2014 01:25:06 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</guid><description>sudo aptitude install postfix hostname -f # sudo vim /etc/postfix/main.cf myhostname = example.com myorigin = example.com mydestination = example1.com, example2.com, ... virtual_alias_maps = hash:/etc/postfix/virtual # sudo vim /etc/postfix/virtual @example1.com name@forward.com @example2.com name@forward.com sudo postmap /etc/postfix/virtual sudo /etc/init.d/postfix reload https://wiki.debian.org/Postfix#Forward_Emails
-https://www.linode.com/docs/email/postfix/basic-postfix-email-gateway-on-debian-6-squeeze
-https://www.debian-administration.org/article/243/Handling_mail_for_multiple_virtual_domains_with_postfix</description></item><item><title>mitmproxy</title><link>https://xn--ynyo-2nad.com/posts/mitmproxy/</link><pubDate>Wed, 20 Aug 2014 12:05:38 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mitmproxy/</guid><description>mitmproxy 是个命令行下查看/修改 http 请求的交互式工具
-#截图 #安装
-sudo apt-get install python-dev libffi-dev pip install mitmproxy #使用
-ubuntu 上启动 mitmproxy
-mitmproxy &amp;ndash;host
-手机 设置 -&amp;gt; WLAN -&amp;gt; 代理
-主机名: ubuntu 的 ip
-端口: 8080
-然后访问网络就会在 mitmproxy 里看到请求记录(如截图)
-#快捷键
-j,k 上下移动
-enter 进入
-tab 切换 request/response
-#参考 http://mitmproxy.org/doc/mitmproxy.html
-http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/</description></item><item><title>brick intro</title><link>https://xn--ynyo-2nad.com/posts/brick-intro/</link><pubDate>Wed, 28 Aug 2013 10:47:17 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/brick-intro/</guid><description>#Introducing Brick: Minimal-markup Web Components for Faster App Development #介绍 brick: 用于快速开发 webapp 的自定义标签组件
-https://hacks.mozilla.org/2013/08/introducing-brick-minimal-markup-web-components-for-faster-app-development/
-Those of you on the cutting HTML5 edge may have already heard of the exciting Web Components specification. If you haven’t, you’ll probably want to read up on what makes this so exciting, but long story short, Web Components promise to open up a new realm of development by letting web developers write custom, reusable HTML tags.</description></item><item><title>my osx setup</title><link>https://xn--ynyo-2nad.com/posts/my-osx-setup/</link><pubDate>Sun, 09 Jun 2013 12:05:50 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/my-osx-setup/</guid><description>#setting
-# Enable full keyboard access for all controls defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 # Disable menu bar transparency defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons defaults write com.apple.finder QuitMenuItem -bool true # Avoid creating .DS_Store files on network volumes defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true # Disable the warning when changing a file extension defaults write com.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>yányào.com</title><link>https://xn--ynyo-2nad.com/</link><description>Recent content on yányào.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 25 Jul 2024 14:52:12 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+&lt;p>始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 &lt;code>pandoc&lt;/code> 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 &lt;code>latex&lt;/code> 相关设定内容。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>wkhtmltopdf&lt;/code> 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈&lt;/li>
+&lt;/ul>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>首先完整安装 latex 包&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ brew uninstall --cask basictex
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ brew install --cask mactex
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="latex-template">Latex template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">title&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;Your article title here&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">date&lt;/span>: 2023-02-20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">fontsize&lt;/span>: 12pt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># fc-list :lang=zh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#mainfont: &amp;#34;PingFang SC&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">mainfont&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;Sarasa Mono SC&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># monofont: &amp;#34;FantasqueSansM Nerd Font Mono&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">monofont&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;Sarasa Mono SC&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 中文换行支持&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">lang&lt;/span>: zh-CN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">geometry&lt;/span>: margin=2cm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 设置双栏&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># classoption=twocolumn&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于&lt;/p></description></item><item><title>Flair-58 Espresso Maker</title><link>https://xn--ynyo-2nad.com/posts/flair-58/</link><pubDate>Tue, 08 Feb 2022 15:55:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/flair-58/</guid><description>&lt;h2 id="flair-58">flair-58&lt;/h2>
+&lt;p>&lt;a href="https://flairespresso.com/product/flair-58/">https://flairespresso.com/product/flair-58/&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://xn--ynyo-2nad.com/flair-coffee.jpg" alt="">&lt;/p>
+&lt;p>周末浪费了2天豆子，终于折腾出比较理想的设定&lt;/p>
+&lt;ul>
+&lt;li>预热：浅烘 = 3档，中烘 = 2档，深烘 = 1档&lt;/li>
+&lt;li>磨豆：C40 调到 8 格(浅烘豆 +=1)&lt;/li>
+&lt;/ul>
+&lt;p>奶泡机没到位，先用娃的小奶锅煮 200ml Oatly 燕麦奶，稍热就好，没有打出泡沫也就无所谓拉花了&lt;br>
+PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-da-da-mo-qi-hei-se-70301165/">宜家 ¥9.9 手持奶泡器&lt;/a>&lt;/p>
+&lt;p>我买的优化后版本默认配无底手柄 + 58mm 18g粉碗，而上半年批次的好像是 20g粉碗，底部没有凹弧线，然后分水网和冲煮头是一体的，每杯都得拆下来清理，现在只需要拆手柄洗洗粉碗和分水网就好，方便连续出杯(但是对于没有多个手柄和粉碗的初阶用户来说，重新填粉加水的操作并不连续 -.-)&lt;br>
+群里有大佬&lt;a href="https://docs.google.com/document/d/1szvhjTE2F7lzhr38phggVUO50fkbddq0/edit?usp=sharing&amp;amp;ouid=115932911354635105266&amp;amp;rtpof=true&amp;amp;sd=true">改装了底座和支架的方案&lt;/a>，解决下压前倾问题和使用12cm+的秤&lt;/p>
+&lt;p>而无底手柄安装还不太熟练，经常要弯腰低头去看小翅膀有没有卡到位，然后注水再安装压力表(顺便当预浸泡)，18g豆出 36g液体，如果粉磨得过细，下压会很费劲&lt;/p>
+&lt;p>虽然目前 5-9bar 之间压的曲线还不太稳定，偶尔通道也不太顺滋到杯外，但是香浓的 crema 已然远超预期(其实很容易过萃，但是家属喝不出来😂)&lt;/p>
+&lt;p>试了下用冰的屈臣氏做 coffee soda，难喝🤢&lt;/p>
+&lt;p>好多想买的配件：拉花奶缸、粉锤、布粉器、鼠尾粉碗、粉饼垃圾盒&lt;/p>
+&lt;p>&lt;strong>update: 2022-08-19 14:09:08&lt;/strong>&lt;/p>
+&lt;p>买了新的拉花缸和称，但是懒到完全不想碰牛奶，only pure coffee and water&amp;hellip;&lt;/p>
+&lt;p>早晨的冲煮开始逐渐暴躁，直接磨58g粉分3次装填、下压、出液到一个杯里，再加冰块分装成两份 long black 出门，少洗两次杯子动作也更流畅～大概15-20分钟完成&lt;/p></description></item><item><title>剁手好物推荐</title><link>https://xn--ynyo-2nad.com/posts/toy/</link><pubDate>Fri, 24 Sep 2021 22:28:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/toy/</guid><description>&lt;ul>
+&lt;li>Insta360 GO2 拇指运动相机&lt;/li>
+&lt;li>巷贩小酒 - 东方甄选金酒&lt;/li>
+&lt;li>Reebok royal techque 板鞋&lt;/li>
+&lt;li>ALTRA Escalante 2.5 轻量零落差跑鞋&lt;/li>
+&lt;li>SENNHEISER IE300 耳机&lt;/li>
+&lt;li>PhD 能量棒&lt;/li>
+&lt;/ul></description></item><item><title>Volvo v60</title><link>https://xn--ynyo-2nad.com/posts/volvo-v60/</link><pubDate>Wed, 30 Jun 2021 21:10:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/volvo-v60/</guid><description>&lt;p>因为家庭新成员加入，所以买车的优先级提了上来。一开始考虑大尺寸6/7座suv，能装全家人短途出行，比如highlander, outlander, explorer, Pajero&amp;hellip;后来因为今年各种新款上市，到最终提车时间有点晚，再加上城市拥堵和停车问题，回归到最初的选项也是一直种草的旅行车Volvo v60&lt;/p>
+&lt;p>中间还去看过Jaguar和Alfa Romeo，可惜后排空间有点小，对外型内饰非常满意，动力和操控也很可以，尤其Julie的前脸颜值太命中我了，一直对mx5这类笑脸无法抗拒…&lt;/p>
+&lt;p>V60在4s店试驾的豪华版，刚开始还挺不适应转向手感和油门刹车的，感觉都很沉很重。比起来以前开过的各种小钢炮和家用轿车，沉着有余灵活不够，前期不熟悉的时候操作起来都得小心翼翼。&lt;/p>
+&lt;p>最后订车选了致远焰影蓝运动款，因为厂家直销的关系也没讲价，就跟销售要了行车记录仪和儿童座椅。目前开两个月小一千公里的行程，大概总结些点吧&lt;/p>
+&lt;ul>
+&lt;li>外观线条比例，审美观因人而异，但是V60各处都在我的区间内&lt;/li>
+&lt;li>nappa皮座椅舒适和支撑都很到位，前排有可调的腿拖和腰撑。对豪华版的实木装饰水晶档杆其实没啥需求，氛围灯也蛮简约，没有那么夜店风。可惜选配的交车时间太长，不然座椅通风、冬季包、米色内饰都想加&lt;/li>
+&lt;li>后排空间坐两人还行，但是中间的地台太高，不适合长途5人出行&lt;/li>
+&lt;li>后备箱就不用夸了，狗子的航空箱一直塞在里面，出去玩很方便，去宜家就把后座放平。6月份搬家就跑了两趟，上次搬家借老王的a3可拉了56趟&lt;/li>
+&lt;li>48v电机+autohold，起步平顺没有纯燃油车型起步轰发动机那个颤抖&lt;/li>
+&lt;li>低转油门动力响应略有延迟，升档不算很迅速，不过相比起golf，508要好很多&lt;/li>
+&lt;li>油耗市区日常11升百公里，跑机场高速能到6.1左右，平时一个月加一次满箱油，推荐95号&lt;/li>
+&lt;li>方向盘虚位明显，过弯会习惯性多打一些位置，转向比hatchback车型都要重许多。前脸两侧的存在感明显，低坐姿的时候会开得谨慎，反而不会觉得屁股有什么阻碍&lt;/li>
+&lt;li>底盘确实在开过的车里算得上优秀，过弯和滤震都很扎实。静音实属一般，风噪胎噪在后排(或者车速超过100)尤其明显，所以也就不考虑顶上行李箱&lt;/li>
+&lt;li>autopilot 模式在跑高速时非常愉悦，车道保持比我打方向顺滑多了，跟前车保持车距也很可靠，另外养成了并线前一定先打灯的习惯，否则车子会自己修正。能称为瑕疵的就是自动刹车不够线性，乘客会有明显的拉扯感甚至点头；拥堵路段还得切回手动模式，跟车距离在我这边太容易被加塞&lt;/li>
+&lt;/ul></description></item><item><title>Self Host Maddy Mail Server</title><link>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</link><pubDate>Tue, 01 Dec 2020 20:34:44 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</guid><description>&lt;h2 id="maddy">maddy&lt;/h2>
+&lt;blockquote>
+&lt;p>Composable all-in-one mail server. &lt;a href="https://github.com/foxcpp/maddy">https://github.com/foxcpp/maddy&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>准备自建系列服务替换掉 google 全家桶，先试了传统的 Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC 套餐，但是本人水平菜，机器配置也不高，折腾两天还没跑起来，正好看到订阅的 changelog 推荐了 maddy &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 于是搓搓手气试试这个邮局方案，以下是满足个人喜好的优点&lt;/p>
+&lt;ul>
+&lt;li>基于 golang 生态依赖少，方便打镜像&lt;/li>
+&lt;li>验证数据存在 sqlite 里也很轻量&lt;/li>
+&lt;li>没有 web 端，只需要 imap + thunderbird 即可&lt;/li>
+&lt;li>配置文件相对简单&lt;/li>
+&lt;/ul>
+&lt;h2 id="install">install&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p /data/maddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># hard link caddy&amp;#39;s crt and key to maddy&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.crt /data/maddy/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.crt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.key /data/maddy/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># foxcpp/maddy:v0.4.2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>podman run &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> --name maddy &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -v /data/maddy:/data &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 25:25 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 143:143 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 587:587 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 993:993 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 465:465 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> yanyaoer/maddy:master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># add user&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>podman run --rm -it -v /data/maddy:/data --entrypoint /bin/maddyctl yanyaoer/maddy:master creds create yanyao@mail.yadanhe.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>参考文档配置&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 完后发送邮件对方可收，本地 thunderbird 接收回复邮件时有问题&lt;/p></description></item><item><title>Utteranc Comments</title><link>https://xn--ynyo-2nad.com/posts/utteranc-comments/</link><pubDate>Fri, 30 Oct 2020 11:49:39 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/utteranc-comments/</guid><description>&lt;p>utterances - A lightweight comments widget built on GitHub issues. Use GitHub issues for blog comments, wiki pages and more!&lt;/p>
+&lt;h2 id="install">install&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>install &lt;a href="https://github.com/apps/utterances">utterances&lt;/a> on your repo&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>add the script to your template&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;script src=&amp;#34;https://utteranc.es/client.js&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> repo=&amp;#34;[ENTER REPO HERE]&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> issue-term=&amp;#34;pathname&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> theme=&amp;#34;github-light&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> crossorigin=&amp;#34;anonymous&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> async&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/script&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>for exsamples &lt;a href="https://github.com/yanyaoer/yanyaoer.github.io/commit/f2508ce7557d372f909f68ee32371f86895fd92f">https://github.com/yanyaoer/yanyaoer.github.io/commit/f2508ce7557d372f909f68ee32371f86895fd92f&lt;/a>&lt;/p>
+&lt;p>done.&lt;/p></description></item><item><title>Zotero as personal knowledge management</title><link>https://xn--ynyo-2nad.com/posts/zotero/</link><pubDate>Thu, 02 Jul 2020 22:55:53 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/zotero/</guid><description>&lt;p>&lt;a href="https://www.zotero.org/">Zotero&lt;/a> 常用于科研的文献管理，由 firefox 浏览器插件发展到现在有了独立的桌面和&lt;a href="https://github.com/mickstar/Zoo-For-Zotero">移动客户端&lt;/a>。&lt;/p>
+&lt;p>&lt;img src="https://xn--ynyo-2nad.com/zotero.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>本身具备简易的 rss 订阅功能可以用来追踪论文的更新&lt;/li>
+&lt;li>注册在线账户后支持导出资料库给其他同学订阅&lt;/li>
+&lt;li>浏览器插件 &lt;a href="https://github.com/zotero/zotero-connectors">zotero connectors&lt;/a> 则类似各类笔记应用的 web clipper，方便导入各种资料。&lt;strong>注意科学上网加载完整页面后再进行保存&lt;/strong>&lt;/li>
+&lt;li>通过插件可以扩展出许多其他功能，比如文件同步、高级档案管理&lt;/li>
+&lt;/ul>
+&lt;h2 id="quickstart">quickstart&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>brew cask install zotero
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这里简单用 &lt;a href="https://github.com/yanyaoer/caddy2-webdav">caddy2 搭建 webdav&lt;/a> 来同步附件，就没用高级的 &lt;a href="http://zotfile.com/">zotfile&lt;/a>&lt;/p>
+&lt;p>至于自带的笔记功能怎么说呢～ 已经适应不能这种风格了&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">add-ons&lt;/th>
+ &lt;th style="text-align: left">link&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">quicklook&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://github.com/mronkko/ZoteroQuickLook/releases">https://github.com/mronkko/ZoteroQuickLook/releases&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">markdown&lt;/td>
+ &lt;td style="text-align: left">&lt;a href="https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/">https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="subscription">subscription&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://arxiv.org/list/cs/recent">https://arxiv.org/list/cs/recent&lt;/a>
+康奈尔大学提供的免费论文预览平台，主要订阅 cs.SD 音频相关更新&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://scholar.google.com/">https://scholar.google.com/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://academic.microsoft.com/">https://academic.microsoft.com/&lt;/a>
+谷歌学术、微软学术也可以用来搜索一些关键词并订阅推送&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.storkapp.me/">https://www.storkapp.me/&lt;/a> 提供关键词订阅推送到邮箱&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://sci-hub.tw/">https://sci-hub.tw/&lt;/a> 实在找不到的下载就靠毛子的共享服务&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>将码农常用的文档工具 gitbook 转为 pdf&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew cask install calibre
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo npm install -g gitbook-cli
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gitbook install &lt;span style="color:#586e75"># for gitbook plugin&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/prometheus/docs.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gitbook pdf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ps: gitbook 开源版本已经很久不维护了，可以换到 &lt;a href="https://github.com/honkit/honkit">honkit&lt;/a> fork 的版本&lt;/p></description></item><item><title>Rss2email</title><link>https://xn--ynyo-2nad.com/posts/rss2email/</link><pubDate>Tue, 23 Jun 2020 18:58:30 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/rss2email/</guid><description>&lt;p>距离上次从 &lt;a href="https://blogtrottr.com">https://blogtrottr.com&lt;/a> 迁移 rss 订阅到 feedly 差不多五六年了，
+这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容，
+当然备选方案也不少:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/miniflux/miniflux">https://github.com/miniflux/miniflux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/SSilence/selfoss">https://github.com/SSilence/selfoss&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/FreshRSS/FreshRSS">https://github.com/FreshRSS/FreshRSS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://git.tt-rss.org/fox/tt-rss">https://git.tt-rss.org/fox/tt-rss&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新&lt;/p>
+&lt;h2 id="安装配置">安装配置&lt;/h2>
+&lt;p>rss2email 的安装到简单，参考 &lt;a href="https://github.com/rss2email/rss2email">官方文档&lt;/a>
+直接 &lt;code>apt install rss2email&lt;/code>，默认配置会发送文本邮件，修改 &lt;code>html-mail=True&lt;/code>，
+在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去，
+就配上 imap.google 账户自己发给自己啦～&lt;/p>
+&lt;p>从 feedly 导出 opml 文件然后 &lt;code>r2e opmlimport&lt;/code> 完事大吉&lt;/p>
+&lt;p>需要注意的是，在 &lt;code>r2e run&lt;/code> 的执行过程中对配置文件进行修改非常容易被覆盖 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>，不要同时搞太多操作就好，&lt;/p>
+&lt;p>&lt;strong>update: 2020-09-18 17:34:49&lt;/strong>&lt;/p>
+&lt;p>修改参数 &lt;code>force-from = True&lt;/code>，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败&lt;/p>
+&lt;h2 id="定时任务">定时任务&lt;/h2>
+&lt;p>现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 &lt;code>$HOME/.config/systemd/user&lt;/code> 写入定时任务配置&lt;/p></description></item><item><title>Deploy bitwarden_rs with podman</title><link>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</link><pubDate>Thu, 04 Jun 2020 19:05:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</guid><description>&lt;p>bitwarden_rs&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 是个用 rust/rocket 编写的非官方 api 实现，
+&lt;a href="https://github.com/bitwarden/server">dotnet&lt;/a> 版本有点儿不太适合手头的部署环境&lt;/p>
+&lt;p>这里用比较现代的 podman&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 来运行 docker 服务&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>podman run -d --name bitwarden -v /bw-data/:/data/:Z -e &lt;span style="color:#268bd2">ROCKET_PORT&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">8080&lt;/span> -p 8080:8080 bitwardenrs/server:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>podman generate systemd --name bitwarden --files
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mv container-bitwarden.service /etc/systemd/system/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl --user &lt;span style="color:#b58900">enable&lt;/span> /etc/systemd/system/container-bitwarden.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl --user start container-bitwarden.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install bitwarden-cli &lt;span style="color:#586e75"># npm install -g @bitwarden/cli&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bw config server https://bw.myserver.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>update 2021-04-01&lt;/strong> build bitwaden_rs from source&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># install rust&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt install git make gcc libssl&lt;span style="color:#719e07">-&lt;/span>dev pkg&lt;span style="color:#719e07">-&lt;/span>config curl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl &lt;span style="color:#719e07">--&lt;/span>proto &lt;span style="color:#2aa198">&amp;#39;=https&amp;#39;&lt;/span> &lt;span style="color:#719e07">--&lt;/span>tlsv1&lt;span style="color:#719e07">.&lt;/span>&lt;span style="color:#2aa198">2&lt;/span> &lt;span style="color:#719e07">-&lt;/span>sSf https:&lt;span style="color:#719e07">//&lt;/span>sh&lt;span style="color:#719e07">.&lt;/span>rustup&lt;span style="color:#719e07">.&lt;/span>rs &lt;span style="color:#719e07">|&lt;/span> sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source &lt;span style="color:#719e07">$&lt;/span>HOME&lt;span style="color:#719e07">/.&lt;/span>cargo&lt;span style="color:#719e07">/&lt;/span>env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># build bitwarden_rs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https:&lt;span style="color:#719e07">//&lt;/span>github&lt;span style="color:#719e07">.&lt;/span>com&lt;span style="color:#719e07">/&lt;/span>dani&lt;span style="color:#719e07">-&lt;/span>garcia&lt;span style="color:#719e07">/&lt;/span>bitwarden_rs&lt;span style="color:#719e07">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd bitwarden_rs&lt;span style="color:#719e07">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cargo build &lt;span style="color:#719e07">--&lt;/span>features sqlite &lt;span style="color:#719e07">--&lt;/span>release
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp target&lt;span style="color:#719e07">/&lt;/span>release&lt;span style="color:#719e07">/&lt;/span>bitwarden_rs &lt;span style="color:#719e07">/&lt;/span>usr&lt;span style="color:#719e07">/&lt;/span>local&lt;span style="color:#719e07">/&lt;/span>bin&lt;span style="color:#719e07">/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># download bw_web_vault from https://github.com/dani-garcia/bw_web_builds/releases&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>edit /etc/systemd/system/bitwarden.service&lt;/p></description></item><item><title>Minio Storage Service</title><link>https://xn--ynyo-2nad.com/posts/minio-storage-service/</link><pubDate>Tue, 02 Jun 2020 09:47:48 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/minio-storage-service/</guid><description>&lt;p>&lt;a href="https://min.io">min.io&lt;/a> 来自前 glusterFS 团队的分布式存储项目，
+兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便，
+golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务&lt;/p>
+&lt;p>&lt;strong>没有生产环境的使用经验，以下仅用于业余尝鲜&lt;/strong> &lt;del>六一节礼物&lt;/del>&lt;/p>
+&lt;h2 id="gnulinux-下载安装">GNU/Linux 下载安装&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod +x /user/local/bin/minio
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="添加用户组和配置文件">添加用户、组和配置文件&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>groupadd --system minio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useradd --system --gid minio --shell /usr/sbin/nologin --comment &lt;span style="color:#2aa198">&amp;#34;Minio file server&amp;#34;&lt;/span> minio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p /data/minio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown -R minio:minio /data/minio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># replace minio.service with your own config, eg. User,Group&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置端口和密钥">配置端口和密钥&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># optional. run `uuidgen` to creates AK/SK&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat &lt;span style="color:#2aa198">&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; /tmp/minio
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">MINIO_VOLUMES=&amp;#34;/data/minio/&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">MINIO_OPTS=&amp;#34;--address :9199&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">MINIO_ACCESS_KEY=`uuidgen`
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">MINIO_SECRET_KEY=`uuidgen`
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="启动服务">启动服务&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl &lt;span style="color:#b58900">enable&lt;/span> minio.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl start minio.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://docs.min.io/docs/minio-client-complete-guide.html">客户端 mc&lt;/a>
+使用说明参考官方文档好了，和 s3 命令行也没太多区别，
+甚至可以用来做 gcs/s3 代理用&lt;/p></description></item><item><title>Pour Over Coffee Makers</title><link>https://xn--ynyo-2nad.com/posts/pour-over-coffee-makers/</link><pubDate>Fri, 15 May 2020 15:41:01 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pour-over-coffee-makers/</guid><description>&lt;h2 id="办公室日常用品">办公室日常用品&lt;/h2>
+&lt;ul>
+&lt;li>hario v60 2人份玻璃滤杯 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>hario v60 600ml 云朵分享壶 &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>comandante c40 手摇磨豆机 &lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>kalita 700ml 细嘴壶 &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>rivers seek 随手杯 &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>
+&lt;p>2020-0615 新购入 Mr.clever 聪明杯 &lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2020-0622 新购入 hario drip kettle air &lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>，
+用了两次手感偏轻水流控制得不稳 T_T&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2020-1027 新购入 fellow ode 电动磨豆机 &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2020-1109 新购入 fellow stagg ekg 温控壶 &lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2023-half 新购入 hoop 澡盆滤杯 &lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup>，类似聪明杯但会拉长萃取时间&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>每天一早 &lt;del>中午&lt;/del> 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水&lt;/p>
+&lt;p>手法就比较 &lt;del>随意&lt;/del> 业余啦，主要参考下面两个视频，出品大概率自己都还挺喜欢的
+&lt;strong>按比例加注水量翻倍&lt;/strong>&lt;/p>
+&lt;h3 id="46-method-by-tetsu-kasuya-4-6method">&amp;ldquo;4:6 method&amp;rdquo; by Tetsu Kasuya &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/h3>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wmCW8xSWGZY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+&lt;h3 id="the-ultimate-v60-technique-by-james-hoffmann">&amp;ldquo;The Ultimate V60 Technique&amp;rdquo; by James Hoffmann&lt;/h3>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AI4ynXzkSQo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+&lt;h2 id="家庭版">家庭版&lt;/h2>
+&lt;ul>
+&lt;li>baratza encore 电动磨豆器 &lt;sup id="fnref:12">&lt;a href="#fn:12" class="footnote-ref" role="doc-noteref">12&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>kinto OCT 2人份陶瓷滤杯 &lt;sup id="fnref:13">&lt;a href="#fn:13" class="footnote-ref" role="doc-noteref">13&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>ikea vardagen 500ml 玻璃量杯 &lt;sup id="fnref:14">&lt;a href="#fn:14" class="footnote-ref" role="doc-noteref">14&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>muji 万古烧马克杯 &lt;sup id="fnref:15">&lt;a href="#fn:15" class="footnote-ref" role="doc-noteref">15&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>2020-0615 新购入 hario filter-in 冷萃瓶 &lt;del>已碎&lt;/del>，21年夏再次购入 &lt;sup id="fnref:16">&lt;a href="#fn:16" class="footnote-ref" role="doc-noteref">16&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;p>刚开始的时候装备上交了不少学费，比如：&lt;del>电动砍豆机&lt;/del>、&lt;del>廉价手磨&lt;/del>、&lt;del>aeropress&lt;/del>，
+虽然不能一概而论，实际上很大程度还是遵循一分钱一分货的原则，性能越好则价格呈指数上涨
+条件允许的话尽量选择好一点的设备，毕竟也是天天要用的家伙事&lt;/p></description></item><item><title>Mastodon</title><link>https://xn--ynyo-2nad.com/posts/mastodon/</link><pubDate>Fri, 15 May 2020 09:45:08 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/mastodon/</guid><description>&lt;p>&lt;code>Mastodon 长毛象&lt;/code>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> &amp;ndash; 基于 rubyonrails/reactjs/nodejs 开发的分布式 &amp;amp;
+去中心化 twiter clone。利用空闲时间在 aws lightsail 上开了个实例把服务跑了起来&lt;/p>
+&lt;p>一开始走了些弯路，因为选机房和省钱的缘故，重建了若干次操作系统，最后的选择是
+tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通不稳定&lt;/p>
+&lt;p>安装步骤没有使用 docker 而是参考文档从源码安装&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>，原因和解决方案如下：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;del>机器用 $3.5/mo 512mem 最便宜的那档消费降级&lt;/del>(512M 内存重启会拉垮弱鸡，服务已迁移到 oraclecloud)，出于 net/io 性能考虑就不使 docker 啦&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>内存问题，&lt;code>RAILS_ENV=production bundle exec rake mastodon:setup&lt;/code>
+这一步骤执行到 &lt;code>rails assets:precompile&lt;/code>，
+不管是在 docker 里跑还是直接运行都会报 swap 分区不足，找到两个方案来解决:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># create swapfile &amp;lt;https://linuxize.com/post/create-a-linux-swap-file/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo fallocate -l 2G /swapfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo chmod &lt;span style="color:#2aa198">600&lt;/span> /swapfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo mkswap /swapfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo swapon /swapfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># verify active&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo swapon --show
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># optional: low value is better for production&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo sysctl vm.swappiness&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">10&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="邮件配置">邮件配置&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># By default the memory limit in Node. js is 512 mb, &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># use command —- max-old-space-size to increase the memory limit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#268bd2">NODE_OPTIONS&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;--max-old-space-size=4096&amp;#34;&lt;/span> &lt;span style="color:#268bd2">RAILS_ENV&lt;/span>&lt;span style="color:#719e07">=&lt;/span>production bundle &lt;span style="color:#b58900">exec&lt;/span> rails assets:precompile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>直接配置 localhost 发送邮件无效，先用 &lt;a href="https://sendgrid.com/">sendgrid&lt;/a> 免费版顶着, 一天 100 封邮件目前够用&lt;/p></description></item><item><title>Gitlab Repo</title><link>https://xn--ynyo-2nad.com/posts/gitlab-repo/</link><pubDate>Sat, 09 May 2020 19:34:06 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/gitlab-repo/</guid><description>&lt;p>gitlab 里面已经有十来个 group，几百个 project，虽然不一定会每个项目都参与，
+但是为了快速同步代码，又捡起了 android 开发常用的 repo 命令来管理多项目代码。
+这里使用了 gitlab graphql 接口来遍历项目生成分组的 manifest 文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#!/usr/bin/env python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">import&lt;/span> argparse
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">import&lt;/span> json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">import&lt;/span> urllib2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_HOST &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;gitlab.mydomain.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_SSH_URL &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;ssh://git@&amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> GITLAB_HOST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_GRAPHQL_URL &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;https://&amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> GITLAB_HOST &lt;span style="color:#719e07">+&lt;/span> &lt;span style="color:#2aa198">&amp;#34;/api/graphql&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_TOKEN &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_GROUP &lt;span style="color:#719e07">=&lt;/span> [&lt;span style="color:#2aa198">&amp;#34;&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BLACK_LIST &lt;span style="color:#719e07">=&lt;/span> (&lt;span style="color:#2aa198">&amp;#34;&amp;#34;&lt;/span>,)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 以上配置修改为自己的设定&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>template &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;&amp;#34;&amp;#34;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">&amp;lt;!-- autogen by gen.py, do not edit this file --&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">&amp;lt;manifest&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> &amp;lt;remote name=&amp;#34;origin&amp;#34; fetch=&amp;#34;&lt;/span>&lt;span style="color:#2aa198">{ssh_url}&lt;/span>&lt;span style="color:#2aa198">&amp;#34; /&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198"> &amp;lt;default revision=&amp;#34;master&amp;#34; remote=&amp;#34;origin&amp;#34; sync-c=&amp;#34;true&amp;#34; sync-j=&amp;#34;4&amp;#34; /&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">&lt;/span>&lt;span style="color:#2aa198">{content}&lt;/span>&lt;span style="color:#2aa198">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#2aa198">&amp;lt;/manifest&amp;gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">def&lt;/span> &lt;span style="color:#268bd2">write_file&lt;/span>(content, filename&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;default.xml&amp;#34;&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _file &lt;span style="color:#719e07">=&lt;/span> os&lt;span style="color:#719e07">.&lt;/span>path&lt;span style="color:#719e07">.&lt;/span>join(os&lt;span style="color:#719e07">.&lt;/span>path&lt;span style="color:#719e07">.&lt;/span>dirname(__file__), filename)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">with&lt;/span> &lt;span style="color:#b58900">open&lt;/span>(_file, &lt;span style="color:#2aa198">&amp;#34;w&amp;#34;&lt;/span>) &lt;span style="color:#719e07">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f&lt;span style="color:#719e07">.&lt;/span>write(template&lt;span style="color:#719e07">.&lt;/span>format(content&lt;span style="color:#719e07">=&lt;/span>content, ssh_url&lt;span style="color:#719e07">=&lt;/span>GITLAB_SSH_URL))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">def&lt;/span> &lt;span style="color:#268bd2">fetch_project_of_group&lt;/span>(group, write&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#cb4b16">True&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#39;{ group(fullPath: &amp;#34;&lt;/span>&lt;span style="color:#2aa198">%s&lt;/span>&lt;span style="color:#2aa198">&amp;#34;) { projects { nodes { fullPath } } }}&amp;#39;&lt;/span> &lt;span style="color:#719e07">%&lt;/span> group
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req &lt;span style="color:#719e07">=&lt;/span> urllib2&lt;span style="color:#719e07">.&lt;/span>Request(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GITLAB_GRAPHQL_URL,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data&lt;span style="color:#719e07">=&lt;/span>json&lt;span style="color:#719e07">.&lt;/span>dumps(&lt;span style="color:#b58900">dict&lt;/span>(query&lt;span style="color:#719e07">=&lt;/span>data)),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> headers&lt;span style="color:#719e07">=&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;Authorization&amp;#34;&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;Bearer &amp;#34;&lt;/span> &lt;span style="color:#719e07">+&lt;/span> GITLAB_TOKEN,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;Content-Type&amp;#34;&lt;/span>: &lt;span style="color:#2aa198">&amp;#34;application/json&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> resp &lt;span style="color:#719e07">=&lt;/span> json&lt;span style="color:#719e07">.&lt;/span>load(urllib2&lt;span style="color:#719e07">.&lt;/span>urlopen(req))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> content &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#cb4b16">\n&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#719e07">.&lt;/span>join(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#39;&amp;lt;project path=&amp;#34;&lt;/span>&lt;span style="color:#2aa198">{d}&lt;/span>&lt;span style="color:#2aa198">&amp;#34; name=&amp;#34;&lt;/span>&lt;span style="color:#2aa198">{d}&lt;/span>&lt;span style="color:#2aa198">&amp;#34;/&amp;gt;&amp;#39;&lt;/span>&lt;span style="color:#719e07">.&lt;/span>format(d&lt;span style="color:#719e07">=&lt;/span>p[&lt;span style="color:#2aa198">&amp;#34;fullPath&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> p &lt;span style="color:#719e07">in&lt;/span> resp[&lt;span style="color:#2aa198">&amp;#34;data&amp;#34;&lt;/span>][&lt;span style="color:#2aa198">&amp;#34;group&amp;#34;&lt;/span>][&lt;span style="color:#2aa198">&amp;#34;projects&amp;#34;&lt;/span>][&lt;span style="color:#2aa198">&amp;#34;nodes&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> p[&lt;span style="color:#2aa198">&amp;#34;fullPath&amp;#34;&lt;/span>] &lt;span style="color:#719e07">not&lt;/span> &lt;span style="color:#719e07">in&lt;/span> BLACK_LIST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> write:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_file(content, filename&lt;span style="color:#719e07">=&lt;/span>group&lt;span style="color:#719e07">.&lt;/span>replace(&lt;span style="color:#2aa198">&amp;#34;/&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;-&amp;#34;&lt;/span>) &lt;span style="color:#719e07">+&lt;/span> &lt;span style="color:#2aa198">&amp;#34;-group.xml&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> content
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">def&lt;/span> &lt;span style="color:#268bd2">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parser &lt;span style="color:#719e07">=&lt;/span> argparse&lt;span style="color:#719e07">.&lt;/span>ArgumentParser(description&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;Process some projects.&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parser&lt;span style="color:#719e07">.&lt;/span>add_argument(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;-G&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;--group&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> help&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;for group/subgroup or all&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">type&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#b58900">str&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> choices&lt;span style="color:#719e07">=&lt;/span>ns &lt;span style="color:#719e07">+&lt;/span> [&lt;span style="color:#2aa198">&amp;#34;all&amp;#34;&lt;/span>, &lt;span style="color:#2aa198">&amp;#34;default&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arg &lt;span style="color:#719e07">=&lt;/span> parser&lt;span style="color:#719e07">.&lt;/span>parse_args()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> arg&lt;span style="color:#719e07">.&lt;/span>group &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">&amp;#34;all&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span> x &lt;span style="color:#719e07">in&lt;/span> GITLAB_GROUP:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fetch_project_of_group(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#719e07">=&lt;/span> [fetch_project_of_group(x, write&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#cb4b16">False&lt;/span>) &lt;span style="color:#719e07">for&lt;/span> x &lt;span style="color:#719e07">in&lt;/span> GITLAB_GROUP]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_file(&lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#cb4b16">\n&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#719e07">.&lt;/span>join(d))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">elif&lt;/span> arg&lt;span style="color:#719e07">.&lt;/span>group &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">&amp;#34;default&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#719e07">=&lt;/span> [fetch_project_of_group(x, write&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#cb4b16">False&lt;/span>) &lt;span style="color:#719e07">for&lt;/span> x &lt;span style="color:#719e07">in&lt;/span> GITLAB_GROUP]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_file(&lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#cb4b16">\n&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#719e07">.&lt;/span>join(d))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fetch_project_of_group(arg&lt;span style="color:#719e07">.&lt;/span>group)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">if&lt;/span> __name__ &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>USAGE:&lt;/strong> 创建完 manifest 文件之后提交到仓库就可以愉快的玩耍啦&lt;/p></description></item><item><title>Dash Replacement with tmux</title><link>https://xn--ynyo-2nad.com/posts/dash-replacement/</link><pubDate>Thu, 07 May 2020 18:54:37 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/dash-replacement/</guid><description>&lt;p>通过 tmux 快捷集成替换 dash.app 查询开发文档&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$ brew install dasht
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ dasht-docsets | tr &amp;#39;A-Z&amp;#39; &amp;#39;a-z&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>javascript
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python_3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rust
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tornado
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># tmux.conf quick start
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bind -n S-up command-prompt -p &amp;#39;docset:&amp;#39; &amp;#34;splitw -h -fb -l 80 dasht &amp;#39;%%&amp;#39;&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Cloudflare Gost</title><link>https://xn--ynyo-2nad.com/posts/cloudflare-gost/</link><pubDate>Thu, 07 May 2020 16:00:01 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/cloudflare-gost/</guid><description>&lt;p>从清明节开始，稳定运行好几年的 ss 服务器终于阵亡了，所有端口全挂。一直蹭公司的 vpn 查资料也挺到了五一，实在拖延够够的就再另外开了一台机器中转过去迁移数据，不过嘛年纪大了又开始犯懒，企图拯救获得资格认证的机器，通过一番网上冲浪学习到了目前(实测可用)能满足我需求的方案。简单来说就是：cloudflare[后文简称为 cf] + websockets over gost，实际的客户端通过 cdn 代理再接入服务&lt;/p>
+&lt;p>有几个需要注意的地方：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>gost 启动时绑定的 localhost 不直接对外访问，走了 caddy 的转发，而这一步和 cf 的 ssl 证书配置会造成不停的重定向跳转，需要将 cf 加密模式配置为 flexible&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>然后修改 caddy 的域名配置为 &lt;a href="http://domain.com">http://domain.com&lt;/a> &lt;a href="https://domain.com">https://domain.com&lt;/a> { &amp;hellip; } 阻止 cf 和 caddy 之间的 http -&amp;gt; https&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>gost 服务端监听 ws 协议，本地的 gost 客户端转发 wss 协议连接 cf_domain:443&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>需要鉴权的方案使用 socks5+wss://username:password@domain:port&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>android 客户端的设置，因为使用了 ws 协议，所以需要将域名写入到插件的配置里，直接用域名变量无法解析&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>具体配置参考官方文档，&lt;strong>一切浪费的时间都是源于没认真仔细看文档&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/haoel/haoel.github.io">https://github.com/haoel/haoel.github.io&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ginuerzh/gost">https://github.com/ginuerzh/gost&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/xausky/ShadowsocksGostPlugin">https://github.com/xausky/ShadowsocksGostPlugin&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>update 2021-03-01&lt;/strong> 由于 shawdowsocks 的 android 客户端升级导致插件不可用，另外部署了 &lt;a href="https://github.com/txthinking/brook">brook&lt;/a> wsserver 给手机使用&lt;/p></description></item><item><title>webpack resolve local module</title><link>https://xn--ynyo-2nad.com/posts/webpack-resolve-local-module/</link><pubDate>Fri, 13 Jan 2017 23:19:49 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/webpack-resolve-local-module/</guid><description>&lt;p>最近的项目刚开始，设计的目录层级有点深&lt;br>
+经常会在好几层本地路径之间互相引用&lt;/p>
+&lt;p>&lt;code>import Image from '../../../../components/image'&lt;/code>&lt;/p>
+&lt;p>这层层叠叠的路径写起来实在丑陋&lt;br>
+不由得想起 Python 从项目根目录引用模块&lt;br>
+然后研究了一下 Node.js 里的几种简易实现&lt;/p>
+&lt;p>干脆利落的软连接: &lt;code>ln -s node_modules src&lt;/code>&lt;/p>
+&lt;p>修改环境变量: &lt;code>NODE_PATH=. node app&lt;/code>&lt;/p>
+&lt;p>从本地目录安装:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// package.json 
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// 需要运行 npm install
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#34;baz&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#719e07">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2aa198">&amp;#34;foo&amp;#34;&lt;/span>&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#34;file: ./src&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>另外还有些修改 global，或者引入其他 require 实现的方法就不再一一列出了&lt;br>
+最终选择的是修改 webpack 配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>// webpack.config.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>resolve: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> modulesDirectories: [__dirname, &amp;#39;node_modules&amp;#39;],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://gist.github.com/branneman/8048520">https://gist.github.com/branneman/8048520&lt;/a>
+&lt;a href="http://stackoverflow.com/questions/10860244/how-to-make-the-require-in-node-js-to-be-always-relative-to-the-root-folder-of-t/41078266#41078266">http://stackoverflow.com/questions/10860244/how-to-make-the-require-in-node-js-to-be-always-relative-to-the-root-folder-of-t/41078266#41078266&lt;/a>
+&lt;a href="https://webpack.github.io/docs/configuration.html#resolve-modulesdirectories">https://webpack.github.io/docs/configuration.html#resolve-modulesdirectories&lt;/a>&lt;/p></description></item><item><title>Leonard Cohen - you want it darker</title><link>https://xn--ynyo-2nad.com/posts/leonard-cohen-you-want-it-darker/</link><pubDate>Tue, 25 Oct 2016 09:21:00 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/leonard-cohen-you-want-it-darker/</guid><description>&lt;h2 id="年度最佳">年度最佳&lt;/h2>
+&lt;p>&lt;a href="https://open.spotify.com/album/3jeTB3j3QmUs8SPIVleHtU">&lt;img src="images/you-want-it-darker.jpg" alt="you want it darker">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://open.spotify.com/album/3jeTB3j3QmUs8SPIVleHtU">you want it darker&lt;/a>&lt;/p>
+&lt;p>循环听了好几天&lt;/p>
+&lt;p>干净低沉的嗓音加配乐&lt;/p>
+&lt;p>愈发担心以后听不到了怎么办 😢～&lt;/p></description></item><item><title>web audio</title><link>https://xn--ynyo-2nad.com/posts/web-audio/</link><pubDate>Wed, 15 Jun 2016 14:34:08 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/web-audio/</guid><description>&lt;p>照文档撸了一下 AudioContext 可视化音频&lt;br>
+桌面浏览器上 Safari 9, Chrome stable 绘制正常&lt;br>
+移动端只有微信的 webview 能工作, 纯玩票叻
+&lt;img src="https://mdn.mozillademos.org/files/7977/wave.png" alt="wave">&lt;/p>
+&lt;p>ref:
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#268bd2">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">meta&lt;/span> charset&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;utf-8&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">meta&lt;/span> name&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;viewport&amp;#34;&lt;/span> content&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;width=device-width, user-scalable=no&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">title&lt;/span>&amp;gt;AV&amp;lt;/&lt;span style="color:#268bd2">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#268bd2">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">canvas&lt;/span> id&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;vis&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#268bd2">canvas&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">audio&lt;/span> id&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;av&amp;#34;&lt;/span> src&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;YOUR_AUDIO_FILE&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#268bd2">audio&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#268bd2">script&lt;/span> src&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;index.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#268bd2">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#268bd2">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#268bd2">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">window&lt;/span>.AudioContext &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#b58900">window&lt;/span>.AudioContext &lt;span style="color:#719e07">||&lt;/span> &lt;span style="color:#b58900">window&lt;/span>.webkitAudioContext &lt;span style="color:#719e07">||&lt;/span> &lt;span style="color:#b58900">window&lt;/span>.mozAudioContext;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">window&lt;/span>.onload &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#268bd2">function&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> canvas &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#b58900">document&lt;/span>.getElementById(&lt;span style="color:#2aa198">&amp;#39;vis&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> canvasCtx &lt;span style="color:#719e07">=&lt;/span> canvas.getContext(&lt;span style="color:#2aa198">&amp;#39;2d&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> isPlaying &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> audio &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#b58900">document&lt;/span>.getElementById(&lt;span style="color:#2aa198">&amp;#39;av&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> audioCtx &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> AudioContext();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> analyser &lt;span style="color:#719e07">=&lt;/span> audioCtx.createAnalyser();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> audioSrc &lt;span style="color:#719e07">=&lt;/span> audioCtx.createMediaElementSource(audio);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> audioSrc.connect(analyser);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> analyser.connect(audioCtx.destination);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> analyser.fftSize &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">2048&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> bufferLength &lt;span style="color:#719e07">=&lt;/span> analyser.fftSize;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataArray &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">new&lt;/span> Uint8Array(bufferLength);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> analyser.getByteTimeDomainData(dataArray);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> WIDTH &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">500&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HEIGHT &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">150&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">function&lt;/span> draw() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> requestAnimationFrame(draw);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (&lt;span style="color:#719e07">!&lt;/span>isPlaying) &lt;span style="color:#719e07">return&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> analyser.getByteTimeDomainData(dataArray);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.fillStyle &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#39;rgb(200, 200, 200)&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.fillRect(&lt;span style="color:#2aa198">0&lt;/span>, &lt;span style="color:#2aa198">0&lt;/span>, WIDTH, HEIGHT);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.lineWidth &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.strokeStyle &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">&amp;#39;rgb(0, 0, 0)&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.beginPath();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> sliceWidth &lt;span style="color:#719e07">=&lt;/span> WIDTH &lt;span style="color:#719e07">*&lt;/span> &lt;span style="color:#2aa198">1.0&lt;/span> &lt;span style="color:#719e07">/&lt;/span> bufferLength;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> x &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">for&lt;/span>(&lt;span style="color:#268bd2">var&lt;/span> i &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#2aa198">0&lt;/span>; i &lt;span style="color:#719e07">&amp;lt;&lt;/span> bufferLength; i&lt;span style="color:#719e07">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> v &lt;span style="color:#719e07">=&lt;/span> dataArray[i] &lt;span style="color:#719e07">/&lt;/span> &lt;span style="color:#2aa198">128.0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">var&lt;/span> y &lt;span style="color:#719e07">=&lt;/span> v &lt;span style="color:#719e07">*&lt;/span> HEIGHT&lt;span style="color:#719e07">/&lt;/span>&lt;span style="color:#2aa198">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span>(i &lt;span style="color:#719e07">===&lt;/span> &lt;span style="color:#2aa198">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.moveTo(x, y);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#719e07">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.lineTo(x, y);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#719e07">+=&lt;/span> sliceWidth;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.lineTo(canvas.width, canvas.height&lt;span style="color:#719e07">/&lt;/span>&lt;span style="color:#2aa198">2&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvasCtx.stroke();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> draw();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> audio.play();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">document&lt;/span>.body.onclick &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#268bd2">function&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(audio, isPlaying);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (isPlaying) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> audio.pause();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> isPlaying &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#cb4b16">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#719e07">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> audio.play();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> isPlaying &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#cb4b16">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>move to caddy</title><link>https://xn--ynyo-2nad.com/posts/move-to-caddy/</link><pubDate>Tue, 26 Apr 2016 06:41:13 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/move-to-caddy/</guid><description>&lt;p>去年用 Hexo 搭建的日志已经好几个月没更新了，最近休假有点空闲就继续更新吧。&lt;br>
+先从 Github 迁移回自己的 Linode，然后安装一个 Caddyserver&lt;a href="https://caddyserver.com/">1&lt;/a> 来渲染 markdown&lt;/p>
+&lt;blockquote>
+&lt;p>Caddy is a unique web server with a modern feature set. Think nginx or Apache, but written in Go. With Caddy, you can serve your websites over HTTP/2. It can act as a reverse proxy and load balancer. Front your PHP apps with it. You can even deploy your site with git push. Cool, right?&lt;a href="https://blog.gopheracademy.com/caddy-a-look-inside/">2&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="download-and-install-systemd">Download and install systemd&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget -O &lt;span style="color:#2aa198">&amp;#39;caddy.tar.gz&amp;#39;&lt;/span> &lt;span style="color:#2aa198">&amp;#39;https://caddyserver.com/download/build?os=linux&amp;amp;arch=amd64&amp;amp;features=git%2Cipfilter&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxf caddy.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /opt/caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /var/run/caddy/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown caddy:caddy -R /opt/caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown caddy:caddy -R /var/run/caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mv caddy /opt/caddy/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useradd -d /var/run/caddy --system caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#2aa198">644&lt;/span> /etc/systemd/system/caddy.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl &lt;span style="color:#b58900">enable&lt;/span> caddy.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl start caddy.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl status caddy.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service">https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service&lt;/a>&lt;/p></description></item><item><title>mongodb backup</title><link>https://xn--ynyo-2nad.com/posts/mongodb-backup/</link><pubDate>Tue, 22 Dec 2015 13:30:24 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mongodb-backup/</guid><description>&lt;p>有台机器准备2月份下架
+记一个 mongodb 备份小脚本 :)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">&lt;/span>&lt;span style="color:#586e75"># vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">MONGO_DATABASE&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;_name_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">MONGO_HOST&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;_ip_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">MONGO_PORT&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;_prot_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">TIMESTAMP&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#586e75">`&lt;/span>date +%Y-%m-%dT%H:%M:%S&lt;span style="color:#586e75">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">MONGODUMP_PATH&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;/usr/bin/mongodump&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">BACKUPS_DIR&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;/data/dumps/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">BACKUP_NAME&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#268bd2">$MONGO_DATABASE&lt;/span>&lt;span style="color:#2aa198">-&lt;/span>&lt;span style="color:#268bd2">$TIMESTAMP&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">while&lt;/span> &lt;span style="color:#b58900">test&lt;/span> &lt;span style="color:#268bd2">$#&lt;/span> -gt &lt;span style="color:#2aa198">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">case&lt;/span> &lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#268bd2">$1&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span> in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -m&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#b58900">echo&lt;/span> &lt;span style="color:#2aa198">&amp;#34;backup mongthly and clear week_dir&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">#rm $BACKUPS_DIR&amp;#34;week/*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> find &lt;span style="color:#268bd2">$BACKUPS_DIR&lt;/span>&lt;span style="color:#2aa198">&amp;#34;week&amp;#34;&lt;/span> -type f -name &lt;span style="color:#2aa198">&amp;#39;*.tgz&amp;#39;&lt;/span> -delete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tar -czPf &lt;span style="color:#268bd2">$BACKUPS_DIR&lt;/span>&lt;span style="color:#2aa198">&amp;#34;month/&amp;#34;&lt;/span>&lt;span style="color:#268bd2">$BACKUP_NAME&lt;/span>.tgz &lt;span style="color:#268bd2">$BACKUPS_DIR$MONGO_DATABASE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -w&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#b58900">echo&lt;/span> &lt;span style="color:#2aa198">&amp;#34;backup weekly&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">echo&lt;/span> &lt;span style="color:#2aa198">&amp;#34;tar -czPf &lt;/span>&lt;span style="color:#268bd2">$BACKUPS_DIR&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span>week/&lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#268bd2">$BACKUP_NAME&lt;/span>&lt;span style="color:#2aa198">.tgz &lt;/span>&lt;span style="color:#268bd2">$BACKUPS_DIR$MONGO_DATABASE&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -d&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#b58900">echo&lt;/span> &lt;span style="color:#2aa198">&amp;#34;just dump&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">$MONGODUMP_PATH&lt;/span> -d &lt;span style="color:#268bd2">$MONGO_DATABASE&lt;/span> --out &lt;span style="color:#268bd2">$BACKUPS_DIR&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *&lt;span style="color:#719e07">)&lt;/span> &lt;span style="color:#b58900">echo&lt;/span> &lt;span style="color:#2aa198">&amp;#34;do nothing&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">shift&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># crontab -e
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>10 3 * * * /bin/bash $HOME/bin/mongobackup.sh -d &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>20 3 * * 1 /bin/bash $HOME/bin/mongobackup.sh -w &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>30 3 1 * * /bin/bash $HOME/bin/mongobackup.sh -m &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>每天早上3点按天／周／月分别保存&lt;/p></description></item><item><title>let's encrypt</title><link>https://xn--ynyo-2nad.com/posts/let-s-encrypt/</link><pubDate>Mon, 14 Dec 2015 23:35:49 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/let-s-encrypt/</guid><description>&lt;p>&lt;a href="https://letsencrypt.org">Let&amp;rsquo;s Encrypt&lt;/a> 已经公开测试，不需要再提交测试域名表单，直接就能申请&lt;br>
+小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦&lt;/p>
+&lt;p>照 &lt;a href="https://letsencrypt.readthedocs.org/en/latest/using.html">文档&lt;/a> 做一遍给域名签上证书还挺简单的&lt;/p>
+&lt;p>&lt;img src="images/ssl.jpg" alt="ssl">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 获取项目代码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/letsencrypt/letsencrypt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">cd&lt;/span> letsencrypt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 安装依赖&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./letsencrypt-auto
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 获取证书&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./letsencrypt-auto certonly --standalone -d www.example.com -d example.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># 配置 nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>server &lt;span style="color:#719e07">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#2aa198">443&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl on;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate_key /etc/letsencrypt/live/youdomain/privkey.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate /etc/letsencrypt/live/youdomain/fullchain.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;del>需要注意的是 dnspod 等国内服务解析域名有问题&lt;/del>&lt;br>
+我这里直接切回 domains.google.com 就行了&lt;br>
+使用 standalone 模式需要先停掉默认的 nginx&lt;br>
+文档里提到可以使用 webroot 模式不用停
+但我创建验证文件失败了 :(&lt;br>
+默认90天过期，建议 crontab 定时更新&lt;/p>
+&lt;p>###Update&lt;/p>
+&lt;p>使用 &lt;a href="https://github.com/Neilpang/acme.sh">acme.sh&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>An ACME protocol client written purely in Shell (Unix shell) language.&lt;/li>
+&lt;li>Fully ACME protocol implementation.&lt;/li>
+&lt;li>Simple, powerful and very easy to use. You only need 3 minutes to learn.&lt;/li>
+&lt;li>Bash, dash and sh compatible.&lt;/li>
+&lt;li>Simplest shell script for Let&amp;rsquo;s Encrypt free certificate client.&lt;/li>
+&lt;li>Purely written in Shell with no dependencies on python or Let&amp;rsquo;s Encrypt official client.&lt;/li>
+&lt;li>Just one script, to issue, renew and install your certificates automatically.&lt;/li>
+&lt;/ul>
+&lt;p>或者 &lt;a href="https://caddyserver.com">caddyserver&lt;/a>&lt;/p></description></item><item><title>simple crawler</title><link>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</link><pubDate>Sat, 17 Oct 2015 12:06:21 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</guid><description>&lt;p>半夜看了本&lt;a href="http://www.qidian.com/Book/3313422.aspx">小说&lt;/a>觉得翻页太累&lt;/p>
+&lt;p>首先要解决的问题是找一个质量还过得去的小说站
+然后写个&lt;a href="https://github.com/yanyaoer/crawler">脚本&lt;/a>去把它爬下来章节合并到一起&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> fs from &lt;span style="color:#2aa198">&amp;#34;fs&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> { argv } from &lt;span style="color:#2aa198">&amp;#34;process&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> request from &lt;span style="color:#2aa198">&amp;#34;request&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> cheerio from &lt;span style="color:#2aa198">&amp;#34;cheerio&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> iconv from &lt;span style="color:#2aa198">&amp;#34;iconv-lite&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> sanitize from &lt;span style="color:#2aa198">&amp;#39;sanitize-html&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">class&lt;/span> main {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constructor() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">Object&lt;/span>.assign(&lt;span style="color:#719e07">this&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#39;./chapter.json&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> html&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#39;./reader.html&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url&lt;span style="color:#719e07">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#39;http://www.piaotian.net/html/6/6658/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> store&lt;span style="color:#719e07">:&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fetch(url, callback) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> request.get(url, {encoding&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>}, (error, response, body)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (&lt;span style="color:#719e07">!&lt;/span>error &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> response.statusCode &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">200&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> $ &lt;span style="color:#719e07">=&lt;/span> cheerio.load(iconv.decode(body, &lt;span style="color:#2aa198">&amp;#39;GBK&amp;#39;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> callback($, body);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#719e07">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(url);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> runchapter() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store.map(d=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (&lt;span style="color:#719e07">!&lt;/span>d.content) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.fetch(&lt;span style="color:#719e07">this&lt;/span>.url.list &lt;span style="color:#719e07">+&lt;/span> d.href, ($, body)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> content &lt;span style="color:#719e07">=&lt;/span> iconv.decode(body, &lt;span style="color:#2aa198">&amp;#39;GBK&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d.content &lt;span style="color:#719e07">=&lt;/span> sanitize(content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.save();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#719e07">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;runchapter fail: &amp;#39;&lt;/span>, d.id, d.title);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.output();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//let content = this.store.slice(0, 2)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">let&lt;/span> content &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">this&lt;/span>.store
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .map(d=&amp;gt; d.content)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .join(&lt;span style="color:#2aa198">&amp;#39;&amp;lt;hr /&amp;gt;&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> html &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#586e75">`&amp;lt;html&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;head&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;meta charset=&amp;#34;utf8&amp;#34; /&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> ul, table, div {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> display: none;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> hr {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> height: 1px;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> margin: 4rem 0;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> body {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> padding: 0 20%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> font:24px/1.5 &amp;#39;Songti Sc&amp;#39;;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;/style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;/head&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;body&amp;gt;&lt;/span>&lt;span style="color:#2aa198">${&lt;/span>content&lt;span style="color:#2aa198">}&lt;/span>&lt;span style="color:#586e75">&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fs.writeFileSync(&lt;span style="color:#719e07">this&lt;/span>.html, html, &lt;span style="color:#2aa198">&amp;#39;utf8&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reload() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.fetch(&lt;span style="color:#719e07">this&lt;/span>.url.list, ($)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store &lt;span style="color:#719e07">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $(&lt;span style="color:#2aa198">&amp;#39;.mainbody .centent ul li a&amp;#39;&lt;/span>).map((id, d)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> el &lt;span style="color:#719e07">=&lt;/span> $(d);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> href &lt;span style="color:#719e07">=&lt;/span> el.attr(&lt;span style="color:#2aa198">&amp;#39;href&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (&lt;span style="color:#719e07">!&lt;/span>href.endsWith(&lt;span style="color:#2aa198">&amp;#39;.html&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store.push({ id, href, title&lt;span style="color:#719e07">:&lt;/span> el.text() })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.save();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.runchapter();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config(force){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (force) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.reload();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } esle {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> text &lt;span style="color:#719e07">=&lt;/span> fs.readFileSync(&lt;span style="color:#719e07">this&lt;/span>.path, &lt;span style="color:#2aa198">&amp;#39;utf8&amp;#39;&lt;/span>).toString();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store &lt;span style="color:#719e07">=&lt;/span> JSON.parse(text);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.runchapter();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> save() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fs.writeFileSync(&lt;span style="color:#719e07">this&lt;/span>.path, JSON.stringify(&lt;span style="color:#719e07">this&lt;/span>.store), &lt;span style="color:#2aa198">&amp;#39;utf8&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> init() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> force &lt;span style="color:#719e07">=&lt;/span> argv[&lt;span style="color:#2aa198">2&lt;/span>] &lt;span style="color:#719e07">===&lt;/span> &lt;span style="color:#2aa198">&amp;#39;-f&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;run: &amp;#39;&lt;/span>, argv[&lt;span style="color:#2aa198">2&lt;/span>], force);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.config(force);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">new&lt;/span> main().init();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>于是就水出来一篇日志啦&lt;/p></description></item><item><title>send notification when task finish</title><link>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</link><pubDate>Sun, 11 Oct 2015 00:38:23 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</guid><description>&lt;p>终端里运行长时间任务(比如 &lt;code>make systemimage&lt;/code>)的时候经常会切换到其他环境做别的事情
+容易忘记查看之前的任务是否完成, 查到一些方法用在任务结束时发出通知&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#C-z 切到后台运行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fg; tput bel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># Mac OS X&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#系统弹窗&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>osascript -e &lt;span style="color:#2aa198">&amp;#39;tell app &amp;#34;System Events&amp;#34; to display alert &amp;#34;Build Completed&amp;#34; message &amp;#34;The checkout and build have completed.&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>say &lt;span style="color:#2aa198">&amp;#34;Job finished&amp;#34;&lt;/span> &lt;span style="color:#586e75">#语音播报&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#notification center&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>osascript -e &lt;span style="color:#2aa198">&amp;#39;display notification &amp;#34;Job finished&amp;#34; with title &amp;#34;Alert&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo gem install terminal-notifier
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>terminal-notifier -message &lt;span style="color:#2aa198">&amp;#34;Job finished!&amp;#34;&lt;/span> -title &lt;span style="color:#2aa198">&amp;#34;Alert&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># Ubuntu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>notify-send &lt;span style="color:#2aa198">&amp;#34;Job finished!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># KDE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kdialog --passivepopup &lt;span style="color:#2aa198">&amp;#39;Job finished&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还有 &lt;a href="https://iterm2.com/documentation-triggers.html">iterm2 trigger&lt;/a> 也能用来触发通知, 高亮文字&lt;/p></description></item><item><title>create CNAME with internationalized domain name</title><link>https://xn--ynyo-2nad.com/posts/cname-with-yanyao-com/</link><pubDate>Sun, 04 Oct 2015 20:52:56 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/cname-with-yanyao-com/</guid><description>&lt;p>前段时间买了个 &lt;a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">idn&lt;/a>: yányào.com 闲置了很长时间没动
+趁着十一长假无所事事的机会, 把玩了一下 &lt;a href="https://hexo.io">hexo&lt;/a> 挂到 yanyaoer.github.io&lt;/p>
+&lt;p>然后 CNAME 的时候掉坑了, 看到有人说30分钟生效傻傻等就不提了
+实际上这个域名的 CNAME 内容应该用编码后的字符串而不是 yányào.com&lt;/p>
+&lt;p>&lt;a href="https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4">https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">diff --git a/CNAME b/CNAME
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">index 6cb647c..92d166c 100644
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span>&lt;span style="color:#dc322f">--- a/CNAME
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#dc322f">&lt;/span>&lt;span style="color:#719e07">+++ b/CNAME
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">&lt;/span>&lt;span style="color:#268bd2">@@ -1 +1 @@
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">&lt;/span>&lt;span style="color:#dc322f">-yányào.com
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#dc322f">&lt;/span>&lt;span style="color:#719e07">+xn--ynyo-2nad.com
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>xtag-and-shadowdom</title><link>https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/</link><pubDate>Sun, 04 Oct 2015 12:20:52 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/</guid><description>&lt;p>最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱
+找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY&lt;/p>
+&lt;p>可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类
+inline 方式覆盖样式略嫌繁琐&lt;/p>
+&lt;h2 id="示例代码">示例代码&lt;/h2>
+&lt;h3 id="xtagjs">xtag.js&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">let&lt;/span> dom &lt;span style="color:#719e07">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shadow(el) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> el.createShadowRoot &lt;span style="color:#719e07">?&lt;/span> el.createShadowRoot() &lt;span style="color:#719e07">:&lt;/span> el.webkitCreateShadowRoot();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> attr(el, prefix&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#39;&amp;#39;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#b58900">Object&lt;/span>.keys(el.dataset).map((d)=&amp;gt; &lt;span style="color:#586e75">`&lt;/span>&lt;span style="color:#2aa198">${&lt;/span>prefix&lt;span style="color:#2aa198">}${&lt;/span>d&lt;span style="color:#2aa198">}&lt;/span>&lt;span style="color:#586e75">=&amp;#34;&lt;/span>&lt;span style="color:#2aa198">${&lt;/span>el.dataset[d]&lt;span style="color:#2aa198">}&lt;/span>&lt;span style="color:#586e75">&amp;#34;`&lt;/span>).join(&lt;span style="color:#2aa198">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">document&lt;/span>.registerElement(&lt;span style="color:#2aa198">&amp;#39;x-image&amp;#39;&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prototype&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#b58900">Object&lt;/span>.create(HTMLElement.prototype, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> createdCallback&lt;span style="color:#719e07">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> value() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//xtag 嵌套时这里读不到attr, 放到 attach
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> console.log(&lt;span style="color:#2aa198">&amp;#39;onCreate::image&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> attachedCallback&lt;span style="color:#719e07">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> value() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;onAttach::image&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> shadow &lt;span style="color:#719e07">=&lt;/span> dom.shadow(&lt;span style="color:#719e07">this&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shadow.innerHTML &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#586e75">`&amp;lt;style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> img { max-width: 100%; }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;/style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;img &lt;/span>&lt;span style="color:#2aa198">${&lt;/span>dom.attr(&lt;span style="color:#719e07">this&lt;/span>)&lt;span style="color:#2aa198">}&lt;/span>&lt;span style="color:#586e75"> /&amp;gt;`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.onclick &lt;span style="color:#719e07">=&lt;/span> (e) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#719e07">this&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">// other x-tag;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="indexjs">index.js&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> &lt;span style="color:#2aa198">&amp;#39;babel/polyfill&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> &lt;span style="color:#2aa198">&amp;#39;./xtag.js&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">class&lt;/span> BaseView {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constructor(opt) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">Object&lt;/span>.assign(&lt;span style="color:#719e07">this&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root&lt;span style="color:#719e07">:&lt;/span> dom(&lt;span style="color:#2aa198">&amp;#39;#app&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, opt);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mount() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;event::mount&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> onCreate() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;event::create&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> onUpdate() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;event::update&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">export&lt;/span> &lt;span style="color:#719e07">default&lt;/span> &lt;span style="color:#268bd2">class&lt;/span> BannerView &lt;span style="color:#268bd2">extends&lt;/span> BaseView {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> init(...args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.mount(...args);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> render() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span> &lt;span style="color:#586e75">`&amp;lt;x-image data-src=&amp;#34;&lt;/span>&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#719e07">this&lt;/span>.src&lt;span style="color:#2aa198">}&lt;/span>&lt;span style="color:#586e75">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> data-href=&amp;#34;&lt;/span>&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#719e07">this&lt;/span>.redirect_url&lt;span style="color:#2aa198">}&lt;/span>&lt;span style="color:#586e75">&amp;#34; /&amp;gt;`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="links">links&lt;/h2>
+&lt;p>&lt;a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">http://www.html5rocks.com/en/tutorials/webcomponents/customelements/&lt;/a>
+&lt;a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/">http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/&lt;/a>&lt;/p></description></item><item><title>remote pbcopy with netcat</title><link>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</link><pubDate>Tue, 20 Jan 2015 11:45:53 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</guid><description>&lt;h2 id="quick-start">Quick start&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">while&lt;/span> &lt;span style="color:#719e07">(&lt;/span>&lt;span style="color:#b58900">true&lt;/span>&lt;span style="color:#719e07">)&lt;/span>; &lt;span style="color:#719e07">do&lt;/span> nc -l &lt;span style="color:#2aa198">2224&lt;/span> | pbcopy; &lt;span style="color:#719e07">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#If your laptop is running linux, replacing pbcopy with xcopy should work:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#while (true); do nc -l 2224 | xcopy; done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">echo&lt;/span> &lt;span style="color:#2aa198">&amp;#34;This text gets sent to clipboard&amp;#34;&lt;/span> | nc localhost &lt;span style="color:#2aa198">2224&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b58900">echo&lt;/span> &lt;span style="color:#2aa198">&amp;#34;RemoteForward 2224 localhost:2224&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.ssh/config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh remote -t &lt;span style="color:#2aa198">&amp;#39;cat blablabla | nc -q0 localhost 2224&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="daemonizing-pbcopy">Daemonizing pbcopy&lt;/h2>
+&lt;p>&lt;code>launchctl load ~/Library/LaunchAgents/local.pbcopy.plist&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple Computer//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;plist version=&amp;#34;1.0&amp;#34;&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;string&amp;gt;localhost.pbcopy&amp;lt;/string&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;array&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;string&amp;gt;/usr/bin/pbcopy&amp;lt;/string&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/array&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;inetdCompatibility&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;Wait&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;false/&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;Sockets&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;Listeners&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;SockServiceName&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;string&amp;gt;2224&amp;lt;/string&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;key&amp;gt;SockNodeName&amp;lt;/key&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;string&amp;gt;127.0.0.1&amp;lt;/string&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/dict&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/plist&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="remote-pbcopy">Remote pbcopy&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp pbcopy remote:/path_to/pbcopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod a+x path_to/pbcopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">[&lt;/span> -n &lt;span style="color:#2aa198">&amp;#34;&lt;/span>&lt;span style="color:#268bd2">$SSH_CLIENT&lt;/span>&lt;span style="color:#2aa198">&amp;#34;&lt;/span> &lt;span style="color:#719e07">]&lt;/span> &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#268bd2">SESSION_TYPE&lt;/span>&lt;span style="color:#719e07">=&lt;/span>&lt;span style="color:#2aa198">&amp;#34;remote&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">if&lt;/span> &lt;span style="color:#719e07">[[&lt;/span> &lt;span style="color:#268bd2">$SESSION_TYPE&lt;/span> &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">&amp;#34;remote&amp;#34;&lt;/span> &lt;span style="color:#719e07">]]&lt;/span>; &lt;span style="color:#719e07">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cat | nc -q0 localhost &lt;span style="color:#2aa198">2224&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cat | pbcopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="links">links&lt;/h2>
+&lt;p>&lt;a href="http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/">http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/&lt;/a>&lt;/p></description></item><item><title>forward email by postfix</title><link>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</link><pubDate>Mon, 06 Oct 2014 01:25:06 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo aptitude install postfix
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname -f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># sudo vim /etc/postfix/main.cf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">myhostname&lt;/span> &lt;span style="color:#719e07">=&lt;/span> example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">myorigin&lt;/span> &lt;span style="color:#719e07">=&lt;/span> example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">mydestination&lt;/span> &lt;span style="color:#719e07">=&lt;/span> example1.com, example2.com, ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">virtual_alias_maps&lt;/span> &lt;span style="color:#719e07">=&lt;/span> hash:/etc/postfix/virtual
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># sudo vim /etc/postfix/virtual&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@example1.com name@forward.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@example2.com name@forward.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo postmap /etc/postfix/virtual
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /etc/init.d/postfix reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://wiki.debian.org/Postfix#Forward_Emails">https://wiki.debian.org/Postfix#Forward_Emails&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.linode.com/docs/email/postfix/basic-postfix-email-gateway-on-debian-6-squeeze">https://www.linode.com/docs/email/postfix/basic-postfix-email-gateway-on-debian-6-squeeze&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.debian-administration.org/article/243/Handling_mail_for_multiple_virtual_domains_with_postfix">https://www.debian-administration.org/article/243/Handling_mail_for_multiple_virtual_domains_with_postfix&lt;/a>&lt;/p></description></item><item><title>mitmproxy</title><link>https://xn--ynyo-2nad.com/posts/mitmproxy/</link><pubDate>Wed, 20 Aug 2014 12:05:38 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mitmproxy/</guid><description>&lt;p>&lt;a href="http://mitmproxy.org">mitmproxy&lt;/a> 是个命令行下查看/修改 http 请求的交互式工具&lt;/p>
+&lt;p>#截图
+&lt;img src="http://mitmproxy.org/doc/screenshots/mitmproxy.png" alt="screenshoot">
+&lt;img src="http://mitmproxy.org/doc/screenshots/mitmproxy-flowview.png" alt="screenshoot">&lt;/p>
+&lt;p>#安装&lt;/p>
+&lt;pre>&lt;code>sudo apt-get install python-dev libffi-dev
+pip install mitmproxy
+&lt;/code>&lt;/pre>
+&lt;p>#使用&lt;/p>
+&lt;p>&lt;strong>ubuntu 上启动 mitmproxy&lt;/strong>&lt;br>
+mitmproxy &amp;ndash;host&lt;/p>
+&lt;p>&lt;strong>手机 设置 -&amp;gt; WLAN -&amp;gt; 代理&lt;/strong>&lt;br>
+主机名: ubuntu 的 ip&lt;br>
+端口: 8080&lt;/p>
+&lt;p>然后访问网络就会在 mitmproxy 里看到请求记录(如截图)&lt;/p>
+&lt;p>#快捷键&lt;/p>
+&lt;p>j,k 上下移动&lt;br>
+enter 进入&lt;br>
+tab 切换 request/response&lt;/p>
+&lt;p>#参考
+&lt;a href="http://mitmproxy.org/doc/mitmproxy.html">http://mitmproxy.org/doc/mitmproxy.html&lt;/a>&lt;br>
+&lt;a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/&lt;/a>&lt;/p></description></item><item><title>brick intro</title><link>https://xn--ynyo-2nad.com/posts/brick-intro/</link><pubDate>Wed, 28 Aug 2013 10:47:17 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/brick-intro/</guid><description>&lt;p>#Introducing Brick: Minimal-markup Web Components for Faster App Development
+#介绍 brick: 用于快速开发 webapp 的自定义标签组件&lt;/p>
+&lt;p>&lt;a href="https://hacks.mozilla.org/2013/08/introducing-brick-minimal-markup-web-components-for-faster-app-development/">https://hacks.mozilla.org/2013/08/introducing-brick-minimal-markup-web-components-for-faster-app-development/&lt;/a>&lt;/p>
+&lt;p>Those of you on the cutting HTML5 edge may have already heard of the exciting Web Components specification. If you haven’t, you’ll probably want to read up on what makes this so exciting, but long story short, Web Components promise to open up a new realm of development by letting web developers write custom, reusable HTML tags. Think of them as JavaScript plugins without the need for additional code initialization or boilerplate markup/styling.&lt;/p></description></item><item><title>my osx setup</title><link>https://xn--ynyo-2nad.com/posts/my-osx-setup/</link><pubDate>Sun, 09 Jun 2013 12:05:50 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/my-osx-setup/</guid><description>&lt;p>#setting&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># Enable full keyboard access for all controls
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Disable menu bar transparency
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.finder QuitMenuItem -bool true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Avoid creating .DS_Store files on network volumes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Disable the warning when changing a file extension
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Enable tap to click (Trackpad)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Enable Safari’s debug menu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># To pin the dock to the right bottom
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.dock pinning -string end
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.dock orientation -string right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># Only Show Open Applications In The Dock
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.dock static-only -bool true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.dock tilesize -int 24
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.finder QLEnableTextSelection -bool true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># disable dashboard
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.dashboard mcx-disabled -boolean true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>#&lt;a href="http://itunes.apple.com/us/app/xcode/">xcode&lt;/a> with &lt;a href="https://developer.apple.com/downloads">Command Line Tools&lt;/a>&lt;/p></description></item></channel></rss>

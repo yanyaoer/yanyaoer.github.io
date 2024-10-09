@@ -1,17 +1,38 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Deploy bitwarden_rs with podman - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现， dotnet 版本有点儿不太适合手头的部署环境
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Deploy bitwarden_rs with podman - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现，
+dotnet 版本有点儿不太适合手头的部署环境
+这里用比较现代的 podman2 来运行 docker 服务
+podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT=8080 -p 8080:8080 bitwardenrs/server:latest
+podman generate systemd --name bitwarden --files
+mv container-bitwarden.service /etc/systemd/system/
+
+systemctl --user enable /etc/systemd/system/container-bitwarden.service
+systemctl --user start container-bitwarden.service
+然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端
+brew install bitwarden-cli  # npm install -g @bitwarden/cli
+bw config server https://bw.myserver.com
+update 2021-04-01 build bitwaden_rs from source
+# install rust
+apt install git make gcc libssl-dev pkg-config curl
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+
+# build bitwarden_rs
+git clone https://github.com/dani-garcia/bitwarden_rs/
+cd bitwarden_rs/
+cargo build --features sqlite --release
+cp target/release/bitwarden_rs /usr/local/bin/
+
+# download bw_web_vault from https://github.com/dani-garcia/bw_web_builds/releases
+edit  /etc/systemd/system/bitwarden.service"><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Deploy bitwarden_rs with podman"><meta property="og:description" content="bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现， dotnet 版本有点儿不太适合手头的部署环境
 这里用比较现代的 podman2 来运行 docker 服务
 podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT=8080 -p 8080:8080 bitwardenrs/server:latest podman generate systemd --name bitwarden --files mv container-bitwarden.service /etc/systemd/system/ systemctl --user enable /etc/systemd/system/container-bitwarden.service systemctl --user start container-bitwarden.service 然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端
 brew install bitwarden-cli # npm install -g @bitwarden/cli bw config server https://bw.myserver.com update 2021-04-01 build bitwaden_rs from source
-# install rust apt install git make gcc libssl-dev pkg-config curl curl --proto '=https' --tlsv1."><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Deploy bitwarden_rs with podman"><meta property="og:description" content="bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现， dotnet 版本有点儿不太适合手头的部署环境
+# install rust apt install git make gcc libssl-dev pkg-config curl curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh source $HOME/.cargo/env # build bitwarden_rs git clone https://github.com/dani-garcia/bitwarden_rs/ cd bitwarden_rs/ cargo build --features sqlite --release cp target/release/bitwarden_rs /usr/local/bin/ # download bw_web_vault from https://github.com/dani-garcia/bw_web_builds/releases edit /etc/systemd/system/bitwarden.service"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-06-04T19:05:12+08:00"><meta property="article:modified_time" content="2020-06-04T19:05:12+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Deploy bitwarden_rs with podman"><meta name=twitter:description content="bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现， dotnet 版本有点儿不太适合手头的部署环境
 这里用比较现代的 podman2 来运行 docker 服务
 podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT=8080 -p 8080:8080 bitwardenrs/server:latest podman generate systemd --name bitwarden --files mv container-bitwarden.service /etc/systemd/system/ systemctl --user enable /etc/systemd/system/container-bitwarden.service systemctl --user start container-bitwarden.service 然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端
 brew install bitwarden-cli # npm install -g @bitwarden/cli bw config server https://bw.myserver.com update 2021-04-01 build bitwaden_rs from source
-# install rust apt install git make gcc libssl-dev pkg-config curl curl --proto '=https' --tlsv1."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-06-04T19:05:12+08:00"><meta property="article:modified_time" content="2020-06-04T19:05:12+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Deploy bitwarden_rs with podman"><meta name=twitter:description content="bitwarden_rs1 是个用 rust/rocket 编写的非官方 api 实现， dotnet 版本有点儿不太适合手头的部署环境
-这里用比较现代的 podman2 来运行 docker 服务
-podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT=8080 -p 8080:8080 bitwardenrs/server:latest podman generate systemd --name bitwarden --files mv container-bitwarden.service /etc/systemd/system/ systemctl --user enable /etc/systemd/system/container-bitwarden.service systemctl --user start container-bitwarden.service 然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端
-brew install bitwarden-cli # npm install -g @bitwarden/cli bw config server https://bw.myserver.com update 2021-04-01 build bitwaden_rs from source
-# install rust apt install git make gcc libssl-dev pkg-config curl curl --proto '=https' --tlsv1."><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
+# install rust apt install git make gcc libssl-dev pkg-config curl curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh source $HOME/.cargo/env # build bitwarden_rs git clone https://github.com/dani-garcia/bitwarden_rs/ cd bitwarden_rs/ cargo build --features sqlite --release cp target/release/bitwarden_rs /usr/local/bin/ # download bw_web_vault from https://github.com/dani-garcia/bw_web_builds/releases edit /etc/systemd/system/bitwarden.service"><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>Deploy bitwarden_rs with podman</h1><div class=meta>Posted on Jun 4, 2020</div></div><section class=body><p>bitwarden_rs<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> 是个用 rust/rocket 编写的非官方 api 实现，
 <a href=https://github.com/bitwarden/server>dotnet</a> 版本有点儿不太适合手头的部署环境</p><p>这里用比较现代的 podman<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> 来运行 docker 服务</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>podman run -d --name bitwarden -v /bw-data/:/data/:Z -e <span style=color:#268bd2>ROCKET_PORT</span><span style=color:#719e07>=</span><span style=color:#2aa198>8080</span> -p 8080:8080 bitwardenrs/server:latest

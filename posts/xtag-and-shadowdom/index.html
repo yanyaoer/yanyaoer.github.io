@@ -1,11 +1,82 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>xtag-and-shadowdom - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>xtag-and-shadowdom - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱
+找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY
+可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类
+inline 方式覆盖样式略嫌繁琐
+示例代码
+xtag.js
+let dom = {
+  shadow(el) {
+    return el.createShadowRoot ? el.createShadowRoot() : el.webkitCreateShadowRoot();
+  },
+  attr(el, prefix='') {
+    return Object.keys(el.dataset).map((d)=> `${prefix}${d}=&#34;${el.dataset[d]}&#34;`).join(' ')
+  }
+}
+
+document.registerElement('x-image', {
+  prototype: Object.create(HTMLElement.prototype, {
+    createdCallback: {
+      value() {
+        //xtag 嵌套时这里读不到attr, 放到 attach
+        console.log('onCreate::image');
+      }
+    },
+    attachedCallback: {
+      value() {
+        console.log('onAttach::image');
+        let shadow = dom.shadow(this);
+        shadow.innerHTML = `<style>
+            img { max-width: 100%; }
+          </style>
+          <img ${dom.attr(this)} />`;
+
+        this.onclick = (e) => {
+          console.log(this);
+        }
+      }
+    }
+  })
+});
+
+// other x-tag;
+index.js
+import 'babel/polyfill';
+import './xtag.js';
+
+class BaseView {
+  constructor(opt) {
+    Object.assign(this, {
+      root: dom('#app')
+    }, opt);
+  }
+  mount() {
+    console.log('event::mount');
+  }
+  onCreate() {
+    console.log('event::create');
+  }
+  onUpdate() {
+    console.log('event::update');
+  }
+}
+
+export default class BannerView extends BaseView {
+  init(...args) {
+    this.mount(...args);
+  }
+  render() {
+    return `<x-image data-src=&#34;${this.src}&#34;
+                     data-href=&#34;${this.redirect_url}&#34; />`;
+  }
+}
+links
+http://www.html5rocks.com/en/tutorials/webcomponents/customelements/
+http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/"><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="xtag-and-shadowdom"><meta property="og:description" content="最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY
 可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类 inline 方式覆盖样式略嫌繁琐
-示例代码 xtag.js let dom = { shadow(el) { return el.createShadowRoot ? el.createShadowRoot() : el.webkitCreateShadowRoot(); }, attr(el, prefix='') { return Object.keys(el.dataset).map((d)=> `${prefix}${d}=&#34;${el.dataset[d]}&#34;`).join(' ') } } document.registerElement('x-image', { prototype: Object.create(HTMLElement.prototype, { createdCallback: { value() { //xtag 嵌套时这里读不到attr, 放到 attach console.log('onCreate::image'); } }, attachedCallback: { value() { console.log('onAttach::image'); let shadow = dom.shadow(this); shadow.innerHTML = `<style> img { max-width: 100%; } </style> <img ${dom."><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="xtag-and-shadowdom"><meta property="og:description" content="最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY
+示例代码 xtag.js let dom = { shadow(el) { return el.createShadowRoot ? el.createShadowRoot() : el.webkitCreateShadowRoot(); }, attr(el, prefix='') { return Object.keys(el.dataset).map((d)=> `${prefix}${d}=&#34;${el.dataset[d]}&#34;`).join(' ') } } document.registerElement('x-image', { prototype: Object.create(HTMLElement.prototype, { createdCallback: { value() { //xtag 嵌套时这里读不到attr, 放到 attach console.log('onCreate::image'); } }, attachedCallback: { value() { console.log('onAttach::image'); let shadow = dom.shadow(this); shadow.innerHTML = `<style> img { max-width: 100%; } </style> <img ${dom.attr(this)} />`; this.onclick = (e) => { console.log(this); } } } }) }); // other x-tag; index.js import 'babel/polyfill'; import './xtag.js'; class BaseView { constructor(opt) { Object.assign(this, { root: dom('#app') }, opt); } mount() { console.log('event::mount'); } onCreate() { console.log('event::create'); } onUpdate() { console.log('event::update'); } } export default class BannerView extends BaseView { init(...args) { this.mount(...args); } render() { return `<x-image data-src=&#34;${this.src}&#34; data-href=&#34;${this.redirect_url}&#34; />`; } } links http://www.html5rocks.com/en/tutorials/webcomponents/customelements/ http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-10-04T12:20:52+00:00"><meta property="article:modified_time" content="2015-10-04T12:20:52+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="xtag-and-shadowdom"><meta name=twitter:description content="最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY
 可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类 inline 方式覆盖样式略嫌繁琐
-示例代码 xtag.js let dom = { shadow(el) { return el.createShadowRoot ? el.createShadowRoot() : el.webkitCreateShadowRoot(); }, attr(el, prefix='') { return Object.keys(el.dataset).map((d)=> `${prefix}${d}=&#34;${el.dataset[d]}&#34;`).join(' ') } } document.registerElement('x-image', { prototype: Object.create(HTMLElement.prototype, { createdCallback: { value() { //xtag 嵌套时这里读不到attr, 放到 attach console.log('onCreate::image'); } }, attachedCallback: { value() { console.log('onAttach::image'); let shadow = dom.shadow(this); shadow.innerHTML = `<style> img { max-width: 100%; } </style> <img ${dom."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-10-04T12:20:52+00:00"><meta property="article:modified_time" content="2015-10-04T12:20:52+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="xtag-and-shadowdom"><meta name=twitter:description content="最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY
-可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类 inline 方式覆盖样式略嫌繁琐
-示例代码 xtag.js let dom = { shadow(el) { return el.createShadowRoot ? el.createShadowRoot() : el.webkitCreateShadowRoot(); }, attr(el, prefix='') { return Object.keys(el.dataset).map((d)=> `${prefix}${d}=&#34;${el.dataset[d]}&#34;`).join(' ') } } document.registerElement('x-image', { prototype: Object.create(HTMLElement.prototype, { createdCallback: { value() { //xtag 嵌套时这里读不到attr, 放到 attach console.log('onCreate::image'); } }, attachedCallback: { value() { console.log('onAttach::image'); let shadow = dom.shadow(this); shadow.innerHTML = `<style> img { max-width: 100%; } </style> <img ${dom."><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
+示例代码 xtag.js let dom = { shadow(el) { return el.createShadowRoot ? el.createShadowRoot() : el.webkitCreateShadowRoot(); }, attr(el, prefix='') { return Object.keys(el.dataset).map((d)=> `${prefix}${d}=&#34;${el.dataset[d]}&#34;`).join(' ') } } document.registerElement('x-image', { prototype: Object.create(HTMLElement.prototype, { createdCallback: { value() { //xtag 嵌套时这里读不到attr, 放到 attach console.log('onCreate::image'); } }, attachedCallback: { value() { console.log('onAttach::image'); let shadow = dom.shadow(this); shadow.innerHTML = `<style> img { max-width: 100%; } </style> <img ${dom.attr(this)} />`; this.onclick = (e) => { console.log(this); } } } }) }); // other x-tag; index.js import 'babel/polyfill'; import './xtag.js'; class BaseView { constructor(opt) { Object.assign(this, { root: dom('#app') }, opt); } mount() { console.log('event::mount'); } onCreate() { console.log('event::create'); } onUpdate() { console.log('event::update'); } } export default class BannerView extends BaseView { init(...args) { this.mount(...args); } render() { return `<x-image data-src=&#34;${this.src}&#34; data-href=&#34;${this.redirect_url}&#34; />`; } } links http://www.html5rocks.com/en/tutorials/webcomponents/customelements/ http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/"><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>xtag-and-shadowdom</h1><div class=meta>Posted on Oct 4, 2015</div></div><section class=body><p>最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱
 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY</p><p>可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类

@@ -1,7 +1,31 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Pandoc generate pdf from markdown - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content='Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
-wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈 Setup 首先完整安装 latex 包
-$ brew uninstall --cask basictex $ brew install --cask mactex Latex template --- title: "Your article title here" date: 2023-02-20 fontsize: 12pt # fc-list :lang=zh #mainfont: "PingFang SC" mainfont: "Sarasa Mono SC" # monofont: "FantasqueSansM Nerd Font Mono" monofont: "Sarasa Mono SC" # 中文换行支持 lang: zh-CN geometry: margin=2cm # 设置双栏 # classoption=twocolumn --- 在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Pandoc generate pdf from markdown"><meta property="og:description" content='Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Pandoc generate pdf from markdown - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content='Intro
+始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
+
+wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈
+
+Setup
+首先完整安装 latex 包
+$ brew uninstall --cask basictex
+$ brew install --cask mactex
+Latex template
+---
+title: "Your article title here"
+date: 2023-02-20
+fontsize: 12pt
+# fc-list :lang=zh
+#mainfont: "PingFang SC"
+mainfont: "Sarasa Mono SC"
+# monofont: "FantasqueSansM Nerd Font Mono"
+monofont: "Sarasa Mono SC"
+# 中文换行支持
+lang: zh-CN
+geometry: margin=2cm
+
+# 设置双栏
+# classoption=twocolumn
+---
+在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Pandoc generate pdf from markdown"><meta property="og:description" content='Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
 wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈 Setup 首先完整安装 latex 包
 $ brew uninstall --cask basictex $ brew install --cask mactex Latex template --- title: "Your article title here" date: 2023-02-20 fontsize: 12pt # fc-list :lang=zh #mainfont: "PingFang SC" mainfont: "Sarasa Mono SC" # monofont: "FantasqueSansM Nerd Font Mono" monofont: "Sarasa Mono SC" # 中文换行支持 lang: zh-CN geometry: margin=2cm # 设置双栏 # classoption=twocolumn --- 在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-07-25T14:52:12+08:00"><meta property="article:modified_time" content="2024-07-25T14:52:12+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Pandoc generate pdf from markdown"><meta name=twitter:description content='Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
 wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈 Setup 首先完整安装 latex 包

@@ -1,26 +1,39 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Rss2email - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Rss2email - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了，
+这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容，
+当然备选方案也不少:
+
+https://github.com/miniflux/miniflux
+https://github.com/SSilence/selfoss
+https://github.com/FreshRSS/FreshRSS
+https://git.tt-rss.org/fox/tt-rss
+
+出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
+安装配置
+rss2email 的安装到简单，参考 官方文档
+直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True，
+在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去，
+就配上 imap.google 账户自己发给自己啦～
+从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
+需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
+update: 2020-09-18 17:34:49
+修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
+定时任务
+现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置"><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/rss2email/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Rss2email"><meta property="og:description" content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
 https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https://github.com/FreshRSS/FreshRSS https://git.tt-rss.org/fox/tt-rss 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
 安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
 从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
 需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
 update: 2020-09-18 17:34:49
 修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
-定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/."><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/rss2email/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Rss2email"><meta property="og:description" content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
+定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-06-23T18:58:30+08:00"><meta property="article:modified_time" content="2020-06-23T18:58:30+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Rss2email"><meta name=twitter:description content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
 https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https://github.com/FreshRSS/FreshRSS https://git.tt-rss.org/fox/tt-rss 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
 安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
 从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
 需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
 update: 2020-09-18 17:34:49
 修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
-定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-06-23T18:58:30+08:00"><meta property="article:modified_time" content="2020-06-23T18:58:30+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Rss2email"><meta name=twitter:description content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
-https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https://github.com/FreshRSS/FreshRSS https://git.tt-rss.org/fox/tt-rss 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
-安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
-从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
-需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
-update: 2020-09-18 17:34:49
-修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
-定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/."><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
+定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置"><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>Rss2email</h1><div class=meta>Posted on Jun 23, 2020</div></div><section class=body><p>距离上次从 <a href=https://blogtrottr.com>https://blogtrottr.com</a> 迁移 rss 订阅到 feedly 差不多五六年了，
 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容，

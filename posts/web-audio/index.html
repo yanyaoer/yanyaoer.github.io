@@ -1,14 +1,99 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>web audio - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>web audio - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content='照文档撸了一下 AudioContext 可视化音频
 桌面浏览器上 Safari 9, Chrome stable 绘制正常
-移动端只有微信的 webview 能工作, 纯玩票叻 ref: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
-<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, user-scalable=no"> <title>AV</title> </head> <body> <canvas id="vis"></canvas> <audio id="av" src="YOUR_AUDIO_FILE"></audio> <script src="index.js"></script> </body> </html> window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById(&#39;vis&#39;); var canvasCtx = canvas.getContext(&#39;2d&#39;); var isPlaying = true; var audio = document.getElementById(&#39;av&#39;); var audioCtx = new AudioContext(); var analyser = audioCtx.'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/web-audio/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="web audio"><meta property="og:description" content='照文档撸了一下 AudioContext 可视化音频
+移动端只有微信的 webview 能工作, 纯玩票叻
+
+ref:
+https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>AV</title>
+  </head>
+  <body>
+    <canvas id="vis"></canvas>
+    <audio id="av" src="YOUR_AUDIO_FILE"></audio>
+    <script src="index.js"></script>
+  </body>
+</html>
+window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+
+window.onload = function(){
+
+  var canvas = document.getElementById(&#39;vis&#39;);
+  var canvasCtx = canvas.getContext(&#39;2d&#39;);
+
+  var isPlaying = true;
+  var audio = document.getElementById(&#39;av&#39;);
+  var audioCtx = new AudioContext();
+  var analyser = audioCtx.createAnalyser();
+  var audioSrc = audioCtx.createMediaElementSource(audio);
+  audioSrc.connect(analyser);
+  analyser.connect(audioCtx.destination);
+
+  analyser.fftSize = 2048;
+  var bufferLength = analyser.fftSize;
+  dataArray = new Uint8Array(bufferLength);
+  analyser.getByteTimeDomainData(dataArray);
+
+  WIDTH = 500;
+  HEIGHT = 150;
+  function draw() {
+    requestAnimationFrame(draw);
+    if (!isPlaying) return;
+
+    analyser.getByteTimeDomainData(dataArray);
+
+    canvasCtx.fillStyle = &#39;rgb(200, 200, 200)&#39;;
+    canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+    canvasCtx.lineWidth = 2;
+    canvasCtx.strokeStyle = &#39;rgb(0, 0, 0)&#39;;
+    canvasCtx.beginPath();
+
+    var sliceWidth = WIDTH * 1.0 / bufferLength;
+    var x = 0;
+
+    for(var i = 0; i < bufferLength; i++) {
+
+      var v = dataArray[i] / 128.0;
+      var y = v * HEIGHT/2;
+
+      if(i === 0) {
+        canvasCtx.moveTo(x, y);
+      } else {
+        canvasCtx.lineTo(x, y);
+      }
+
+      x += sliceWidth;
+    }
+
+    canvasCtx.lineTo(canvas.width, canvas.height/2);
+    canvasCtx.stroke();
+  };
+
+  draw();
+  audio.play();
+
+  document.body.onclick = function() {
+    console.log(audio, isPlaying);
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+    } else {
+      audio.play();
+      isPlaying = true;
+    }
+  }
+}
+'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/web-audio/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="web audio"><meta property="og:description" content='照文档撸了一下 AudioContext 可视化音频
 桌面浏览器上 Safari 9, Chrome stable 绘制正常
 移动端只有微信的 webview 能工作, 纯玩票叻 ref: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
-<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, user-scalable=no"> <title>AV</title> </head> <body> <canvas id="vis"></canvas> <audio id="av" src="YOUR_AUDIO_FILE"></audio> <script src="index.js"></script> </body> </html> window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById(&#39;vis&#39;); var canvasCtx = canvas.getContext(&#39;2d&#39;); var isPlaying = true; var audio = document.getElementById(&#39;av&#39;); var audioCtx = new AudioContext(); var analyser = audioCtx.'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2016-06-15T14:34:08+00:00"><meta property="article:modified_time" content="2016-06-15T14:34:08+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="web audio"><meta name=twitter:description content='照文档撸了一下 AudioContext 可视化音频
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, user-scalable=no"> <title>AV</title> </head> <body> <canvas id="vis"></canvas> <audio id="av" src="YOUR_AUDIO_FILE"></audio> <script src="index.js"></script> </body> </html> window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById(&#39;vis&#39;); var canvasCtx = canvas.getContext(&#39;2d&#39;); var isPlaying = true; var audio = document.getElementById(&#39;av&#39;); var audioCtx = new AudioContext(); var analyser = audioCtx.createAnalyser(); var audioSrc = audioCtx.createMediaElementSource(audio); audioSrc.connect(analyser); analyser.connect(audioCtx.destination); analyser.fftSize = 2048; var bufferLength = analyser.fftSize; dataArray = new Uint8Array(bufferLength); analyser.getByteTimeDomainData(dataArray); WIDTH = 500; HEIGHT = 150; function draw() { requestAnimationFrame(draw); if (!isPlaying) return; analyser.getByteTimeDomainData(dataArray); canvasCtx.fillStyle = &#39;rgb(200, 200, 200)&#39;; canvasCtx.fillRect(0, 0, WIDTH, HEIGHT); canvasCtx.lineWidth = 2; canvasCtx.strokeStyle = &#39;rgb(0, 0, 0)&#39;; canvasCtx.beginPath(); var sliceWidth = WIDTH * 1.0 / bufferLength; var x = 0; for(var i = 0; i < bufferLength; i++) { var v = dataArray[i] / 128.0; var y = v * HEIGHT/2; if(i === 0) { canvasCtx.moveTo(x, y); } else { canvasCtx.lineTo(x, y); } x += sliceWidth; } canvasCtx.lineTo(canvas.width, canvas.height/2); canvasCtx.stroke(); }; draw(); audio.play(); document.body.onclick = function() { console.log(audio, isPlaying); if (isPlaying) { audio.pause(); isPlaying = false; } else { audio.play(); isPlaying = true; } } } '><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2016-06-15T14:34:08+00:00"><meta property="article:modified_time" content="2016-06-15T14:34:08+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="web audio"><meta name=twitter:description content='照文档撸了一下 AudioContext 可视化音频
 桌面浏览器上 Safari 9, Chrome stable 绘制正常
 移动端只有微信的 webview 能工作, 纯玩票叻 ref: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
-<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, user-scalable=no"> <title>AV</title> </head> <body> <canvas id="vis"></canvas> <audio id="av" src="YOUR_AUDIO_FILE"></audio> <script src="index.js"></script> </body> </html> window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById(&#39;vis&#39;); var canvasCtx = canvas.getContext(&#39;2d&#39;); var isPlaying = true; var audio = document.getElementById(&#39;av&#39;); var audioCtx = new AudioContext(); var analyser = audioCtx.'><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, user-scalable=no"> <title>AV</title> </head> <body> <canvas id="vis"></canvas> <audio id="av" src="YOUR_AUDIO_FILE"></audio> <script src="index.js"></script> </body> </html> window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext; window.onload = function(){ var canvas = document.getElementById(&#39;vis&#39;); var canvasCtx = canvas.getContext(&#39;2d&#39;); var isPlaying = true; var audio = document.getElementById(&#39;av&#39;); var audioCtx = new AudioContext(); var analyser = audioCtx.createAnalyser(); var audioSrc = audioCtx.createMediaElementSource(audio); audioSrc.connect(analyser); analyser.connect(audioCtx.destination); analyser.fftSize = 2048; var bufferLength = analyser.fftSize; dataArray = new Uint8Array(bufferLength); analyser.getByteTimeDomainData(dataArray); WIDTH = 500; HEIGHT = 150; function draw() { requestAnimationFrame(draw); if (!isPlaying) return; analyser.getByteTimeDomainData(dataArray); canvasCtx.fillStyle = &#39;rgb(200, 200, 200)&#39;; canvasCtx.fillRect(0, 0, WIDTH, HEIGHT); canvasCtx.lineWidth = 2; canvasCtx.strokeStyle = &#39;rgb(0, 0, 0)&#39;; canvasCtx.beginPath(); var sliceWidth = WIDTH * 1.0 / bufferLength; var x = 0; for(var i = 0; i < bufferLength; i++) { var v = dataArray[i] / 128.0; var y = v * HEIGHT/2; if(i === 0) { canvasCtx.moveTo(x, y); } else { canvasCtx.lineTo(x, y); } x += sliceWidth; } canvasCtx.lineTo(canvas.width, canvas.height/2); canvasCtx.stroke(); }; draw(); audio.play(); document.body.onclick = function() { console.log(audio, isPlaying); if (isPlaying) { audio.pause(); isPlaying = false; } else { audio.play(); isPlaying = true; } } } '><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>web audio</h1><div class=meta>Posted on Jun 15, 2016</div></div><section class=body><p>照文档撸了一下 AudioContext 可视化音频<br>桌面浏览器上 Safari 9, Chrome stable 绘制正常<br>移动端只有微信的 webview 能工作, 纯玩票叻
 <img src=https://mdn.mozillademos.org/files/7977/wave.png alt=wave></p><p>ref:

@@ -1,3 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Self-Host on yányào.com</title><link>https://xn--ynyo-2nad.com/tags/self-host/</link><description>Recent content in Self-Host on yányào.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 01 Dec 2020 20:34:44 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/tags/self-host/index.xml" rel="self" type="application/rss+xml"/><item><title>Self Host Maddy Mail Server</title><link>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</link><pubDate>Tue, 01 Dec 2020 20:34:44 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</guid><description>maddy Composable all-in-one mail server. https://github.com/foxcpp/maddy
-准备自建系列服务替换掉 google 全家桶，先试了传统的 Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC 套餐，但是本人水平菜，机器配置也不高，折腾两天还没跑起来，正好看到订阅的 changelog 推荐了 maddy 1 于是搓搓手气试试这个邮局方案，以下是满足个人喜好的优点
-基于 golang 生态依赖少，方便打镜像 验证数据存在 sqlite 里也很轻量 没有 web 端，只需要 imap + thunderbird 即可 配置文件相对简单 install mkdir -p /data/maddy # hard link caddy&amp;#39;s crt and key to maddy ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/${domain}/${domain}.crt /data/maddy/${domain}.crt ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/${domain}/${domain}.key /data/maddy/${domain}.key # foxcpp/maddy:v0.4.2 podman run \ --name maddy \ -v /data/maddy:/data \ -p 25:25 \ -p 143:143 \ -p 587:587 \ -p 993:993 \ -p 465:465 \ yanyaoer/maddy:master # add user podman run --rm -it -v /data/maddy:/data --entrypoint /bin/maddyctl yanyaoer/maddy:master creds create yanyao@mail.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Self-Host on yányào.com</title><link>https://xn--ynyo-2nad.com/tags/self-host/</link><description>Recent content in Self-Host on yányào.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 01 Dec 2020 20:34:44 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/tags/self-host/index.xml" rel="self" type="application/rss+xml"/><item><title>Self Host Maddy Mail Server</title><link>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</link><pubDate>Tue, 01 Dec 2020 20:34:44 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</guid><description>&lt;h2 id="maddy">maddy&lt;/h2>
+&lt;blockquote>
+&lt;p>Composable all-in-one mail server. &lt;a href="https://github.com/foxcpp/maddy">https://github.com/foxcpp/maddy&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>准备自建系列服务替换掉 google 全家桶，先试了传统的 Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC 套餐，但是本人水平菜，机器配置也不高，折腾两天还没跑起来，正好看到订阅的 changelog 推荐了 maddy &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 于是搓搓手气试试这个邮局方案，以下是满足个人喜好的优点&lt;/p>
+&lt;ul>
+&lt;li>基于 golang 生态依赖少，方便打镜像&lt;/li>
+&lt;li>验证数据存在 sqlite 里也很轻量&lt;/li>
+&lt;li>没有 web 端，只需要 imap + thunderbird 即可&lt;/li>
+&lt;li>配置文件相对简单&lt;/li>
+&lt;/ul>
+&lt;h2 id="install">install&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p /data/maddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># hard link caddy&amp;#39;s crt and key to maddy&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.crt /data/maddy/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.crt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.key /data/maddy/&lt;span style="color:#2aa198">${&lt;/span>&lt;span style="color:#268bd2">domain&lt;/span>&lt;span style="color:#2aa198">}&lt;/span>.key
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># foxcpp/maddy:v0.4.2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>podman run &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> --name maddy &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -v /data/maddy:/data &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 25:25 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 143:143 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 587:587 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 993:993 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> -p 465:465 &lt;span style="color:#cb4b16">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cb4b16">&lt;/span> yanyaoer/maddy:master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"># add user&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>podman run --rm -it -v /data/maddy:/data --entrypoint /bin/maddyctl yanyaoer/maddy:master creds create yanyao@mail.yadanhe.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>参考文档配置&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 完后发送邮件对方可收，本地 thunderbird 接收回复邮件时有问题&lt;/p></description></item></channel></rss>

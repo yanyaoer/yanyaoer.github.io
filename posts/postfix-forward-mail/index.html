@@ -1,5 +1,22 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>forward email by postfix - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="sudo aptitude install postfix hostname -f # sudo vim /etc/postfix/main.cf myhostname = example.com myorigin = example.com mydestination = example1.com, example2.com, ... virtual_alias_maps = hash:/etc/postfix/virtual # sudo vim /etc/postfix/virtual @example1.com name@forward.com @example2.com name@forward.com sudo postmap /etc/postfix/virtual sudo /etc/init.d/postfix reload https://wiki.debian.org/Postfix#Forward_Emails
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>forward email by postfix - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="sudo aptitude install postfix
+hostname -f
+
+
+# sudo vim /etc/postfix/main.cf
+myhostname = example.com
+myorigin = example.com
+mydestination = example1.com, example2.com, ...
+virtual_alias_maps = hash:/etc/postfix/virtual
+
+# sudo vim /etc/postfix/virtual
+@example1.com    name@forward.com
+@example2.com    name@forward.com
+
+
+sudo postmap /etc/postfix/virtual
+sudo /etc/init.d/postfix reload
+https://wiki.debian.org/Postfix#Forward_Emails
 https://www.linode.com/docs/email/postfix/basic-postfix-email-gateway-on-debian-6-squeeze
 https://www.debian-administration.org/article/243/Handling_mail_for_multiple_virtual_domains_with_postfix"><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/postfix-forward-mail/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="forward email by postfix"><meta property="og:description" content="sudo aptitude install postfix hostname -f # sudo vim /etc/postfix/main.cf myhostname = example.com myorigin = example.com mydestination = example1.com, example2.com, ... virtual_alias_maps = hash:/etc/postfix/virtual # sudo vim /etc/postfix/virtual @example1.com name@forward.com @example2.com name@forward.com sudo postmap /etc/postfix/virtual sudo /etc/init.d/postfix reload https://wiki.debian.org/Postfix#Forward_Emails
 https://www.linode.com/docs/email/postfix/basic-postfix-email-gateway-on-debian-6-squeeze

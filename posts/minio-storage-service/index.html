@@ -1,11 +1,39 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Minio Storage Service - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content='min.io 来自前 glusterFS 团队的分布式存储项目， 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便， golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Minio Storage Service - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content='min.io 来自前 glusterFS 团队的分布式存储项目，
+兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便，
+golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务
 没有生产环境的使用经验，以下仅用于业余尝鲜 六一节礼物
-GNU/Linux 下载安装 wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio chmod +x /user/local/bin/minio 添加用户、组和配置文件 groupadd --system minio useradd --system --gid minio --shell /usr/sbin/nologin --comment "Minio file server" minio mkdir -p /data/minio chown -R minio:minio /data/minio # replace minio.service with your own config, eg. User,Group wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service 配置端口和密钥 # optional. run `uuidgen` to creates AK/SK cat <<EOF >> /tmp/minio MINIO_VOLUMES="/data/minio/" MINIO_OPTS="--address :9199" MINIO_ACCESS_KEY=`uuidgen` MINIO_SECRET_KEY=`uuidgen` EOF 启动服务 systemctl enable minio.'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/minio-storage-service/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Minio Storage Service"><meta property="og:description" content='min.io 来自前 glusterFS 团队的分布式存储项目， 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便， golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务
+GNU/Linux 下载安装
+wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio
+chmod +x /user/local/bin/minio
+添加用户、组和配置文件
+groupadd --system minio
+useradd --system --gid minio --shell /usr/sbin/nologin --comment "Minio file server" minio
+mkdir -p /data/minio
+chown -R minio:minio /data/minio
+
+# replace minio.service with your own config, eg. User,Group
+wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service
+配置端口和密钥
+# optional. run `uuidgen` to creates AK/SK
+
+cat <<EOF >> /tmp/minio
+MINIO_VOLUMES="/data/minio/"
+MINIO_OPTS="--address :9199"
+MINIO_ACCESS_KEY=`uuidgen`
+MINIO_SECRET_KEY=`uuidgen`
+
+EOF
+启动服务
+systemctl enable minio.service
+systemctl start minio.service
+客户端 mc
+使用说明参考官方文档好了，和 s3 命令行也没太多区别，
+甚至可以用来做 gcs/s3 代理用'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/minio-storage-service/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Minio Storage Service"><meta property="og:description" content='min.io 来自前 glusterFS 团队的分布式存储项目， 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便， golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务
 没有生产环境的使用经验，以下仅用于业余尝鲜 六一节礼物
-GNU/Linux 下载安装 wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio chmod +x /user/local/bin/minio 添加用户、组和配置文件 groupadd --system minio useradd --system --gid minio --shell /usr/sbin/nologin --comment "Minio file server" minio mkdir -p /data/minio chown -R minio:minio /data/minio # replace minio.service with your own config, eg. User,Group wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service 配置端口和密钥 # optional. run `uuidgen` to creates AK/SK cat <<EOF >> /tmp/minio MINIO_VOLUMES="/data/minio/" MINIO_OPTS="--address :9199" MINIO_ACCESS_KEY=`uuidgen` MINIO_SECRET_KEY=`uuidgen` EOF 启动服务 systemctl enable minio.'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-06-02T09:47:48+08:00"><meta property="article:modified_time" content="2020-06-02T09:47:48+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Minio Storage Service"><meta name=twitter:description content='min.io 来自前 glusterFS 团队的分布式存储项目， 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便， golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务
+GNU/Linux 下载安装 wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio chmod +x /user/local/bin/minio 添加用户、组和配置文件 groupadd --system minio useradd --system --gid minio --shell /usr/sbin/nologin --comment "Minio file server" minio mkdir -p /data/minio chown -R minio:minio /data/minio # replace minio.service with your own config, eg. User,Group wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service 配置端口和密钥 # optional. run `uuidgen` to creates AK/SK cat <<EOF >> /tmp/minio MINIO_VOLUMES="/data/minio/" MINIO_OPTS="--address :9199" MINIO_ACCESS_KEY=`uuidgen` MINIO_SECRET_KEY=`uuidgen` EOF 启动服务 systemctl enable minio.service systemctl start minio.service 客户端 mc 使用说明参考官方文档好了，和 s3 命令行也没太多区别， 甚至可以用来做 gcs/s3 代理用'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-06-02T09:47:48+08:00"><meta property="article:modified_time" content="2020-06-02T09:47:48+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Minio Storage Service"><meta name=twitter:description content='min.io 来自前 glusterFS 团队的分布式存储项目， 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便， golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务
 没有生产环境的使用经验，以下仅用于业余尝鲜 六一节礼物
-GNU/Linux 下载安装 wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio chmod +x /user/local/bin/minio 添加用户、组和配置文件 groupadd --system minio useradd --system --gid minio --shell /usr/sbin/nologin --comment "Minio file server" minio mkdir -p /data/minio chown -R minio:minio /data/minio # replace minio.service with your own config, eg. User,Group wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service 配置端口和密钥 # optional. run `uuidgen` to creates AK/SK cat <<EOF >> /tmp/minio MINIO_VOLUMES="/data/minio/" MINIO_OPTS="--address :9199" MINIO_ACCESS_KEY=`uuidgen` MINIO_SECRET_KEY=`uuidgen` EOF 启动服务 systemctl enable minio.'><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
+GNU/Linux 下载安装 wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio chmod +x /user/local/bin/minio 添加用户、组和配置文件 groupadd --system minio useradd --system --gid minio --shell /usr/sbin/nologin --comment "Minio file server" minio mkdir -p /data/minio chown -R minio:minio /data/minio # replace minio.service with your own config, eg. User,Group wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service 配置端口和密钥 # optional. run `uuidgen` to creates AK/SK cat <<EOF >> /tmp/minio MINIO_VOLUMES="/data/minio/" MINIO_OPTS="--address :9199" MINIO_ACCESS_KEY=`uuidgen` MINIO_SECRET_KEY=`uuidgen` EOF 启动服务 systemctl enable minio.service systemctl start minio.service 客户端 mc 使用说明参考官方文档好了，和 s3 命令行也没太多区别， 甚至可以用来做 gcs/s3 代理用'><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>Minio Storage Service</h1><div class=meta>Posted on Jun 2, 2020</div></div><section class=body><p><a href=https://min.io>min.io</a> 来自前 glusterFS 团队的分布式存储项目，
 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便，

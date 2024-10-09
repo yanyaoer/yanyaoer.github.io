@@ -1,8 +1,44 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>mongodb backup - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content='有台机器准备2月份下架 记一个 mongodb 备份小脚本 :)
-#!/bin/bash # vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8: MONGO_DATABASE="_name_" MONGO_HOST="_ip_" MONGO_PORT="_prot_" TIMESTAMP=`date +%Y-%m-%dT%H:%M:%S` MONGODUMP_PATH="/usr/bin/mongodump" BACKUPS_DIR="/data/dumps/" BACKUP_NAME="$MONGO_DATABASE-$TIMESTAMP" while test $# -gt 0 do case "$1" in -m) echo "backup mongthly and clear week_dir" #rm $BACKUPS_DIR"week/*" find $BACKUPS_DIR"week" -type f -name &#39;*.tgz&#39; -delete tar -czPf $BACKUPS_DIR"month/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE ;; -w) echo "backup weekly" echo "tar -czPf $BACKUPS_DIR"week/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE" ;; -d) echo "just dump" $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR ;; *) echo "do nothing" ;; esac shift done # crontab -e 10 3 * * * /bin/bash $HOME/bin/mongobackup.'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/mongodb-backup/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="mongodb backup"><meta property="og:description" content='有台机器准备2月份下架 记一个 mongodb 备份小脚本 :)
-#!/bin/bash # vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8: MONGO_DATABASE="_name_" MONGO_HOST="_ip_" MONGO_PORT="_prot_" TIMESTAMP=`date +%Y-%m-%dT%H:%M:%S` MONGODUMP_PATH="/usr/bin/mongodump" BACKUPS_DIR="/data/dumps/" BACKUP_NAME="$MONGO_DATABASE-$TIMESTAMP" while test $# -gt 0 do case "$1" in -m) echo "backup mongthly and clear week_dir" #rm $BACKUPS_DIR"week/*" find $BACKUPS_DIR"week" -type f -name &#39;*.tgz&#39; -delete tar -czPf $BACKUPS_DIR"month/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE ;; -w) echo "backup weekly" echo "tar -czPf $BACKUPS_DIR"week/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE" ;; -d) echo "just dump" $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR ;; *) echo "do nothing" ;; esac shift done # crontab -e 10 3 * * * /bin/bash $HOME/bin/mongobackup.'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-12-22T13:30:24+00:00"><meta property="article:modified_time" content="2015-12-22T13:30:24+00:00"><meta property="article:tag" content="Backup"><meta property="article:tag" content="Mongodb"><meta property="article:tag" content="Cronjob"><meta name=twitter:card content="summary"><meta name=twitter:title content="mongodb backup"><meta name=twitter:description content='有台机器准备2月份下架 记一个 mongodb 备份小脚本 :)
-#!/bin/bash # vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8: MONGO_DATABASE="_name_" MONGO_HOST="_ip_" MONGO_PORT="_prot_" TIMESTAMP=`date +%Y-%m-%dT%H:%M:%S` MONGODUMP_PATH="/usr/bin/mongodump" BACKUPS_DIR="/data/dumps/" BACKUP_NAME="$MONGO_DATABASE-$TIMESTAMP" while test $# -gt 0 do case "$1" in -m) echo "backup mongthly and clear week_dir" #rm $BACKUPS_DIR"week/*" find $BACKUPS_DIR"week" -type f -name &#39;*.tgz&#39; -delete tar -czPf $BACKUPS_DIR"month/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE ;; -w) echo "backup weekly" echo "tar -czPf $BACKUPS_DIR"week/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE" ;; -d) echo "just dump" $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR ;; *) echo "do nothing" ;; esac shift done # crontab -e 10 3 * * * /bin/bash $HOME/bin/mongobackup.'><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>mongodb backup - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content='有台机器准备2月份下架
+记一个 mongodb 备份小脚本 :)
+#!/bin/bash
+# vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8:
+
+MONGO_DATABASE="_name_"
+
+MONGO_HOST="_ip_"
+MONGO_PORT="_prot_"
+TIMESTAMP=`date +%Y-%m-%dT%H:%M:%S`
+MONGODUMP_PATH="/usr/bin/mongodump"
+BACKUPS_DIR="/data/dumps/"
+BACKUP_NAME="$MONGO_DATABASE-$TIMESTAMP"
+
+while test $# -gt 0
+do
+  case "$1" in
+    -m) echo "backup mongthly and clear week_dir"
+      #rm $BACKUPS_DIR"week/*"
+      find $BACKUPS_DIR"week" -type f -name &#39;*.tgz&#39; -delete
+      tar -czPf $BACKUPS_DIR"month/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE
+      ;;
+    -w) echo "backup weekly"
+      echo "tar -czPf $BACKUPS_DIR"week/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE"
+      ;;
+    -d) echo "just dump"
+      $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR
+      ;;
+    *) echo "do nothing"
+      ;;
+  esac
+  shift
+done
+# crontab -e
+10 3 * * * /bin/bash $HOME/bin/mongobackup.sh -d > /dev/null 2>&amp;1
+20 3 * * 1 /bin/bash $HOME/bin/mongobackup.sh -w > /dev/null 2>&amp;1
+30 3 1 * * /bin/bash $HOME/bin/mongobackup.sh -m > /dev/null 2>&amp;1
+每天早上3点按天／周／月分别保存'><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/mongodb-backup/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="mongodb backup"><meta property="og:description" content='有台机器准备2月份下架 记一个 mongodb 备份小脚本 :)
+#!/bin/bash # vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8: MONGO_DATABASE="_name_" MONGO_HOST="_ip_" MONGO_PORT="_prot_" TIMESTAMP=`date +%Y-%m-%dT%H:%M:%S` MONGODUMP_PATH="/usr/bin/mongodump" BACKUPS_DIR="/data/dumps/" BACKUP_NAME="$MONGO_DATABASE-$TIMESTAMP" while test $# -gt 0 do case "$1" in -m) echo "backup mongthly and clear week_dir" #rm $BACKUPS_DIR"week/*" find $BACKUPS_DIR"week" -type f -name &#39;*.tgz&#39; -delete tar -czPf $BACKUPS_DIR"month/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE ;; -w) echo "backup weekly" echo "tar -czPf $BACKUPS_DIR"week/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE" ;; -d) echo "just dump" $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR ;; *) echo "do nothing" ;; esac shift done # crontab -e 10 3 * * * /bin/bash $HOME/bin/mongobackup.sh -d > /dev/null 2>&amp;1 20 3 * * 1 /bin/bash $HOME/bin/mongobackup.sh -w > /dev/null 2>&amp;1 30 3 1 * * /bin/bash $HOME/bin/mongobackup.sh -m > /dev/null 2>&amp;1 每天早上3点按天／周／月分别保存'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-12-22T13:30:24+00:00"><meta property="article:modified_time" content="2015-12-22T13:30:24+00:00"><meta property="article:tag" content="Backup"><meta property="article:tag" content="Mongodb"><meta property="article:tag" content="Cronjob"><meta name=twitter:card content="summary"><meta name=twitter:title content="mongodb backup"><meta name=twitter:description content='有台机器准备2月份下架 记一个 mongodb 备份小脚本 :)
+#!/bin/bash # vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8: MONGO_DATABASE="_name_" MONGO_HOST="_ip_" MONGO_PORT="_prot_" TIMESTAMP=`date +%Y-%m-%dT%H:%M:%S` MONGODUMP_PATH="/usr/bin/mongodump" BACKUPS_DIR="/data/dumps/" BACKUP_NAME="$MONGO_DATABASE-$TIMESTAMP" while test $# -gt 0 do case "$1" in -m) echo "backup mongthly and clear week_dir" #rm $BACKUPS_DIR"week/*" find $BACKUPS_DIR"week" -type f -name &#39;*.tgz&#39; -delete tar -czPf $BACKUPS_DIR"month/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE ;; -w) echo "backup weekly" echo "tar -czPf $BACKUPS_DIR"week/"$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE" ;; -d) echo "just dump" $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR ;; *) echo "do nothing" ;; esac shift done # crontab -e 10 3 * * * /bin/bash $HOME/bin/mongobackup.sh -d > /dev/null 2>&amp;1 20 3 * * 1 /bin/bash $HOME/bin/mongobackup.sh -w > /dev/null 2>&amp;1 30 3 1 * * /bin/bash $HOME/bin/mongobackup.sh -m > /dev/null 2>&amp;1 每天早上3点按天／周／月分别保存'><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>mongodb backup</h1><div class=meta>Posted on Dec 22, 2015</div></div><section class=body><p>有台机器准备2月份下架
 记一个 mongodb 备份小脚本 :)</p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#719e07>#!/bin/bash

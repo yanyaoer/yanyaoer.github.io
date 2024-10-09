@@ -1,15 +1,42 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>let's encrypt - yányào.com</title><meta name=viewport content="width=device-width,initial-scale=1">
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>let's encrypt - yányào.com</title><link rel=icon type=image/png href=#ZgotmplZ><meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Let&rsquo;s Encrypt 已经公开测试，不需要再提交测试域名表单，直接就能申请
 小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦
 照 文档 做一遍给域名签上证书还挺简单的
-# 获取项目代码 git clone https://github.com/letsencrypt/letsencrypt cd letsencrypt # 安装依赖 ./letsencrypt-auto # 获取证书 ./letsencrypt-auto certonly --standalone -d www.example.com -d example.com # 配置 nginx server { listen 443 ; ssl on; ssl_certificate_key /etc/letsencrypt/live/youdomain/privkey.pem; ssl_certificate /etc/letsencrypt/live/youdomain/fullchain.pem; } 需要注意的是 dnspod 等国内服务解析域名有问题
+
+# 获取项目代码
+git clone https://github.com/letsencrypt/letsencrypt
+cd letsencrypt
+
+# 安装依赖
+./letsencrypt-auto
+
+# 获取证书
+./letsencrypt-auto certonly --standalone -d www.example.com -d example.com
+# 配置 nginx
+server {
+  listen 443 ;
+  ssl on;
+  ssl_certificate_key /etc/letsencrypt/live/youdomain/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/youdomain/fullchain.pem;
+}
+需要注意的是 dnspod 等国内服务解析域名有问题
 我这里直接切回 domains.google.com 就行了
 使用 standalone 模式需要先停掉默认的 nginx
-文档里提到可以使用 webroot 模式不用停 但我创建验证文件失败了 :(
+文档里提到可以使用 webroot 模式不用停
+但我创建验证文件失败了 :(
 默认90天过期，建议 crontab 定时更新
 ###Update
 使用 acme.sh
-An ACME protocol client written purely in Shell (Unix shell) language."><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/let-s-encrypt/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="let's encrypt"><meta property="og:description" content="Let’s Encrypt 已经公开测试，不需要再提交测试域名表单，直接就能申请
+
+An ACME protocol client written purely in Shell (Unix shell) language.
+Fully ACME protocol implementation.
+Simple, powerful and very easy to use. You only need 3 minutes to learn.
+Bash, dash and sh compatible.
+Simplest shell script for Let&rsquo;s Encrypt free certificate client.
+Purely written in Shell with no dependencies on python or Let&rsquo;s Encrypt official client.
+Just one script, to issue, renew and install your certificates automatically.
+
+或者 caddyserver"><meta property="og:image" content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/let-s-encrypt/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="let's encrypt"><meta property="og:description" content="Let’s Encrypt 已经公开测试，不需要再提交测试域名表单，直接就能申请
 小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦
 照 文档 做一遍给域名签上证书还挺简单的
 # 获取项目代码 git clone https://github.com/letsencrypt/letsencrypt cd letsencrypt # 安装依赖 ./letsencrypt-auto # 获取证书 ./letsencrypt-auto certonly --standalone -d www.example.com -d example.com # 配置 nginx server { listen 443 ; ssl on; ssl_certificate_key /etc/letsencrypt/live/youdomain/privkey.pem; ssl_certificate /etc/letsencrypt/live/youdomain/fullchain.pem; } 需要注意的是 dnspod 等国内服务解析域名有问题
@@ -19,7 +46,7 @@ An ACME protocol client written purely in Shell (Unix shell) language."><meta pr
 默认90天过期，建议 crontab 定时更新
 ###Update
 使用 acme.sh
-An ACME protocol client written purely in Shell (Unix shell) language."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-12-14T23:35:49+00:00"><meta property="article:modified_time" content="2015-12-14T23:35:49+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="let's encrypt"><meta name=twitter:description content="Let’s Encrypt 已经公开测试，不需要再提交测试域名表单，直接就能申请
+An ACME protocol client written purely in Shell (Unix shell) language. Fully ACME protocol implementation. Simple, powerful and very easy to use. You only need 3 minutes to learn. Bash, dash and sh compatible. Simplest shell script for Let’s Encrypt free certificate client. Purely written in Shell with no dependencies on python or Let’s Encrypt official client. Just one script, to issue, renew and install your certificates automatically. 或者 caddyserver"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-12-14T23:35:49+00:00"><meta property="article:modified_time" content="2015-12-14T23:35:49+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="let's encrypt"><meta name=twitter:description content="Let’s Encrypt 已经公开测试，不需要再提交测试域名表单，直接就能申请
 小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦
 照 文档 做一遍给域名签上证书还挺简单的
 # 获取项目代码 git clone https://github.com/letsencrypt/letsencrypt cd letsencrypt # 安装依赖 ./letsencrypt-auto # 获取证书 ./letsencrypt-auto certonly --standalone -d www.example.com -d example.com # 配置 nginx server { listen 443 ; ssl on; ssl_certificate_key /etc/letsencrypt/live/youdomain/privkey.pem; ssl_certificate /etc/letsencrypt/live/youdomain/fullchain.pem; } 需要注意的是 dnspod 等国内服务解析域名有问题
@@ -29,7 +56,7 @@ An ACME protocol client written purely in Shell (Unix shell) language."><meta pr
 默认90天过期，建议 crontab 定时更新
 ###Update
 使用 acme.sh
-An ACME protocol client written purely in Shell (Unix shell) language."><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
+An ACME protocol client written purely in Shell (Unix shell) language. Fully ACME protocol implementation. Simple, powerful and very easy to use. You only need 3 minutes to learn. Bash, dash and sh compatible. Simplest shell script for Let’s Encrypt free certificate client. Purely written in Shell with no dependencies on python or Let’s Encrypt official client. Just one script, to issue, renew and install your certificates automatically. 或者 caddyserver"><script src=https://xn--ynyo-2nad.com/js/feather.min.js></script><link href=https://xn--ynyo-2nad.com/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://xn--ynyo-2nad.com/css/main.5cebd7d4fb2b97856af8d32a6def16164fcf7d844e98e236fcb3559655020373.css></head><body><div class=content><header><div class=main><a href=https://xn--ynyo-2nad.com/>yányào.com</a></div><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/tags>Tags</a></nav></header><main><article><div class=title><h1 class=title>let's encrypt</h1><div class=meta>Posted on Dec 14, 2015</div></div><section class=body><p><a href=https://letsencrypt.org>Let&rsquo;s Encrypt</a> 已经公开测试，不需要再提交测试域名表单，直接就能申请<br>小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦</p><p>照 <a href=https://letsencrypt.readthedocs.org/en/latest/using.html>文档</a> 做一遍给域名签上证书还挺简单的</p><p><img src=images/ssl.jpg alt=ssl></p><div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#586e75># 获取项目代码</span>
 </span></span><span style=display:flex><span>git clone https://github.com/letsencrypt/letsencrypt

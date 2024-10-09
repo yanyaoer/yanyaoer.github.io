@@ -1,3 +1,107 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Crawler on yányào.com</title><link>https://xn--ynyo-2nad.com/tags/crawler/</link><description>Recent content in Crawler on yányào.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 17 Oct 2015 12:06:21 +0000</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/tags/crawler/index.xml" rel="self" type="application/rss+xml"/><item><title>simple crawler</title><link>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</link><pubDate>Sat, 17 Oct 2015 12:06:21 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</guid><description>半夜看了本小说觉得翻页太累
-首先要解决的问题是找一个质量还过得去的小说站 然后写个脚本去把它爬下来章节合并到一起
-import fs from &amp;#34;fs&amp;#34;; import { argv } from &amp;#34;process&amp;#34;; import request from &amp;#34;request&amp;#34;; import cheerio from &amp;#34;cheerio&amp;#34;; import iconv from &amp;#34;iconv-lite&amp;#34;; import sanitize from &amp;#39;sanitize-html&amp;#39;; class main { constructor() { Object.assign(this, { path: &amp;#39;./chapter.json&amp;#39;, html: &amp;#39;./reader.html&amp;#39;, url: { list: &amp;#39;http://www.piaotian.net/html/6/6658/&amp;#39; }, store: [] }) } fetch(url, callback) { request.get(url, {encoding: null}, (error, response, body)=&amp;gt; { if (!error &amp;amp;&amp;amp; response.statusCode == 200) { let $ = cheerio.load(iconv.decode(body, &amp;#39;GBK&amp;#39;)); callback($, body); } else { console.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Crawler on yányào.com</title><link>https://xn--ynyo-2nad.com/tags/crawler/</link><description>Recent content in Crawler on yányào.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 17 Oct 2015 12:06:21 +0000</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/tags/crawler/index.xml" rel="self" type="application/rss+xml"/><item><title>simple crawler</title><link>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</link><pubDate>Sat, 17 Oct 2015 12:06:21 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</guid><description>&lt;p>半夜看了本&lt;a href="http://www.qidian.com/Book/3313422.aspx">小说&lt;/a>觉得翻页太累&lt;/p>
+&lt;p>首先要解决的问题是找一个质量还过得去的小说站
+然后写个&lt;a href="https://github.com/yanyaoer/crawler">脚本&lt;/a>去把它爬下来章节合并到一起&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> fs from &lt;span style="color:#2aa198">&amp;#34;fs&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> { argv } from &lt;span style="color:#2aa198">&amp;#34;process&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> request from &lt;span style="color:#2aa198">&amp;#34;request&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> cheerio from &lt;span style="color:#2aa198">&amp;#34;cheerio&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> iconv from &lt;span style="color:#2aa198">&amp;#34;iconv-lite&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">import&lt;/span> sanitize from &lt;span style="color:#2aa198">&amp;#39;sanitize-html&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#268bd2">class&lt;/span> main {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constructor() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b58900">Object&lt;/span>.assign(&lt;span style="color:#719e07">this&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#39;./chapter.json&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> html&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#39;./reader.html&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url&lt;span style="color:#719e07">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#2aa198">&amp;#39;http://www.piaotian.net/html/6/6658/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> store&lt;span style="color:#719e07">:&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fetch(url, callback) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> request.get(url, {encoding&lt;span style="color:#719e07">:&lt;/span> &lt;span style="color:#cb4b16">null&lt;/span>}, (error, response, body)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (&lt;span style="color:#719e07">!&lt;/span>error &lt;span style="color:#719e07">&amp;amp;&amp;amp;&lt;/span> response.statusCode &lt;span style="color:#719e07">==&lt;/span> &lt;span style="color:#2aa198">200&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> $ &lt;span style="color:#719e07">=&lt;/span> cheerio.load(iconv.decode(body, &lt;span style="color:#2aa198">&amp;#39;GBK&amp;#39;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> callback($, body);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#719e07">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(url);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> runchapter() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store.map(d=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (&lt;span style="color:#719e07">!&lt;/span>d.content) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.fetch(&lt;span style="color:#719e07">this&lt;/span>.url.list &lt;span style="color:#719e07">+&lt;/span> d.href, ($, body)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> content &lt;span style="color:#719e07">=&lt;/span> iconv.decode(body, &lt;span style="color:#2aa198">&amp;#39;GBK&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d.content &lt;span style="color:#719e07">=&lt;/span> sanitize(content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.save();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#719e07">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;runchapter fail: &amp;#39;&lt;/span>, d.id, d.title);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.output();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#586e75">//let content = this.store.slice(0, 2)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75">&lt;/span> &lt;span style="color:#268bd2">let&lt;/span> content &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#719e07">this&lt;/span>.store
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .map(d=&amp;gt; d.content)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .join(&lt;span style="color:#2aa198">&amp;#39;&amp;lt;hr /&amp;gt;&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> html &lt;span style="color:#719e07">=&lt;/span> &lt;span style="color:#586e75">`&amp;lt;html&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;head&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;meta charset=&amp;#34;utf8&amp;#34; /&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> ul, table, div {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> display: none;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> hr {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> height: 1px;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> margin: 4rem 0;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> body {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> padding: 0 20%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> font:24px/1.5 &amp;#39;Songti Sc&amp;#39;;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;/style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;/head&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#586e75"> &amp;lt;body&amp;gt;&lt;/span>&lt;span style="color:#2aa198">${&lt;/span>content&lt;span style="color:#2aa198">}&lt;/span>&lt;span style="color:#586e75">&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fs.writeFileSync(&lt;span style="color:#719e07">this&lt;/span>.html, html, &lt;span style="color:#2aa198">&amp;#39;utf8&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reload() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.fetch(&lt;span style="color:#719e07">this&lt;/span>.url.list, ($)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store &lt;span style="color:#719e07">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $(&lt;span style="color:#2aa198">&amp;#39;.mainbody .centent ul li a&amp;#39;&lt;/span>).map((id, d)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> el &lt;span style="color:#719e07">=&lt;/span> $(d);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> href &lt;span style="color:#719e07">=&lt;/span> el.attr(&lt;span style="color:#2aa198">&amp;#39;href&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (&lt;span style="color:#719e07">!&lt;/span>href.endsWith(&lt;span style="color:#2aa198">&amp;#39;.html&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store.push({ id, href, title&lt;span style="color:#719e07">:&lt;/span> el.text() })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.save();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.runchapter();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config(force){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">if&lt;/span> (force) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.reload();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } esle {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> text &lt;span style="color:#719e07">=&lt;/span> fs.readFileSync(&lt;span style="color:#719e07">this&lt;/span>.path, &lt;span style="color:#2aa198">&amp;#39;utf8&amp;#39;&lt;/span>).toString();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.store &lt;span style="color:#719e07">=&lt;/span> JSON.parse(text);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.runchapter();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> save() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fs.writeFileSync(&lt;span style="color:#719e07">this&lt;/span>.path, JSON.stringify(&lt;span style="color:#719e07">this&lt;/span>.store), &lt;span style="color:#2aa198">&amp;#39;utf8&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> init() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#268bd2">let&lt;/span> force &lt;span style="color:#719e07">=&lt;/span> argv[&lt;span style="color:#2aa198">2&lt;/span>] &lt;span style="color:#719e07">===&lt;/span> &lt;span style="color:#2aa198">&amp;#39;-f&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#2aa198">&amp;#39;run: &amp;#39;&lt;/span>, argv[&lt;span style="color:#2aa198">2&lt;/span>], force);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#719e07">this&lt;/span>.config(force);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#719e07">new&lt;/span> main().init();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>于是就水出来一篇日志啦&lt;/p></description></item></channel></rss>
