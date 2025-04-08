@@ -66,8 +66,7 @@ PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-
 &lt;li>autopilot 模式在跑高速时非常愉悦，车道保持比我打方向顺滑多了，跟前车保持车距也很可靠，另外养成了并线前一定先打灯的习惯，否则车子会自己修正。能称为瑕疵的就是自动刹车不够线性，乘客会有明显的拉扯感甚至点头；拥堵路段还得切回手动模式，跟车距离在我这边太容易被加塞&lt;/li>
 &lt;/ul></description></item><item><title>Self Host Maddy Mail Server</title><link>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</link><pubDate>Tue, 01 Dec 2020 20:34:44 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</guid><description>&lt;h2 id="maddy">maddy&lt;/h2>
 &lt;blockquote>
-&lt;p>Composable all-in-one mail server. &lt;a href="https://github.com/foxcpp/maddy">https://github.com/foxcpp/maddy&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;p>Composable all-in-one mail server. &lt;a href="https://github.com/foxcpp/maddy">https://github.com/foxcpp/maddy&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>准备自建系列服务替换掉 google 全家桶，先试了传统的 Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC 套餐，但是本人水平菜，机器配置也不高，折腾两天还没跑起来，正好看到订阅的 changelog 推荐了 maddy &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 于是搓搓手气试试这个邮局方案，以下是满足个人喜好的优点&lt;/p>
 &lt;ul>
 &lt;li>基于 golang 生态依赖少，方便打镜像&lt;/li>
@@ -130,18 +129,18 @@ PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">add-ons&lt;/th>
- &lt;th style="text-align: left">link&lt;/th>
+ &lt;th>add-ons&lt;/th>
+ &lt;th>link&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">quicklook&lt;/td>
- &lt;td style="text-align: left">&lt;a href="https://github.com/mronkko/ZoteroQuickLook/releases">https://github.com/mronkko/ZoteroQuickLook/releases&lt;/a>&lt;/td>
+ &lt;td>quicklook&lt;/td>
+ &lt;td>&lt;a href="https://github.com/mronkko/ZoteroQuickLook/releases">https://github.com/mronkko/ZoteroQuickLook/releases&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">markdown&lt;/td>
- &lt;td style="text-align: left">&lt;a href="https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/">https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/&lt;/a>&lt;/td>
+ &lt;td>markdown&lt;/td>
+ &lt;td>&lt;a href="https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/">https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/&lt;/a>&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
@@ -280,22 +279,14 @@ golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建�
 &lt;p>每天一早 &lt;del>中午&lt;/del> 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水&lt;/p>
 &lt;p>手法就比较 &lt;del>随意&lt;/del> 业余啦，主要参考下面两个视频，出品大概率自己都还挺喜欢的
 &lt;strong>按比例加注水量翻倍&lt;/strong>&lt;/p>
-&lt;h3 id="46-method-by-tetsu-kasuya-4-6method">&amp;ldquo;4:6 method&amp;rdquo; by Tetsu Kasuya &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/h3>
-
-
- 
- &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wmCW8xSWGZY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
- >&lt;/iframe>
+&lt;h3 id="46-method-by-tetsu-kasuya">&amp;ldquo;4:6 method&amp;rdquo; by Tetsu Kasuya &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/h3>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wmCW8xSWGZY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
  &lt;/div>
 
 &lt;h3 id="the-ultimate-v60-technique-by-james-hoffmann">&amp;ldquo;The Ultimate V60 Technique&amp;rdquo; by James Hoffmann&lt;/h3>
-
-
- 
- &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AI4ynXzkSQo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
- >&lt;/iframe>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AI4ynXzkSQo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
  &lt;/div>
 
 &lt;h2 id="家庭版">家庭版&lt;/h2>
@@ -582,8 +573,7 @@ tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>move to caddy</title><link>https://xn--ynyo-2nad.com/posts/move-to-caddy/</link><pubDate>Tue, 26 Apr 2016 06:41:13 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/move-to-caddy/</guid><description>&lt;p>去年用 Hexo 搭建的日志已经好几个月没更新了，最近休假有点空闲就继续更新吧。&lt;br>
 先从 Github 迁移回自己的 Linode，然后安装一个 Caddyserver&lt;a href="https://caddyserver.com/">1&lt;/a> 来渲染 markdown&lt;/p>
 &lt;blockquote>
-&lt;p>Caddy is a unique web server with a modern feature set. Think nginx or Apache, but written in Go. With Caddy, you can serve your websites over HTTP/2. It can act as a reverse proxy and load balancer. Front your PHP apps with it. You can even deploy your site with git push. Cool, right?&lt;a href="https://blog.gopheracademy.com/caddy-a-look-inside/">2&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;p>Caddy is a unique web server with a modern feature set. Think nginx or Apache, but written in Go. With Caddy, you can serve your websites over HTTP/2. It can act as a reverse proxy and load balancer. Front your PHP apps with it. You can even deploy your site with git push. Cool, right?&lt;a href="https://blog.gopheracademy.com/caddy-a-look-inside/">2&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;h2 id="download-and-install-systemd">Download and install systemd&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget -O &lt;span style="color:#2aa198">&amp;#39;caddy.tar.gz&amp;#39;&lt;/span> &lt;span style="color:#2aa198">&amp;#39;https://caddyserver.com/download/build?os=linux&amp;amp;arch=amd64&amp;amp;features=git%2Cipfilter&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxf caddy.tar.gz

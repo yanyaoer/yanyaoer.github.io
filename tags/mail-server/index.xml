@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mail-Server on yányào.com</title><link>https://xn--ynyo-2nad.com/tags/mail-server/</link><description>Recent content in Mail-Server on yányào.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 01 Dec 2020 20:34:44 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/tags/mail-server/index.xml" rel="self" type="application/rss+xml"/><item><title>Self Host Maddy Mail Server</title><link>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</link><pubDate>Tue, 01 Dec 2020 20:34:44 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/self-host-maddy-mail-server/</guid><description>&lt;h2 id="maddy">maddy&lt;/h2>
 &lt;blockquote>
-&lt;p>Composable all-in-one mail server. &lt;a href="https://github.com/foxcpp/maddy">https://github.com/foxcpp/maddy&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;p>Composable all-in-one mail server. &lt;a href="https://github.com/foxcpp/maddy">https://github.com/foxcpp/maddy&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>准备自建系列服务替换掉 google 全家桶，先试了传统的 Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC 套餐，但是本人水平菜，机器配置也不高，折腾两天还没跑起来，正好看到订阅的 changelog 推荐了 maddy &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 于是搓搓手气试试这个邮局方案，以下是满足个人喜好的优点&lt;/p>
 &lt;ul>
 &lt;li>基于 golang 生态依赖少，方便打镜像&lt;/li>
