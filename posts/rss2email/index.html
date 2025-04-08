@@ -1,0 +1,76 @@
+<!doctype html><html lang=en-US><head><meta http-equiv=X-Clacks-Overhead content="GNU Terry Pratchett"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=#ZgotmplZ><title>Rss2email | yányào.com</title>
+<meta name=title content="Rss2email"><meta name=description content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了，
+这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容，
+当然备选方案也不少:
+
+https://github.com/miniflux/miniflux
+https://github.com/SSilence/selfoss
+https://github.com/FreshRSS/FreshRSS
+https://git.tt-rss.org/fox/tt-rss
+
+出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
+安装配置
+rss2email 的安装到简单，参考 官方文档
+直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True，
+在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去，
+就配上 imap.google 账户自己发给自己啦～
+从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
+需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
+update: 2020-09-18 17:34:49
+修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
+定时任务
+现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置"><meta name=keywords content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/rss2email/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Rss2email"><meta property="og:description" content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
+https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https://github.com/FreshRSS/FreshRSS https://git.tt-rss.org/fox/tt-rss 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
+安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
+从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
+需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
+update: 2020-09-18 17:34:49
+修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
+定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-06-23T18:58:30+08:00"><meta property="article:modified_time" content="2020-06-23T18:58:30+08:00"><meta property="og:image" content="https://xn--ynyo-2nad.com/images/share.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xn--ynyo-2nad.com/images/share.png"><meta name=twitter:title content="Rss2email"><meta name=twitter:description content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
+https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https://github.com/FreshRSS/FreshRSS https://git.tt-rss.org/fox/tt-rss 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
+安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
+从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
+需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
+update: 2020-09-18 17:34:49
+修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
+定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置"><meta itemprop=name content="Rss2email"><meta itemprop=description content="距离上次从 https://blogtrottr.com 迁移 rss 订阅到 feedly 差不多五六年了， 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容， 当然备选方案也不少:
+https://github.com/miniflux/miniflux https://github.com/SSilence/selfoss https://github.com/FreshRSS/FreshRSS https://git.tt-rss.org/fox/tt-rss 出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新
+安装配置 rss2email 的安装到简单，参考 官方文档 直接 apt install rss2email，默认配置会发送文本邮件，修改 html-mail=True， 在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去， 就配上 imap.google 账户自己发给自己啦～
+从 feedly 导出 opml 文件然后 r2e opmlimport 完事大吉
+需要注意的是，在 r2e run 的执行过程中对配置文件进行修改非常容易被覆盖 1，不要同时搞太多操作就好，
+update: 2020-09-18 17:34:49
+修改参数 force-from = True，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败
+定时任务 现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 $HOME/.config/systemd/user 写入定时任务配置"><meta itemprop=datePublished content="2020-06-23T18:58:30+08:00"><meta itemprop=dateModified content="2020-06-23T18:58:30+08:00"><meta itemprop=wordCount content="185"><meta itemprop=image content="https://xn--ynyo-2nad.com/images/share.png"><meta name=referrer content="no-referrer-when-downgrade"><style>:root{--width:720px;--font-main:Verdana, sans-serif;--font-secondary:Verdana, sans-serif;--font-scale:1em;--background-color:#fff;--heading-color:#222;--text-color:#444;--link-color:#3273dc;--visited-color:#8b6fcb;--code-background-color:#f2f2f2;--code-color:#222;--blockquote-color:#222}@media(prefers-color-scheme:dark){:root{--background-color:#01242e;--heading-color:#eee;--text-color:#ddd;--link-color:#8cc2dd;--visited-color:#8b6fcb;--code-background-color:#000;--code-color:#ddd;--blockquote-color:#ccc}}body{font-family:var(--font-secondary);font-size:var(--font-scale);margin:auto;padding:20px;max-width:var(--width);text-align:left;background-color:var(--background-color);word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:var(--text-color)}h1,h2,h3,h4,h5,h6{font-family:var(--font-main);color:var(--heading-color)}a{color:var(--link-color);cursor:pointer;text-decoration:none}a:hover{text-decoration:underline}nav a{margin-right:8px}strong,b{color:var(--heading-color)}button{margin:0;cursor:pointer}time{font-family:monospace;font-style:normal;font-size:15px}main{line-height:1.6}table{width:100%}hr{border:0;border-top:1px dashed}img{max-width:100%}code{font-family:monospace;padding:2px;background-color:var(--code-background-color);color:var(--code-color);border-radius:3px}blockquote{border-left:1px solid #999;color:var(--code-color);padding-left:20px;font-style:italic}footer{padding:25px 0;text-align:center}.title:hover{text-decoration:none}.title h1{font-size:1.5em}.inline{width:auto!important}.highlight,.code{padding:1px 15px;background-color:var(--code-background-color);color:var(--code-color);border-radius:3px;margin-block-start:1em;margin-block-end:1em;overflow-x:auto}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:var(--visited-color)}</style></head><body><header><a href=/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a></nav></header><main><content><p>距离上次从 <a href=https://blogtrottr.com>https://blogtrottr.com</a> 迁移 rss 订阅到 feedly 差不多五六年了，
+这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容，
+当然备选方案也不少:</p><ul><li><a href=https://github.com/miniflux/miniflux>https://github.com/miniflux/miniflux</a></li><li><a href=https://github.com/SSilence/selfoss>https://github.com/SSilence/selfoss</a></li><li><a href=https://github.com/FreshRSS/FreshRSS>https://github.com/FreshRSS/FreshRSS</a></li><li><a href=https://git.tt-rss.org/fox/tt-rss>https://git.tt-rss.org/fox/tt-rss</a></li></ul><p>出于复古心理顺便减少对应的 app 安装选择问题，又选择了回归 email 方式订阅更新</p><h2 id=安装配置>安装配置</h2><p>rss2email 的安装到简单，参考 <a href=https://github.com/rss2email/rss2email>官方文档</a>
+直接 <code>apt install rss2email</code>，默认配置会发送文本邮件，修改 <code>html-mail=True</code>，
+在我的环境里 smtp over sendgrid 很容易超配额，sendmail 基本发送不出去，
+就配上 imap.google 账户自己发给自己啦～</p><p>从 feedly 导出 opml 文件然后 <code>r2e opmlimport</code> 完事大吉</p><p>需要注意的是，在 <code>r2e run</code> 的执行过程中对配置文件进行修改非常容易被覆盖 <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>，不要同时搞太多操作就好，</p><p><strong>update: 2020-09-18 17:34:49</strong></p><p>修改参数 <code>force-from = True</code>，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败</p><h2 id=定时任务>定时任务</h2><p>现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 <code>$HOME/.config/systemd/user</code> 写入定时任务配置</p><p>定时器 <code>rss2email.timer</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>Unit<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>Description<span style=color:#f92672>=</span>rss2email
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Service<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>Type<span style=color:#f92672>=</span>oneshot
+</span></span><span style=display:flex><span>ExecStart<span style=color:#f92672>=</span>/usr/bin/r2e run
+</span></span></code></pre></div><p>执行文件 <code>rss2email.service</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>Timer<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>OnCalendar<span style=color:#f92672>=</span>00/3:00
+</span></span><span style=display:flex><span>Unit<span style=color:#f92672>=</span>rss2email.service
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Install<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>WantedBy<span style=color:#f92672>=</span>multi-user.target
+</span></span></code></pre></div><p>启动服务</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>systemctl --user daemon-reload
+</span></span><span style=display:flex><span>systemctl --user enable rss2email.timer
+</span></span><span style=display:flex><span>systemctl --user start rss2email.timer
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>systemctl --user list-timers
+</span></span><span style=display:flex><span>NEXT                        LEFT          LAST PASSED UNIT            ACTIVATES
+</span></span><span style=display:flex><span>Tue 2020-06-23 12:00:00 UTC 1h 32min left n/a  n/a    rss2email.timer rss2email.service
+</span></span></code></pre></div><h2 id=定制邮件样式>定制邮件样式</h2><p>默认的 configparser 参数会将 <code>#</code> 设为注释，于是 <code>rss2email/config.py</code> 和
+<code>$HOME/.config/rss2email.cfg</code> 中关于 <code>#entry {...} #body {...}</code>
+这几行一直显示不出来，临时解决方案把它们合并成一行可以先凑合着</p><pre tabindex=0><code>css = ...
+    .footer {
+    background: #c3d9ff;
+    border-top: solid 4px #c3d9ff;
+    padding: 5px;
+    margin-bottom: 0px;
+    } #entry { border: solid 4px #c3d9ff; } #body { margin-left: 5px; margin-right: 5px; }
+    img { max-width: 90% } /* 避免邮件里展示原图将页面撑得太宽 */
+</code></pre><p><a href=https://github.com/rss2email/rss2email/issues/7>Lines removed in stylesheet and optionally link to external one</a></p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://github.com/rss2email/rss2email/issues/110>https://github.com/rss2email/rss2email/issues/110</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></content><p></p></main><footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a></footer></body></html>

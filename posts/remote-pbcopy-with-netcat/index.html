@@ -1,0 +1,104 @@
+<!doctype html><html lang=en-US><head><meta http-equiv=X-Clacks-Overhead content="GNU Terry Pratchett"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=#ZgotmplZ><title>remote pbcopy with netcat | yányào.com</title>
+<meta name=title content="remote pbcopy with netcat"><meta name=description content='Quick start
+while (true); do nc -l 2224 | pbcopy; done
+#If your laptop is running linux, replacing pbcopy with xcopy should work:
+#while (true); do nc -l 2224 | xcopy; done
+
+echo "This text gets sent to clipboard" | nc localhost 2224
+
+echo "RemoteForward 2224 localhost:2224" >> ~/.ssh/config
+ssh remote -t &#39;cat blablabla | nc -q0 localhost 2224&#39;
+Daemonizing pbcopy
+launchctl load ~/Library/LaunchAgents/local.pbcopy.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>localhost.pbcopy</string>
+    <key>ProgramArguments</key>
+    <array>
+       <string>/usr/bin/pbcopy</string>
+    </array>
+    <key>inetdCompatibility</key>
+    <dict>
+       <key>Wait</key>
+       <false/>
+    </dict>
+    <key>Sockets</key>
+    <dict>
+       <key>Listeners</key>
+       <dict>
+           <key>SockServiceName</key>
+           <string>2224</string>
+           <key>SockNodeName</key>
+           <string>127.0.0.1</string>
+       </dict>
+    </dict>
+</dict>
+</plist>
+Remote pbcopy
+scp pbcopy remote:/path_to/pbcopy
+chmod a+x path_to/pbcopy
+
+#!/bin/bash
+
+[ -n "$SSH_CLIENT" ] && SESSION_TYPE="remote"
+
+if [[ $SESSION_TYPE == "remote" ]]; then
+  cat | nc -q0 localhost 2224
+else
+  cat | pbcopy
+fi
+links
+http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/'><meta name=keywords content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="remote pbcopy with netcat"><meta property="og:description" content='Quick start while (true); do nc -l 2224 | pbcopy; done #If your laptop is running linux, replacing pbcopy with xcopy should work: #while (true); do nc -l 2224 | xcopy; done echo "This text gets sent to clipboard" | nc localhost 2224 echo "RemoteForward 2224 localhost:2224" >> ~/.ssh/config ssh remote -t &#39;cat blablabla | nc -q0 localhost 2224&#39; Daemonizing pbcopy launchctl load ~/Library/LaunchAgents/local.pbcopy.plist
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"> <plist version="1.0"> <dict> <key>Label</key> <string>localhost.pbcopy</string> <key>ProgramArguments</key> <array> <string>/usr/bin/pbcopy</string> </array> <key>inetdCompatibility</key> <dict> <key>Wait</key> <false/> </dict> <key>Sockets</key> <dict> <key>Listeners</key> <dict> <key>SockServiceName</key> <string>2224</string> <key>SockNodeName</key> <string>127.0.0.1</string> </dict> </dict> </dict> </plist> Remote pbcopy scp pbcopy remote:/path_to/pbcopy chmod a+x path_to/pbcopy #!/bin/bash [ -n "$SSH_CLIENT" ] && SESSION_TYPE="remote" if [[ $SESSION_TYPE == "remote" ]]; then cat | nc -q0 localhost 2224 else cat | pbcopy fi links http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/'><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-01-20T11:45:53+00:00"><meta property="article:modified_time" content="2015-01-20T11:45:53+00:00"><meta property="og:image" content="https://xn--ynyo-2nad.com/images/share.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xn--ynyo-2nad.com/images/share.png"><meta name=twitter:title content="remote pbcopy with netcat"><meta name=twitter:description content='Quick start while (true); do nc -l 2224 | pbcopy; done #If your laptop is running linux, replacing pbcopy with xcopy should work: #while (true); do nc -l 2224 | xcopy; done echo "This text gets sent to clipboard" | nc localhost 2224 echo "RemoteForward 2224 localhost:2224" >> ~/.ssh/config ssh remote -t &#39;cat blablabla | nc -q0 localhost 2224&#39; Daemonizing pbcopy launchctl load ~/Library/LaunchAgents/local.pbcopy.plist
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"> <plist version="1.0"> <dict> <key>Label</key> <string>localhost.pbcopy</string> <key>ProgramArguments</key> <array> <string>/usr/bin/pbcopy</string> </array> <key>inetdCompatibility</key> <dict> <key>Wait</key> <false/> </dict> <key>Sockets</key> <dict> <key>Listeners</key> <dict> <key>SockServiceName</key> <string>2224</string> <key>SockNodeName</key> <string>127.0.0.1</string> </dict> </dict> </dict> </plist> Remote pbcopy scp pbcopy remote:/path_to/pbcopy chmod a+x path_to/pbcopy #!/bin/bash [ -n "$SSH_CLIENT" ] && SESSION_TYPE="remote" if [[ $SESSION_TYPE == "remote" ]]; then cat | nc -q0 localhost 2224 else cat | pbcopy fi links http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/'><meta itemprop=name content="remote pbcopy with netcat"><meta itemprop=description content='Quick start while (true); do nc -l 2224 | pbcopy; done #If your laptop is running linux, replacing pbcopy with xcopy should work: #while (true); do nc -l 2224 | xcopy; done echo "This text gets sent to clipboard" | nc localhost 2224 echo "RemoteForward 2224 localhost:2224" >> ~/.ssh/config ssh remote -t &#39;cat blablabla | nc -q0 localhost 2224&#39; Daemonizing pbcopy launchctl load ~/Library/LaunchAgents/local.pbcopy.plist
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"> <plist version="1.0"> <dict> <key>Label</key> <string>localhost.pbcopy</string> <key>ProgramArguments</key> <array> <string>/usr/bin/pbcopy</string> </array> <key>inetdCompatibility</key> <dict> <key>Wait</key> <false/> </dict> <key>Sockets</key> <dict> <key>Listeners</key> <dict> <key>SockServiceName</key> <string>2224</string> <key>SockNodeName</key> <string>127.0.0.1</string> </dict> </dict> </dict> </plist> Remote pbcopy scp pbcopy remote:/path_to/pbcopy chmod a+x path_to/pbcopy #!/bin/bash [ -n "$SSH_CLIENT" ] && SESSION_TYPE="remote" if [[ $SESSION_TYPE == "remote" ]]; then cat | nc -q0 localhost 2224 else cat | pbcopy fi links http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/'><meta itemprop=datePublished content="2015-01-20T11:45:53+00:00"><meta itemprop=dateModified content="2015-01-20T11:45:53+00:00"><meta itemprop=wordCount content="138"><meta itemprop=image content="https://xn--ynyo-2nad.com/images/share.png"><meta name=referrer content="no-referrer-when-downgrade"><style>:root{--width:720px;--font-main:Verdana, sans-serif;--font-secondary:Verdana, sans-serif;--font-scale:1em;--background-color:#fff;--heading-color:#222;--text-color:#444;--link-color:#3273dc;--visited-color:#8b6fcb;--code-background-color:#f2f2f2;--code-color:#222;--blockquote-color:#222}@media(prefers-color-scheme:dark){:root{--background-color:#01242e;--heading-color:#eee;--text-color:#ddd;--link-color:#8cc2dd;--visited-color:#8b6fcb;--code-background-color:#000;--code-color:#ddd;--blockquote-color:#ccc}}body{font-family:var(--font-secondary);font-size:var(--font-scale);margin:auto;padding:20px;max-width:var(--width);text-align:left;background-color:var(--background-color);word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:var(--text-color)}h1,h2,h3,h4,h5,h6{font-family:var(--font-main);color:var(--heading-color)}a{color:var(--link-color);cursor:pointer;text-decoration:none}a:hover{text-decoration:underline}nav a{margin-right:8px}strong,b{color:var(--heading-color)}button{margin:0;cursor:pointer}time{font-family:monospace;font-style:normal;font-size:15px}main{line-height:1.6}table{width:100%}hr{border:0;border-top:1px dashed}img{max-width:100%}code{font-family:monospace;padding:2px;background-color:var(--code-background-color);color:var(--code-color);border-radius:3px}blockquote{border-left:1px solid #999;color:var(--code-color);padding-left:20px;font-style:italic}footer{padding:25px 0;text-align:center}.title:hover{text-decoration:none}.title h1{font-size:1.5em}.inline{width:auto!important}.highlight,.code{padding:1px 15px;background-color:var(--code-background-color);color:var(--code-color);border-radius:3px;margin-block-start:1em;margin-block-end:1em;overflow-x:auto}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:var(--visited-color)}</style></head><body><header><a href=/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a></nav></header><main><content><h2 id=quick-start>Quick start</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>true<span style=color:#f92672>)</span>; <span style=color:#66d9ef>do</span> nc -l <span style=color:#ae81ff>2224</span> | pbcopy; <span style=color:#66d9ef>done</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#If your laptop is running linux, replacing pbcopy with xcopy should work:</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#while (true); do nc -l 2224 | xcopy; done</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;This text gets sent to clipboard&#34;</span> | nc localhost <span style=color:#ae81ff>2224</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;RemoteForward 2224 localhost:2224&#34;</span> &gt;&gt; ~/.ssh/config
+</span></span><span style=display:flex><span>ssh remote -t <span style=color:#e6db74>&#39;cat blablabla | nc -q0 localhost 2224&#39;</span>
+</span></span></code></pre></div><h2 id=daemonizing-pbcopy>Daemonizing pbcopy</h2><p><code>launchctl load ~/Library/LaunchAgents/local.pbcopy.plist</code></p><pre tabindex=0><code class=language-plist data-lang=plist>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;!DOCTYPE plist PUBLIC &#34;-//Apple Computer//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;
+&lt;plist version=&#34;1.0&#34;&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;localhost.pbcopy&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+       &lt;string&gt;/usr/bin/pbcopy&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;inetdCompatibility&lt;/key&gt;
+    &lt;dict&gt;
+       &lt;key&gt;Wait&lt;/key&gt;
+       &lt;false/&gt;
+    &lt;/dict&gt;
+    &lt;key&gt;Sockets&lt;/key&gt;
+    &lt;dict&gt;
+       &lt;key&gt;Listeners&lt;/key&gt;
+       &lt;dict&gt;
+           &lt;key&gt;SockServiceName&lt;/key&gt;
+           &lt;string&gt;2224&lt;/string&gt;
+           &lt;key&gt;SockNodeName&lt;/key&gt;
+           &lt;string&gt;127.0.0.1&lt;/string&gt;
+       &lt;/dict&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code></pre><h2 id=remote-pbcopy>Remote pbcopy</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>scp pbcopy remote:/path_to/pbcopy
+</span></span><span style=display:flex><span>chmod a+x path_to/pbcopy
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#!/bin/bash</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span> -n <span style=color:#e6db74>&#34;</span>$SSH_CLIENT<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]</span> <span style=color:#f92672>&amp;&amp;</span> SESSION_TYPE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;remote&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> $SESSION_TYPE <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;remote&#34;</span> <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>  cat | nc -q0 localhost <span style=color:#ae81ff>2224</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span>  cat | pbcopy
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span></code></pre></div><h2 id=links>links</h2><p><a href=http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/>http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/</a></p><p><a href=http://seancoates.com/blogs/remote-pbcopy>http://seancoates.com/blogs/remote-pbcopy</a></p><p><a href=http://evolvingweb.ca/blog/exposing-your-clipboard-over-ssh>http://evolvingweb.ca/blog/exposing-your-clipboard-over-ssh</a></p></content><p></p></main><footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a></footer></body></html>

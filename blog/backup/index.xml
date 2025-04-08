@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backup on yányào.com</title><link>https://xn--ynyo-2nad.com/blog/backup/</link><description>Recent content in Backup on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 22 Dec 2015 13:30:24 +0000</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/blog/backup/index.xml" rel="self" type="application/rss+xml"/><item><title>mongodb backup</title><link>https://xn--ynyo-2nad.com/posts/mongodb-backup/</link><pubDate>Tue, 22 Dec 2015 13:30:24 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mongodb-backup/</guid><description>&lt;p>有台机器准备2月份下架
+记一个 mongodb 备份小脚本 :)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e"># vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_DATABASE&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;_name_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_HOST&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;_ip_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_PORT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;_prot_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TIMESTAMP&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>date +%Y-%m-%dT%H:%M:%S&lt;span style="color:#e6db74">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGODUMP_PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/usr/bin/mongodump&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BACKUPS_DIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/data/dumps/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BACKUP_NAME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$MONGO_DATABASE&lt;span style="color:#e6db74">-&lt;/span>$TIMESTAMP&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> test $# -gt &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$1&lt;span style="color:#e6db74">&amp;#34;&lt;/span> in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -m&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;backup mongthly and clear week_dir&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#rm $BACKUPS_DIR&amp;#34;week/*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> find $BACKUPS_DIR&lt;span style="color:#e6db74">&amp;#34;week&amp;#34;&lt;/span> -type f -name &lt;span style="color:#e6db74">&amp;#39;*.tgz&amp;#39;&lt;/span> -delete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tar -czPf $BACKUPS_DIR&lt;span style="color:#e6db74">&amp;#34;month/&amp;#34;&lt;/span>$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -w&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;backup weekly&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;tar -czPf &lt;/span>$BACKUPS_DIR&lt;span style="color:#e6db74">&amp;#34;&lt;/span>week/&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$BACKUP_NAME&lt;span style="color:#e6db74">.tgz &lt;/span>$BACKUPS_DIR$MONGO_DATABASE&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -d&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;just dump&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;do nothing&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shift
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code class="language-cronjob" data-lang="cronjob"># crontab -e
+10 3 * * * /bin/bash $HOME/bin/mongobackup.sh -d &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+20 3 * * 1 /bin/bash $HOME/bin/mongobackup.sh -w &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+30 3 1 * * /bin/bash $HOME/bin/mongobackup.sh -m &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/code>&lt;/pre>&lt;p>每天早上3点按天／周／月分别保存&lt;/p></description></item></channel></rss>

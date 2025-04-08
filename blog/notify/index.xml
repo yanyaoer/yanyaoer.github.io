@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notify on yányào.com</title><link>https://xn--ynyo-2nad.com/blog/notify/</link><description>Recent content in Notify on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 11 Oct 2015 00:38:23 +0000</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/blog/notify/index.xml" rel="self" type="application/rss+xml"/><item><title>send notification when task finish</title><link>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</link><pubDate>Sun, 11 Oct 2015 00:38:23 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</guid><description>&lt;p>终端里运行长时间任务(比如 &lt;code>make systemimage&lt;/code>)的时候经常会切换到其他环境做别的事情
+容易忘记查看之前的任务是否完成, 查到一些方法用在任务结束时发出通知&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#C-z 切到后台运行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fg; tput bel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Mac OS X&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#系统弹窗&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>osascript -e &lt;span style="color:#e6db74">&amp;#39;tell app &amp;#34;System Events&amp;#34; to display alert &amp;#34;Build Completed&amp;#34; message &amp;#34;The checkout and build have completed.&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>say &lt;span style="color:#e6db74">&amp;#34;Job finished&amp;#34;&lt;/span> &lt;span style="color:#75715e">#语音播报&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#notification center&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>osascript -e &lt;span style="color:#e6db74">&amp;#39;display notification &amp;#34;Job finished&amp;#34; with title &amp;#34;Alert&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo gem install terminal-notifier
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>terminal-notifier -message &lt;span style="color:#e6db74">&amp;#34;Job finished!&amp;#34;&lt;/span> -title &lt;span style="color:#e6db74">&amp;#34;Alert&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Ubuntu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>notify-send &lt;span style="color:#e6db74">&amp;#34;Job finished!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># KDE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kdialog --passivepopup &lt;span style="color:#e6db74">&amp;#39;Job finished&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还有 &lt;a href="https://iterm2.com/documentation-triggers.html">iterm2 trigger&lt;/a> 也能用来触发通知, 高亮文字&lt;/p></description></item></channel></rss>

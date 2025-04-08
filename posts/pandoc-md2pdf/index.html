@@ -1,0 +1,85 @@
+<!doctype html><html lang=en-US><head><meta http-equiv=X-Clacks-Overhead content="GNU Terry Pratchett"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=#ZgotmplZ><title>Pandoc generate pdf from markdown | yányào.com</title>
+<meta name=title content="Pandoc generate pdf from markdown"><meta name=description content='Intro
+始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
+
+wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈
+
+Setup
+首先完整安装 latex 包
+$ brew uninstall --cask basictex
+$ brew install --cask mactex
+Latex template
+---
+title: "Your article title here"
+date: 2023-02-20
+fontsize: 12pt
+# fc-list :lang=zh
+#mainfont: "PingFang SC"
+mainfont: "Sarasa Mono SC"
+# monofont: "FantasqueSansM Nerd Font Mono"
+monofont: "Sarasa Mono SC"
+# 中文换行支持
+lang: zh-CN
+geometry: margin=2cm
+
+# 设置双栏
+# classoption=twocolumn
+---
+在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于'><meta name=keywords content><meta property="og:url" content="https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/"><meta property="og:site_name" content="yányào.com"><meta property="og:title" content="Pandoc generate pdf from markdown"><meta property="og:description" content='Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
+wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈 Setup 首先完整安装 latex 包
+$ brew uninstall --cask basictex $ brew install --cask mactex Latex template --- title: "Your article title here" date: 2023-02-20 fontsize: 12pt # fc-list :lang=zh #mainfont: "PingFang SC" mainfont: "Sarasa Mono SC" # monofont: "FantasqueSansM Nerd Font Mono" monofont: "Sarasa Mono SC" # 中文换行支持 lang: zh-CN geometry: margin=2cm # 设置双栏 # classoption=twocolumn --- 在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于'><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-07-25T14:52:12+08:00"><meta property="article:modified_time" content="2024-07-25T14:52:12+08:00"><meta property="og:image" content="https://xn--ynyo-2nad.com/images/share.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xn--ynyo-2nad.com/images/share.png"><meta name=twitter:title content="Pandoc generate pdf from markdown"><meta name=twitter:description content='Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
+wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈 Setup 首先完整安装 latex 包
+$ brew uninstall --cask basictex $ brew install --cask mactex Latex template --- title: "Your article title here" date: 2023-02-20 fontsize: 12pt # fc-list :lang=zh #mainfont: "PingFang SC" mainfont: "Sarasa Mono SC" # monofont: "FantasqueSansM Nerd Font Mono" monofont: "Sarasa Mono SC" # 中文换行支持 lang: zh-CN geometry: margin=2cm # 设置双栏 # classoption=twocolumn --- 在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于'><meta itemprop=name content="Pandoc generate pdf from markdown"><meta itemprop=description content='Intro 始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 pandoc 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 latex 相关设定内容。
+wkhtmltopdf 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈 Setup 首先完整安装 latex 包
+$ brew uninstall --cask basictex $ brew install --cask mactex Latex template --- title: "Your article title here" date: 2023-02-20 fontsize: 12pt # fc-list :lang=zh #mainfont: "PingFang SC" mainfont: "Sarasa Mono SC" # monofont: "FantasqueSansM Nerd Font Mono" monofont: "Sarasa Mono SC" # 中文换行支持 lang: zh-CN geometry: margin=2cm # 设置双栏 # classoption=twocolumn --- 在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于'><meta itemprop=datePublished content="2024-07-25T14:52:12+08:00"><meta itemprop=dateModified content="2024-07-25T14:52:12+08:00"><meta itemprop=wordCount content="211"><meta itemprop=image content="https://xn--ynyo-2nad.com/images/share.png"><meta name=referrer content="no-referrer-when-downgrade"><style>:root{--width:720px;--font-main:Verdana, sans-serif;--font-secondary:Verdana, sans-serif;--font-scale:1em;--background-color:#fff;--heading-color:#222;--text-color:#444;--link-color:#3273dc;--visited-color:#8b6fcb;--code-background-color:#f2f2f2;--code-color:#222;--blockquote-color:#222}@media(prefers-color-scheme:dark){:root{--background-color:#01242e;--heading-color:#eee;--text-color:#ddd;--link-color:#8cc2dd;--visited-color:#8b6fcb;--code-background-color:#000;--code-color:#ddd;--blockquote-color:#ccc}}body{font-family:var(--font-secondary);font-size:var(--font-scale);margin:auto;padding:20px;max-width:var(--width);text-align:left;background-color:var(--background-color);word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:var(--text-color)}h1,h2,h3,h4,h5,h6{font-family:var(--font-main);color:var(--heading-color)}a{color:var(--link-color);cursor:pointer;text-decoration:none}a:hover{text-decoration:underline}nav a{margin-right:8px}strong,b{color:var(--heading-color)}button{margin:0;cursor:pointer}time{font-family:monospace;font-style:normal;font-size:15px}main{line-height:1.6}table{width:100%}hr{border:0;border-top:1px dashed}img{max-width:100%}code{font-family:monospace;padding:2px;background-color:var(--code-background-color);color:var(--code-color);border-radius:3px}blockquote{border-left:1px solid #999;color:var(--code-color);padding-left:20px;font-style:italic}footer{padding:25px 0;text-align:center}.title:hover{text-decoration:none}.title h1{font-size:1.5em}.inline{width:auto!important}.highlight,.code{padding:1px 15px;background-color:var(--code-background-color);color:var(--code-color);border-radius:3px;margin-block-start:1em;margin-block-end:1em;overflow-x:auto}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:var(--visited-color)}</style></head><body><header><a href=/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a></nav></header><main><content><h2 id=intro>Intro</h2><p>始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 <code>pandoc</code> 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 <code>latex</code> 相关设定内容。</p><ul><li><code>wkhtmltopdf</code> 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈</li></ul><h2 id=setup>Setup</h2><p>首先完整安装 latex 包</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ brew uninstall --cask basictex
+</span></span><span style=display:flex><span>$ brew install --cask mactex
+</span></span></code></pre></div><h2 id=latex-template>Latex template</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>title</span>: <span style=color:#e6db74>&#34;Your article title here&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>date</span>: <span style=color:#e6db74>2023-02-20</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>fontsize</span>: <span style=color:#ae81ff>12pt</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># fc-list :lang=zh</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#mainfont: &#34;PingFang SC&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>mainfont</span>: <span style=color:#e6db74>&#34;Sarasa Mono SC&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># monofont: &#34;FantasqueSansM Nerd Font Mono&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>monofont</span>: <span style=color:#e6db74>&#34;Sarasa Mono SC&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 中文换行支持</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>lang</span>: <span style=color:#ae81ff>zh-CN</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>geometry</span>: <span style=color:#ae81ff>margin=2cm</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设置双栏</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># classoption=twocolumn</span>
+</span></span><span style=display:flex><span>---
+</span></span></code></pre></div><p>在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ pandoc --pdf-engine<span style=color:#f92672>=</span>xelatex -f gfm  -H head.latex <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -V geometry:<span style=color:#e6db74>&#34;top=2cm, bottom=2cm, left=2cm, right=2cm&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -V mainfont<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;PingFang SC&#34;</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  input.md -o output.pdf
+</span></span><span style=display:flex><span><span style=color:#75715e># simplify</span>
+</span></span><span style=display:flex><span>$ pandoc --pdf-engine<span style=color:#f92672>=</span>xelatex -H head.tex -f gfm input.md -o output.pdf
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-latex data-lang=latex><span style=display:flex><span><span style=color:#75715e>% head.tex，使用文档内联的 header-includes 指令一直运行不成功，
+</span></span></span><span style=display:flex><span><span style=color:#75715e>% 替换为 command-line 的参数 `-V header-includes=&#39;\pagenumbering{gobble}&#39;`
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\pagenumbering</span>{gobble}
+</span></span></code></pre></div><h2 id=vim-plugin>Vim plugin</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span><span style=color:#a6e22e>command</span>! <span style=color:#a6e22e>ToPDF</span> <span style=color:#a6e22e>call</span> <span style=color:#a6e22e>s</span>:<span style=color:#a6e22e>md_to_pdf</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span>! <span style=color:#a6e22e>s</span>:<span style=color:#a6e22e>md_to_pdf</span>() <span style=color:#a6e22e>abort</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>  &#34; check if pandoc is installed</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>executable</span>(<span style=color:#e6db74>&#39;pandoc&#39;</span>) != <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>echoerr</span> <span style=color:#e6db74>&#34;pandoc not found&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>return</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>endif</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>md_path</span> = <span style=color:#a6e22e>expand</span>(<span style=color:#e6db74>&#34;%:p&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>pdf_path</span> = <span style=color:#a6e22e>fnamemodify</span>(<span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>md_path</span>, <span style=color:#e6db74>&#34;:r&#34;</span>) .. <span style=color:#e6db74>&#34;.pdf&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>cmd</span> = <span style=color:#e6db74>&#34;pandoc --pdf-engine=xelatex -f gfm &#34;</span> .
+</span></span><span style=display:flex><span>    \ <span style=color:#e6db74>&#34;-H ~/.local/share/pandoc/head.tex &#39;&#34;</span> .
+</span></span><span style=display:flex><span>    \ <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>md_path</span> . <span style=color:#e6db74>&#34;&#39; -o &#39;&#34;</span> . <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>pdf_path</span> . <span style=color:#e6db74>&#34;&#39; &amp;&amp; ql &#39;&#34;</span> . <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>pdf_path</span> . <span style=color:#e6db74>&#34;&#39;&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  &#34; echomsg l:cmd</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>id</span> = <span style=color:#a6e22e>jobstart</span>(<span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>cmd</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>id</span> == <span style=color:#ae81ff>0</span> || <span style=color:#a6e22e>l</span>:<span style=color:#a6e22e>id</span> == <span style=color:#ae81ff>-1</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>echoerr</span> <span style=color:#e6db74>&#34;Error running command&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>endif</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>endfunction</span>
+</span></span></code></pre></div></content><p></p></main><footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a></footer></body></html>
