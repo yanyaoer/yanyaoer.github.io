@@ -19,7 +19,4 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># KDE&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kdialog --passivepopup &lt;span style="color:#e6db74">&amp;#39;Job finished&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还有 &lt;a href="https://iterm2.com/documentation-triggers.html">iterm2 trigger&lt;/a> 也能用来触发通知, 高亮文字&lt;/p>
-&lt;h2 id="links">links&lt;/h2>
-&lt;p>&lt;a href="http://apple.stackexchange.com/questions/9412/how-to-get-a-notification-when-my-commands-are-done">http://apple.stackexchange.com/questions/9412/how-to-get-a-notification-when-my-commands-are-done&lt;/a>
-&lt;a href="http://superuser.com/questions/345447/how-can-i-trigger-a-notification-when-a-job-process-ends">http://superuser.com/questions/345447/how-can-i-trigger-a-notification-when-a-job-process-ends&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还有 &lt;a href="https://iterm2.com/documentation-triggers.html">iterm2 trigger&lt;/a> 也能用来触发通知, 高亮文字&lt;/p></description></item></channel></rss>

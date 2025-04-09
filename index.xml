@@ -24,42 +24,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 设置双栏&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># classoption=twocolumn&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ pandoc --pdf-engine&lt;span style="color:#f92672">=&lt;/span>xelatex -f gfm -H head.latex &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -V geometry:&lt;span style="color:#e6db74">&amp;#34;top=2cm, bottom=2cm, left=2cm, right=2cm&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -V mainfont&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;PingFang SC&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> input.md -o output.pdf
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># simplify&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ pandoc --pdf-engine&lt;span style="color:#f92672">=&lt;/span>xelatex -H head.tex -f gfm input.md -o output.pdf
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-latex" data-lang="latex">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% head.tex，使用文档内联的 header-includes 指令一直运行不成功，
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">% 替换为 command-line 的参数 `-V header-includes=&amp;#39;\pagenumbering{gobble}&amp;#39;`
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">\pagenumbering&lt;/span>{gobble}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vim-plugin">Vim plugin&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-vim" data-lang="vim">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">command&lt;/span>! &lt;span style="color:#a6e22e">ToPDF&lt;/span> &lt;span style="color:#a6e22e">call&lt;/span> &lt;span style="color:#a6e22e">s&lt;/span>:&lt;span style="color:#a6e22e">md_to_pdf&lt;/span>()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span>! &lt;span style="color:#a6e22e">s&lt;/span>:&lt;span style="color:#a6e22e">md_to_pdf&lt;/span>() &lt;span style="color:#a6e22e">abort&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> &amp;#34; check if pandoc is installed&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">executable&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;pandoc&amp;#39;&lt;/span>) != &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">echoerr&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pandoc not found&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">return&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">endif&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">md_path&lt;/span> = &lt;span style="color:#a6e22e">expand&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%:p&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">pdf_path&lt;/span> = &lt;span style="color:#a6e22e">fnamemodify&lt;/span>(&lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">md_path&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;:r&amp;#34;&lt;/span>) .. &lt;span style="color:#e6db74">&amp;#34;.pdf&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">cmd&lt;/span> = &lt;span style="color:#e6db74">&amp;#34;pandoc --pdf-engine=xelatex -f gfm &amp;#34;&lt;/span> .
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> \ &lt;span style="color:#e6db74">&amp;#34;-H ~/.local/share/pandoc/head.tex &amp;#39;&amp;#34;&lt;/span> .
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> \ &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">md_path&lt;/span> . &lt;span style="color:#e6db74">&amp;#34;&amp;#39; -o &amp;#39;&amp;#34;&lt;/span> . &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">pdf_path&lt;/span> . &lt;span style="color:#e6db74">&amp;#34;&amp;#39; &amp;amp;&amp;amp; ql &amp;#39;&amp;#34;&lt;/span> . &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">pdf_path&lt;/span> . &lt;span style="color:#e6db74">&amp;#34;&amp;#39;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> &amp;#34; echomsg l:cmd&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">id&lt;/span> = &lt;span style="color:#a6e22e">jobstart&lt;/span>(&lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">cmd&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">id&lt;/span> == &lt;span style="color:#ae81ff">0&lt;/span> || &lt;span style="color:#a6e22e">l&lt;/span>:&lt;span style="color:#a6e22e">id&lt;/span> == &lt;span style="color:#ae81ff">-1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">echoerr&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Error running command&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">endif&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">endfunction&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Flair-58 Espresso Maker</title><link>https://xn--ynyo-2nad.com/posts/flair-58/</link><pubDate>Tue, 08 Feb 2022 15:55:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/flair-58/</guid><description>&lt;h2 id="flair-58">flair-58&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 markdown 文档的最前面加入以上 metadata 简化命令参数设定，实际效果等价于&lt;/p></description></item><item><title>Flair-58 Espresso Maker</title><link>https://xn--ynyo-2nad.com/posts/flair-58/</link><pubDate>Tue, 08 Feb 2022 15:55:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/flair-58/</guid><description>&lt;h2 id="flair-58">flair-58&lt;/h2>
 &lt;p>&lt;a href="https://flairespresso.com/product/flair-58/">https://flairespresso.com/product/flair-58/&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://xn--ynyo-2nad.com/flair-coffee.jpg" alt="">&lt;/p>
 &lt;p>周末浪费了2天豆子，终于折腾出比较理想的设定&lt;/p>
@@ -131,60 +96,7 @@ PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># add user&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>podman run --rm -it -v /data/maddy:/data --entrypoint /bin/maddyctl yanyaoer/maddy:master creds create yanyao@mail.yadanhe.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>参考文档配置&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 完后发送邮件对方可收，本地 thunderbird 接收回复邮件时有问题&lt;/p>
-&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> spf 验证无法通过，暂时禁用待修复&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> 接收时报错 &amp;ldquo;Unexpected EOF when reciving from Steam&amp;rdquo;，等 0.4.3 发布 &lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/li>
-&lt;/ul>
-&lt;h2 id="workaround">workaround&lt;/h2>
-&lt;ul>
-&lt;li>使用 master 分支打包镜像 maddy 0.5.0-dev15+ge4ad3bd 到 &lt;code>yanyaoer/maddy:master&lt;/code> 临时使用&lt;/li>
-&lt;li>go 1.15.5 打包镜像时报错 &lt;code>go build runtime/cgo: invalid flag in go:cgo_ldflag: -Wl,-z,relro,-z,now&lt;/code>，在 builds.sh 里添加参数通过 &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>diff --git a/build.sh b/build.sh
-index a76f6b6..b6e2eb2 100755
---- a/build.sh
-+++ b/build.sh
-@@ -119,6 +119,7 @@ read_config() {
- export MADDY_SRC=
- fi
-
-+ export CGO_LDFLAGS_ALLOW=&amp;#39;-Wl,-z,relro,-z,now&amp;#39;
- export CGO_CFLAGS=&amp;#34;-g -O2 -D_FORTIFY_SOURCE=2 $CFLAGS&amp;#34;
- export CGO_CXXFLAGS=&amp;#34;-g -O2 -D_FORTIFY_SOURCE=2 $CXXFLAGS&amp;#34;
- export LDFLAGS=&amp;#34;-Wl,-z,relro,-z,now $LDFLAGS&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>** update: 2021-07-23 **
-&lt;a href="https://github.com/foxcpp/maddy/releases/tag/v0.4.4">v0.4.4&lt;/a>
-直接下载解压以上功能正常使用，不再使用 podman 部署&lt;/p>
-&lt;h2 id="alternative">alternative&lt;/h2>
-&lt;p>以下方案不太合口味，日后有缘再试&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/sovereign/sovereign">https://github.com/sovereign/sovereign&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/ajgon/self-hosted-mailserver/blob/master/docs/nsa-proof-your-e-mail-in-2-hours.md">https://github.com/ajgon/self-hosted-mailserver/blob/master/docs/nsa-proof-your-e-mail-in-2-hours.md&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/Mailu/Mailu">https://github.com/Mailu/Mailu&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/mailcow/mailcow-dockerized">https://github.com/mailcow/mailcow-dockerized&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/tonioo/modoboa">https://github.com/tonioo/modoboa&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/sovereign/sovereign">https://github.com/sovereign/sovereign&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/mail-in-a-box/mailinabox">https://github.com/mail-in-a-box/mailinabox&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/iredmail/iRedMail">https://github.com/iredmail/iRedMail&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>&lt;a href="https://changelog.com/news/maddy-a-composable-allinone-mail-server-ljEe">https://changelog.com/news/maddy-a-composable-allinone-mail-server-ljEe&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:2">
-&lt;p>&lt;a href="https://foxcpp.dev/maddy/tutorials/setting-up/">https://foxcpp.dev/maddy/tutorials/setting-up/&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:3">
-&lt;p>&lt;a href="https://github.com/foxcpp/maddy/issues/300">https://github.com/foxcpp/maddy/issues/300&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:4">
-&lt;p>&lt;a href="https://github.com/foxcpp/maddy/issues/299#issuecomment-735862091">https://github.com/foxcpp/maddy/issues/299#issuecomment-735862091&lt;/a>&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>Utteranc Comments</title><link>https://xn--ynyo-2nad.com/posts/utteranc-comments/</link><pubDate>Fri, 30 Oct 2020 11:49:39 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/utteranc-comments/</guid><description>&lt;p>utterances - A lightweight comments widget built on GitHub issues. Use GitHub issues for blog comments, wiki pages and more!&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>参考文档配置&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 完后发送邮件对方可收，本地 thunderbird 接收回复邮件时有问题&lt;/p></description></item><item><title>Utteranc Comments</title><link>https://xn--ynyo-2nad.com/posts/utteranc-comments/</link><pubDate>Fri, 30 Oct 2020 11:49:39 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/utteranc-comments/</guid><description>&lt;p>utterances - A lightweight comments widget built on GitHub issues. Use GitHub issues for blog comments, wiki pages and more!&lt;/p>
 &lt;h2 id="install">install&lt;/h2>
 &lt;ol>
 &lt;li>
@@ -262,13 +174,7 @@ index a76f6b6..b6e2eb2 100755
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/prometheus/docs.git
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gitbook pdf
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ps: gitbook 开源版本已经很久不维护了，可以换到 &lt;a href="https://github.com/honkit/honkit">honkit&lt;/a> fork 的版本&lt;/p>
-&lt;h2 id="reference">reference&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/qiyuangong/How_to_Search_and_Read_a_Paper">https://github.com/qiyuangong/How_to_Search_and_Read_a_Paper&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/ying-zhang/ying-zhang.github.io/blob/blog/source/_posts/we-love-paper.md">https://github.com/ying-zhang/ying-zhang.github.io/blob/blog/source/_posts/we-love-paper.md&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.hanlindong.com/2018/zotero-citation-manager/">http://www.hanlindong.com/2018/zotero-citation-manager/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Rss2email</title><link>https://xn--ynyo-2nad.com/posts/rss2email/</link><pubDate>Tue, 23 Jun 2020 18:58:30 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/rss2email/</guid><description>&lt;p>距离上次从 &lt;a href="https://blogtrottr.com">https://blogtrottr.com&lt;/a> 迁移 rss 订阅到 feedly 差不多五六年了，
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>ps: gitbook 开源版本已经很久不维护了，可以换到 &lt;a href="https://github.com/honkit/honkit">honkit&lt;/a> fork 的版本&lt;/p></description></item><item><title>Rss2email</title><link>https://xn--ynyo-2nad.com/posts/rss2email/</link><pubDate>Tue, 23 Jun 2020 18:58:30 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/rss2email/</guid><description>&lt;p>距离上次从 &lt;a href="https://blogtrottr.com">https://blogtrottr.com&lt;/a> 迁移 rss 订阅到 feedly 差不多五六年了，
 这会网络不可用的状况又变得严重些，干脆还是用自建服务来接收感兴趣的内容，
 当然备选方案也不少:&lt;/p>
 &lt;ul>
@@ -288,49 +194,7 @@ index a76f6b6..b6e2eb2 100755
 &lt;p>&lt;strong>update: 2020-09-18 17:34:49&lt;/strong>&lt;/p>
 &lt;p>修改参数 &lt;code>force-from = True&lt;/code>，默认会从 feed 里优先提取作者或者发布站点的邮箱，导致 gmail 过滤器失败&lt;/p>
 &lt;h2 id="定时任务">定时任务&lt;/h2>
-&lt;p>现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 &lt;code>$HOME/.config/systemd/user&lt;/code> 写入定时任务配置&lt;/p>
-&lt;p>定时器 &lt;code>rss2email.timer&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Unit&lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Description&lt;span style="color:#f92672">=&lt;/span>rss2email
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Service&lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Type&lt;span style="color:#f92672">=&lt;/span>oneshot
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ExecStart&lt;span style="color:#f92672">=&lt;/span>/usr/bin/r2e run
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>执行文件 &lt;code>rss2email.service&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Timer&lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OnCalendar&lt;span style="color:#f92672">=&lt;/span>00/3:00
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Unit&lt;span style="color:#f92672">=&lt;/span>rss2email.service
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Install&lt;span style="color:#f92672">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WantedBy&lt;span style="color:#f92672">=&lt;/span>multi-user.target
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动服务&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl --user daemon-reload
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl --user enable rss2email.timer
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl --user start rss2email.timer
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl --user list-timers
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NEXT LEFT LAST PASSED UNIT ACTIVATES
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Tue 2020-06-23 12:00:00 UTC 1h 32min left n/a n/a rss2email.timer rss2email.service
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="定制邮件样式">定制邮件样式&lt;/h2>
-&lt;p>默认的 configparser 参数会将 &lt;code>#&lt;/code> 设为注释，于是 &lt;code>rss2email/config.py&lt;/code> 和
-&lt;code>$HOME/.config/rss2email.cfg&lt;/code> 中关于 &lt;code>#entry {...} #body {...}&lt;/code>
-这几行一直显示不出来，临时解决方案把它们合并成一行可以先凑合着&lt;/p>
-&lt;pre tabindex="0">&lt;code>css = ...
- .footer {
- background: #c3d9ff;
- border-top: solid 4px #c3d9ff;
- padding: 5px;
- margin-bottom: 0px;
- } #entry { border: solid 4px #c3d9ff; } #body { margin-left: 5px; margin-right: 5px; }
- img { max-width: 90% } /* 避免邮件里展示原图将页面撑得太宽 */
-&lt;/code>&lt;/pre>&lt;p>&lt;a href="https://github.com/rss2email/rss2email/issues/7">Lines removed in stylesheet and optionally link to external one&lt;/a>&lt;/p>
-&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>&lt;a href="https://github.com/rss2email/rss2email/issues/110">https://github.com/rss2email/rss2email/issues/110&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>Deploy bitwarden_rs with podman</title><link>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</link><pubDate>Thu, 04 Jun 2020 19:05:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</guid><description>&lt;p>bitwarden_rs&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 是个用 rust/rocket 编写的非官方 api 实现，
+&lt;p>现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 &lt;code>$HOME/.config/systemd/user&lt;/code> 写入定时任务配置&lt;/p></description></item><item><title>Deploy bitwarden_rs with podman</title><link>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</link><pubDate>Thu, 04 Jun 2020 19:05:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</guid><description>&lt;p>bitwarden_rs&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> 是个用 rust/rocket 编写的非官方 api 实现，
 &lt;a href="https://github.com/bitwarden/server">dotnet&lt;/a> 版本有点儿不太适合手头的部署环境&lt;/p>
 &lt;p>这里用比较现代的 podman&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> 来运行 docker 服务&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span> -p 8080:8080 bitwardenrs/server:latest
@@ -355,45 +219,7 @@ cargo build --features sqlite --release
 cp target/release/bitwarden_rs /usr/local/bin/
 
 # download bw_web_vault from https://github.com/dani-garcia/bw_web_builds/releases
-&lt;/code>&lt;/pre>&lt;p>edit /etc/systemd/system/bitwarden.service&lt;/p>
-&lt;pre tabindex="0">&lt;code>[Unit]
-Description=Bitwarden Server (Rust Edition)
-Documentation=https://github.com/dani-garcia/bitwarden_rs
-After=network.target
-
-[Service]
-EnvironmentFile=/data/bitwarden_rs/config.env
-ExecStart=/usr/local/bin/bitwarden_rs
-LimitNOFILE=1048576
-LimitNPROC=64
-PrivateTmp=true
-PrivateDevices=true
-ProtectHome=true
-ProtectSystem=strict
-WorkingDirectory=/data/bitwarden_rs/
-ReadWriteDirectories=/data/bitwarden_rs/
-ReadWriteDirectories=/data/bitwarden_rs/
-AmbientCapabilities=CAP_NET_BIND_SERVICE
-Restart=always
-RestartSec=5
-StartLimitBurst=3
-StartLimitInterval=60
-StandardOutput=null
-StandardError=null
-
-[Install]
-WantedBy=multi-user.target
-&lt;/code>&lt;/pre>&lt;div class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1">
-&lt;p>&lt;a href="https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Podman">https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Podman&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:2">
-&lt;p>&lt;a href="https://podman.io/getting-started/installation.html">https://podman.io/getting-started/installation.html&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div></description></item><item><title>Minio Storage Service</title><link>https://xn--ynyo-2nad.com/posts/minio-storage-service/</link><pubDate>Tue, 02 Jun 2020 09:47:48 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/minio-storage-service/</guid><description>&lt;p>&lt;a href="https://min.io">min.io&lt;/a> 来自前 glusterFS 团队的分布式存储项目，
+&lt;/code>&lt;/pre>&lt;p>edit /etc/systemd/system/bitwarden.service&lt;/p></description></item><item><title>Minio Storage Service</title><link>https://xn--ynyo-2nad.com/posts/minio-storage-service/</link><pubDate>Tue, 02 Jun 2020 09:47:48 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/minio-storage-service/</guid><description>&lt;p>&lt;a href="https://min.io">min.io&lt;/a> 来自前 glusterFS 团队的分布式存储项目，
 兼容 aws s3 / google cloud storage 接口，支持多磁盘、多节点，伸缩扩容方便，
 golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务&lt;/p>
 &lt;p>&lt;strong>没有生产环境的使用经验，以下仅用于业余尝鲜&lt;/strong> &lt;del>六一节礼物&lt;/del>&lt;/p>
@@ -423,18 +249,758 @@ golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl start minio.service
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://docs.min.io/docs/minio-client-complete-guide.html">客户端 mc&lt;/a>
 使用说明参考官方文档好了，和 s3 命令行也没太多区别，
-甚至可以用来做 gcs/s3 代理用&lt;/p>
-&lt;h2 id="bonus">BONUS&lt;/h2>
-&lt;p>之前断断续续申请了若干次的 oraclecloud 免费版，信用卡扣了钱也没通过简直过分，
-直到 2020-06-01 当天终于成功开启 &lt;em>happy children&amp;rsquo;s day&lt;/em>&lt;/p>
-&lt;p>&lt;a href="https://www.oracle.com/cloud/free/#always-free">always free plan&lt;/a>
-2个虚拟机各有 1/8 ocpu 和 1G 内存，两块磁盘共 100G，#真香警告#&lt;/p>
-&lt;p>开启机器后默认的安全策略只打开了 22 端口，自行添加 80/443
-之后折腾半天还是无法连接，直接添加 iptables 放行即可，
-搜索出来的那些直接打开全部端口的谜之操作请谨慎参考。
-另外吐槽下这个双层防火墙配制有点费头发，还是 aws 那种操作一次就好&amp;hellip;&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>iptables -A INPUT -p tcp -m tcp --dport &lt;span style="color:#ae81ff">80&lt;/span> -j ACCEPT
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -A INPUT -p tcp -m tcp –-dport &lt;span style="color:#ae81ff">443&lt;/span> -j ACCEPT
+甚至可以用来做 gcs/s3 代理用&lt;/p></description></item><item><title>Pour Over Coffee Makers</title><link>https://xn--ynyo-2nad.com/posts/pour-over-coffee-makers/</link><pubDate>Fri, 15 May 2020 15:41:01 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pour-over-coffee-makers/</guid><description>&lt;h2 id="办公室日常用品">办公室日常用品&lt;/h2>
+&lt;ul>
+&lt;li>hario v60 2人份玻璃滤杯 &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>hario v60 600ml 云朵分享壶 &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>comandante c40 手摇磨豆机 &lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>kalita 700ml 细嘴壶 &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>rivers seek 随手杯 &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>
+&lt;p>2020-0615 新购入 Mr.clever 聪明杯 &lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2020-0622 新购入 hario drip kettle air &lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>，
+用了两次手感偏轻水流控制得不稳 T_T&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2020-1027 新购入 fellow ode 电动磨豆机 &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2020-1109 新购入 fellow stagg ekg 温控壶 &lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2023-half 新购入 hoop 澡盆滤杯 &lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup>，类似聪明杯但会拉长萃取时间&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>每天一早 &lt;del>中午&lt;/del> 到公司开始烧水，然后吭呲吭呲摇 40g 豆子兑 600ml 左右的水&lt;/p>
+&lt;p>手法就比较 &lt;del>随意&lt;/del> 业余啦，主要参考下面两个视频，出品大概率自己都还挺喜欢的
+&lt;strong>按比例加注水量翻倍&lt;/strong>&lt;/p>
+&lt;h3 id="46-method-by-tetsu-kasuya">&amp;ldquo;4:6 method&amp;rdquo; by Tetsu Kasuya &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/h3>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wmCW8xSWGZY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+ &lt;/div>
+
+&lt;h3 id="the-ultimate-v60-technique-by-james-hoffmann">&amp;ldquo;The Ultimate V60 Technique&amp;rdquo; by James Hoffmann&lt;/h3>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AI4ynXzkSQo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+ &lt;/div>
+
+&lt;h2 id="家庭版">家庭版&lt;/h2>
+&lt;ul>
+&lt;li>baratza encore 电动磨豆器 &lt;sup id="fnref:12">&lt;a href="#fn:12" class="footnote-ref" role="doc-noteref">12&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>kinto OCT 2人份陶瓷滤杯 &lt;sup id="fnref:13">&lt;a href="#fn:13" class="footnote-ref" role="doc-noteref">13&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>ikea vardagen 500ml 玻璃量杯 &lt;sup id="fnref:14">&lt;a href="#fn:14" class="footnote-ref" role="doc-noteref">14&lt;/a>&lt;/sup>&lt;/li>
+&lt;li>muji 万古烧马克杯 &lt;sup id="fnref:15">&lt;a href="#fn:15" class="footnote-ref" role="doc-noteref">15&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>2020-0615 新购入 hario filter-in 冷萃瓶 &lt;del>已碎&lt;/del>，21年夏再次购入 &lt;sup id="fnref:16">&lt;a href="#fn:16" class="footnote-ref" role="doc-noteref">16&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;p>刚开始的时候装备上交了不少学费，比如：&lt;del>电动砍豆机&lt;/del>、&lt;del>廉价手磨&lt;/del>、&lt;del>aeropress&lt;/del>，
+虽然不能一概而论，实际上很大程度还是遵循一分钱一分货的原则，性能越好则价格呈指数上涨
+条件允许的话尽量选择好一点的设备，毕竟也是天天要用的家伙事&lt;/p></description></item><item><title>Mastodon</title><link>https://xn--ynyo-2nad.com/posts/mastodon/</link><pubDate>Fri, 15 May 2020 09:45:08 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/mastodon/</guid><description>&lt;p>&lt;code>Mastodon 长毛象&lt;/code>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> &amp;ndash; 基于 rubyonrails/reactjs/nodejs 开发的分布式 &amp;amp;
+去中心化 twiter clone。利用空闲时间在 aws lightsail 上开了个实例把服务跑了起来&lt;/p>
+&lt;p>一开始走了些弯路，因为选机房和省钱的缘故，重建了若干次操作系统，最后的选择是
+tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通不稳定&lt;/p>
+&lt;p>安装步骤没有使用 docker 而是参考文档从源码安装&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>，原因和解决方案如下：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;del>机器用 $3.5/mo 512mem 最便宜的那档消费降级&lt;/del>(512M 内存重启会拉垮弱鸡，服务已迁移到 oraclecloud)，出于 net/io 性能考虑就不使 docker 啦&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>内存问题，&lt;code>RAILS_ENV=production bundle exec rake mastodon:setup&lt;/code>
+这一步骤执行到 &lt;code>rails assets:precompile&lt;/code>，
+不管是在 docker 里跑还是直接运行都会报 swap 分区不足，找到两个方案来解决:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># create swapfile &amp;lt;https://linuxize.com/post/create-a-linux-swap-file/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo fallocate -l 2G /swapfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo chmod &lt;span style="color:#ae81ff">600&lt;/span> /swapfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo mkswap /swapfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo swapon /swapfile
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables-save &amp;gt; /etc/iptables/rules.v4
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># verify active&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo swapon --show
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># optional: low value is better for production&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo sysctl vm.swappiness&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="邮件配置">邮件配置&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># By default the memory limit in Node. js is 512 mb, &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># use command —- max-old-space-size to increase the memory limit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ NODE_OPTIONS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;--max-old-space-size=4096&amp;#34;&lt;/span> RAILS_ENV&lt;span style="color:#f92672">=&lt;/span>production bundle exec rails assets:precompile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>直接配置 localhost 发送邮件无效，先用 &lt;a href="https://sendgrid.com/">sendgrid&lt;/a> 免费版顶着, 一天 100 封邮件目前够用&lt;/p></description></item><item><title>Gitlab Repo</title><link>https://xn--ynyo-2nad.com/posts/gitlab-repo/</link><pubDate>Sat, 09 May 2020 19:34:06 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/gitlab-repo/</guid><description>&lt;p>gitlab 里面已经有十来个 group，几百个 project，虽然不一定会每个项目都参与，
+但是为了快速同步代码，又捡起了 android 开发常用的 repo 命令来管理多项目代码。
+这里使用了 gitlab graphql 接口来遍历项目生成分组的 manifest 文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> argparse
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> urllib2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_HOST &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;gitlab.mydomain.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_SSH_URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;ssh://git@&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> GITLAB_HOST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_GRAPHQL_URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> GITLAB_HOST &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/api/graphql&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_TOKEN &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GITLAB_GROUP &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BLACK_LIST &lt;span style="color:#f92672">=&lt;/span> (&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>,)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 以上配置修改为自己的设定&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>template &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;lt;!-- autogen by gen.py, do not edit this file --&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;lt;manifest&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;remote name=&amp;#34;origin&amp;#34; fetch=&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{ssh_url}&lt;/span>&lt;span style="color:#e6db74">&amp;#34; /&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;default revision=&amp;#34;master&amp;#34; remote=&amp;#34;origin&amp;#34; sync-c=&amp;#34;true&amp;#34; sync-j=&amp;#34;4&amp;#34; /&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&lt;/span>&lt;span style="color:#e6db74">{content}&lt;/span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;lt;/manifest&amp;gt;&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">write_file&lt;/span>(content, filename&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;default.xml&amp;#34;&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _file &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>join(os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>dirname(__file__), filename)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">with&lt;/span> open(_file, &lt;span style="color:#e6db74">&amp;#34;w&amp;#34;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f&lt;span style="color:#f92672">.&lt;/span>write(template&lt;span style="color:#f92672">.&lt;/span>format(content&lt;span style="color:#f92672">=&lt;/span>content, ssh_url&lt;span style="color:#f92672">=&lt;/span>GITLAB_SSH_URL))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">fetch_project_of_group&lt;/span>(group, write&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;{ group(fullPath: &amp;#34;&lt;/span>&lt;span style="color:#e6db74">%s&lt;/span>&lt;span style="color:#e6db74">&amp;#34;) { projects { nodes { fullPath } } }}&amp;#39;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> group
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req &lt;span style="color:#f92672">=&lt;/span> urllib2&lt;span style="color:#f92672">.&lt;/span>Request(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GITLAB_GRAPHQL_URL,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data&lt;span style="color:#f92672">=&lt;/span>json&lt;span style="color:#f92672">.&lt;/span>dumps(dict(query&lt;span style="color:#f92672">=&lt;/span>data)),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> headers&lt;span style="color:#f92672">=&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Authorization&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Bearer &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> GITLAB_TOKEN,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;application/json&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> resp &lt;span style="color:#f92672">=&lt;/span> json&lt;span style="color:#f92672">.&lt;/span>load(urllib2&lt;span style="color:#f92672">.&lt;/span>urlopen(req))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> content &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;&amp;lt;project path=&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{d}&lt;/span>&lt;span style="color:#e6db74">&amp;#34; name=&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{d}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/&amp;gt;&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(d&lt;span style="color:#f92672">=&lt;/span>p[&lt;span style="color:#e6db74">&amp;#34;fullPath&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> p &lt;span style="color:#f92672">in&lt;/span> resp[&lt;span style="color:#e6db74">&amp;#34;data&amp;#34;&lt;/span>][&lt;span style="color:#e6db74">&amp;#34;group&amp;#34;&lt;/span>][&lt;span style="color:#e6db74">&amp;#34;projects&amp;#34;&lt;/span>][&lt;span style="color:#e6db74">&amp;#34;nodes&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> p[&lt;span style="color:#e6db74">&amp;#34;fullPath&amp;#34;&lt;/span>] &lt;span style="color:#f92672">not&lt;/span> &lt;span style="color:#f92672">in&lt;/span> BLACK_LIST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> write:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_file(content, filename&lt;span style="color:#f92672">=&lt;/span>group&lt;span style="color:#f92672">.&lt;/span>replace(&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;-&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;-group.xml&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> content
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parser &lt;span style="color:#f92672">=&lt;/span> argparse&lt;span style="color:#f92672">.&lt;/span>ArgumentParser(description&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Process some projects.&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parser&lt;span style="color:#f92672">.&lt;/span>add_argument(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;-G&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;--group&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> help&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;for group/subgroup or all&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type&lt;span style="color:#f92672">=&lt;/span>str,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> choices&lt;span style="color:#f92672">=&lt;/span>ns &lt;span style="color:#f92672">+&lt;/span> [&lt;span style="color:#e6db74">&amp;#34;all&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> arg &lt;span style="color:#f92672">=&lt;/span> parser&lt;span style="color:#f92672">.&lt;/span>parse_args()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> arg&lt;span style="color:#f92672">.&lt;/span>group &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;all&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> x &lt;span style="color:#f92672">in&lt;/span> GITLAB_GROUP:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fetch_project_of_group(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#f92672">=&lt;/span> [fetch_project_of_group(x, write&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">False&lt;/span>) &lt;span style="color:#66d9ef">for&lt;/span> x &lt;span style="color:#f92672">in&lt;/span> GITLAB_GROUP]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_file(&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(d))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> arg&lt;span style="color:#f92672">.&lt;/span>group &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#f92672">=&lt;/span> [fetch_project_of_group(x, write&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">False&lt;/span>) &lt;span style="color:#66d9ef">for&lt;/span> x &lt;span style="color:#f92672">in&lt;/span> GITLAB_GROUP]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_file(&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(d))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fetch_project_of_group(arg&lt;span style="color:#f92672">.&lt;/span>group)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>USAGE:&lt;/strong> 创建完 manifest 文件之后提交到仓库就可以愉快的玩耍啦&lt;/p></description></item><item><title>Dash Replacement with tmux</title><link>https://xn--ynyo-2nad.com/posts/dash-replacement/</link><pubDate>Thu, 07 May 2020 18:54:37 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/dash-replacement/</guid><description>&lt;p>通过 tmux 快捷集成替换 dash.app 查询开发文档&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ brew install dasht
+
+$ dasht-docsets | tr &amp;#39;A-Z&amp;#39; &amp;#39;a-z&amp;#39;
+go
+javascript
+python_3
+rust
+tornado
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code># tmux.conf quick start
+bind -n S-up command-prompt -p &amp;#39;docset:&amp;#39; &amp;#34;splitw -h -fb -l 80 dasht &amp;#39;%%&amp;#39;&amp;#34;
+&lt;/code>&lt;/pre></description></item><item><title>Cloudflare Gost</title><link>https://xn--ynyo-2nad.com/posts/cloudflare-gost/</link><pubDate>Thu, 07 May 2020 16:00:01 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/cloudflare-gost/</guid><description>&lt;p>从清明节开始，稳定运行好几年的 ss 服务器终于阵亡了，所有端口全挂。一直蹭公司的 vpn 查资料也挺到了五一，实在拖延够够的就再另外开了一台机器中转过去迁移数据，不过嘛年纪大了又开始犯懒，企图拯救获得资格认证的机器，通过一番网上冲浪学习到了目前(实测可用)能满足我需求的方案。简单来说就是：cloudflare[后文简称为 cf] + websockets over gost，实际的客户端通过 cdn 代理再接入服务&lt;/p>
+&lt;p>有几个需要注意的地方：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>gost 启动时绑定的 localhost 不直接对外访问，走了 caddy 的转发，而这一步和 cf 的 ssl 证书配置会造成不停的重定向跳转，需要将 cf 加密模式配置为 flexible&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>然后修改 caddy 的域名配置为 &lt;a href="http://domain.com">http://domain.com&lt;/a> &lt;a href="https://domain.com">https://domain.com&lt;/a> { &amp;hellip; } 阻止 cf 和 caddy 之间的 http -&amp;gt; https&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>gost 服务端监听 ws 协议，本地的 gost 客户端转发 wss 协议连接 cf_domain:443&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>需要鉴权的方案使用 socks5+wss://username:password@domain:port&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>android 客户端的设置，因为使用了 ws 协议，所以需要将域名写入到插件的配置里，直接用域名变量无法解析&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>具体配置参考官方文档，&lt;strong>一切浪费的时间都是源于没认真仔细看文档&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/haoel/haoel.github.io">https://github.com/haoel/haoel.github.io&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/ginuerzh/gost">https://github.com/ginuerzh/gost&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/xausky/ShadowsocksGostPlugin">https://github.com/xausky/ShadowsocksGostPlugin&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>update 2021-03-01&lt;/strong> 由于 shawdowsocks 的 android 客户端升级导致插件不可用，另外部署了 &lt;a href="https://github.com/txthinking/brook">brook&lt;/a> wsserver 给手机使用&lt;/p></description></item><item><title>webpack resolve local module</title><link>https://xn--ynyo-2nad.com/posts/webpack-resolve-local-module/</link><pubDate>Fri, 13 Jan 2017 23:19:49 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/webpack-resolve-local-module/</guid><description>&lt;p>最近的项目刚开始，设计的目录层级有点深&lt;br>
+经常会在好几层本地路径之间互相引用&lt;/p>
+&lt;p>&lt;code>import Image from '../../../../components/image'&lt;/code>&lt;/p>
+&lt;p>这层层叠叠的路径写起来实在丑陋&lt;br>
+不由得想起 Python 从项目根目录引用模块&lt;br>
+然后研究了一下 Node.js 里的几种简易实现&lt;/p>
+&lt;p>干脆利落的软连接: &lt;code>ln -s node_modules src&lt;/code>&lt;/p>
+&lt;p>修改环境变量: &lt;code>NODE_PATH=. node app&lt;/code>&lt;/p>
+&lt;p>从本地目录安装:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// package.json 
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 需要运行 npm install
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;baz&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;foo&amp;#34;&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;file: ./src&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>另外还有些修改 global，或者引入其他 require 实现的方法就不再一一列出了&lt;br>
+最终选择的是修改 webpack 配置&lt;/p>
+&lt;pre tabindex="0">&lt;code>// webpack.config.js
+resolve: {
+ modulesDirectories: [__dirname, &amp;#39;node_modules&amp;#39;],
+}
+&lt;/code>&lt;/pre>&lt;p>&lt;a href="https://gist.github.com/branneman/8048520">https://gist.github.com/branneman/8048520&lt;/a>
+&lt;a href="http://stackoverflow.com/questions/10860244/how-to-make-the-require-in-node-js-to-be-always-relative-to-the-root-folder-of-t/41078266#41078266">http://stackoverflow.com/questions/10860244/how-to-make-the-require-in-node-js-to-be-always-relative-to-the-root-folder-of-t/41078266#41078266&lt;/a>
+&lt;a href="https://webpack.github.io/docs/configuration.html#resolve-modulesdirectories">https://webpack.github.io/docs/configuration.html#resolve-modulesdirectories&lt;/a>&lt;/p></description></item><item><title>Leonard Cohen - you want it darker</title><link>https://xn--ynyo-2nad.com/posts/leonard-cohen-you-want-it-darker/</link><pubDate>Tue, 25 Oct 2016 09:21:00 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/leonard-cohen-you-want-it-darker/</guid><description>&lt;h2 id="年度最佳">年度最佳&lt;/h2>
+&lt;p>&lt;a href="https://open.spotify.com/album/3jeTB3j3QmUs8SPIVleHtU">&lt;img src="images/you-want-it-darker.jpg" alt="you want it darker">&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://open.spotify.com/album/3jeTB3j3QmUs8SPIVleHtU">you want it darker&lt;/a>&lt;/p>
+&lt;p>循环听了好几天&lt;/p>
+&lt;p>干净低沉的嗓音加配乐&lt;/p>
+&lt;p>愈发担心以后听不到了怎么办 😢～&lt;/p></description></item><item><title>web audio</title><link>https://xn--ynyo-2nad.com/posts/web-audio/</link><pubDate>Wed, 15 Jun 2016 14:34:08 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/web-audio/</guid><description>&lt;p>照文档撸了一下 AudioContext 可视化音频&lt;br>
+桌面浏览器上 Safari 9, Chrome stable 绘制正常&lt;br>
+移动端只有微信的 webview 能工作, 纯玩票叻
+&lt;img src="https://mdn.mozillademos.org/files/7977/wave.png" alt="wave">&lt;/p>
+&lt;p>ref:
+&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;utf-8&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;width=device-width, user-scalable=no&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;AV&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">canvas&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;vis&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">canvas&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">audio&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;av&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;YOUR_AUDIO_FILE&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">audio&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;index.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>window.&lt;span style="color:#a6e22e">AudioContext&lt;/span> &lt;span style="color:#f92672">=&lt;/span> window.&lt;span style="color:#a6e22e">AudioContext&lt;/span> &lt;span style="color:#f92672">||&lt;/span> window.&lt;span style="color:#a6e22e">webkitAudioContext&lt;/span> &lt;span style="color:#f92672">||&lt;/span> window.&lt;span style="color:#a6e22e">mozAudioContext&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>window.&lt;span style="color:#a6e22e">onload&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">canvas&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;vis&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">canvas&lt;/span>.&lt;span style="color:#a6e22e">getContext&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;2d&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">isPlaying&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">audio&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;av&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">audioCtx&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">AudioContext&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">analyser&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">audioCtx&lt;/span>.&lt;span style="color:#a6e22e">createAnalyser&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">audioSrc&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">audioCtx&lt;/span>.&lt;span style="color:#a6e22e">createMediaElementSource&lt;/span>(&lt;span style="color:#a6e22e">audio&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">audioSrc&lt;/span>.&lt;span style="color:#a6e22e">connect&lt;/span>(&lt;span style="color:#a6e22e">analyser&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">analyser&lt;/span>.&lt;span style="color:#a6e22e">connect&lt;/span>(&lt;span style="color:#a6e22e">audioCtx&lt;/span>.&lt;span style="color:#a6e22e">destination&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">analyser&lt;/span>.&lt;span style="color:#a6e22e">fftSize&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">2048&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">bufferLength&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">analyser&lt;/span>.&lt;span style="color:#a6e22e">fftSize&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">dataArray&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Uint8Array&lt;/span>(&lt;span style="color:#a6e22e">bufferLength&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">analyser&lt;/span>.&lt;span style="color:#a6e22e">getByteTimeDomainData&lt;/span>(&lt;span style="color:#a6e22e">dataArray&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">WIDTH&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">500&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">HEIGHT&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">150&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">draw&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">requestAnimationFrame&lt;/span>(&lt;span style="color:#a6e22e">draw&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">isPlaying&lt;/span>) &lt;span style="color:#66d9ef">return&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">analyser&lt;/span>.&lt;span style="color:#a6e22e">getByteTimeDomainData&lt;/span>(&lt;span style="color:#a6e22e">dataArray&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">fillStyle&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;rgb(200, 200, 200)&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">fillRect&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#a6e22e">WIDTH&lt;/span>, &lt;span style="color:#a6e22e">HEIGHT&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">lineWidth&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">strokeStyle&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;rgb(0, 0, 0)&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">beginPath&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">sliceWidth&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">WIDTH&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">1.0&lt;/span> &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#a6e22e">bufferLength&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">x&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#a6e22e">bufferLength&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">v&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">dataArray&lt;/span>[&lt;span style="color:#a6e22e">i&lt;/span>] &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#ae81ff">128.0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">y&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">v&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">HEIGHT&lt;/span>&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">===&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">moveTo&lt;/span>(&lt;span style="color:#a6e22e">x&lt;/span>, &lt;span style="color:#a6e22e">y&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">lineTo&lt;/span>(&lt;span style="color:#a6e22e">x&lt;/span>, &lt;span style="color:#a6e22e">y&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#a6e22e">sliceWidth&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">lineTo&lt;/span>(&lt;span style="color:#a6e22e">canvas&lt;/span>.&lt;span style="color:#a6e22e">width&lt;/span>, &lt;span style="color:#a6e22e">canvas&lt;/span>.&lt;span style="color:#a6e22e">height&lt;/span>&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">canvasCtx&lt;/span>.&lt;span style="color:#a6e22e">stroke&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">draw&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">audio&lt;/span>.&lt;span style="color:#a6e22e">play&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> document.&lt;span style="color:#a6e22e">body&lt;/span>.&lt;span style="color:#a6e22e">onclick&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">audio&lt;/span>, &lt;span style="color:#a6e22e">isPlaying&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">isPlaying&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">audio&lt;/span>.&lt;span style="color:#a6e22e">pause&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">isPlaying&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">audio&lt;/span>.&lt;span style="color:#a6e22e">play&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">isPlaying&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>move to caddy</title><link>https://xn--ynyo-2nad.com/posts/move-to-caddy/</link><pubDate>Tue, 26 Apr 2016 06:41:13 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/move-to-caddy/</guid><description>&lt;p>去年用 Hexo 搭建的日志已经好几个月没更新了，最近休假有点空闲就继续更新吧。&lt;br>
+先从 Github 迁移回自己的 Linode，然后安装一个 Caddyserver&lt;a href="https://caddyserver.com/">1&lt;/a> 来渲染 markdown&lt;/p>
+&lt;blockquote>
+&lt;p>Caddy is a unique web server with a modern feature set. Think nginx or Apache, but written in Go. With Caddy, you can serve your websites over HTTP/2. It can act as a reverse proxy and load balancer. Front your PHP apps with it. You can even deploy your site with git push. Cool, right?&lt;a href="https://blog.gopheracademy.com/caddy-a-look-inside/">2&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h2 id="download-and-install-systemd">Download and install systemd&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget -O &lt;span style="color:#e6db74">&amp;#39;caddy.tar.gz&amp;#39;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;https://caddyserver.com/download/build?os=linux&amp;amp;arch=amd64&amp;amp;features=git%2Cipfilter&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxf caddy.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /opt/caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /var/run/caddy/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown caddy:caddy -R /opt/caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown caddy:caddy -R /var/run/caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mv caddy /opt/caddy/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useradd -d /var/run/caddy --system caddy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#ae81ff">644&lt;/span> /etc/systemd/system/caddy.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl enable caddy.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl start caddy.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl status caddy.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service">https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service&lt;/a>&lt;/p></description></item><item><title>mongodb backup</title><link>https://xn--ynyo-2nad.com/posts/mongodb-backup/</link><pubDate>Tue, 22 Dec 2015 13:30:24 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mongodb-backup/</guid><description>&lt;p>有台机器准备2月份下架
+记一个 mongodb 备份小脚本 :)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e"># vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_DATABASE&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;_name_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_HOST&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;_ip_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_PORT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;_prot_&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TIMESTAMP&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>date +%Y-%m-%dT%H:%M:%S&lt;span style="color:#e6db74">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGODUMP_PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/usr/bin/mongodump&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BACKUPS_DIR&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/data/dumps/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BACKUP_NAME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$MONGO_DATABASE&lt;span style="color:#e6db74">-&lt;/span>$TIMESTAMP&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> test $# -gt &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$1&lt;span style="color:#e6db74">&amp;#34;&lt;/span> in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -m&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;backup mongthly and clear week_dir&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#rm $BACKUPS_DIR&amp;#34;week/*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> find $BACKUPS_DIR&lt;span style="color:#e6db74">&amp;#34;week&amp;#34;&lt;/span> -type f -name &lt;span style="color:#e6db74">&amp;#39;*.tgz&amp;#39;&lt;/span> -delete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tar -czPf $BACKUPS_DIR&lt;span style="color:#e6db74">&amp;#34;month/&amp;#34;&lt;/span>$BACKUP_NAME.tgz $BACKUPS_DIR$MONGO_DATABASE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -w&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;backup weekly&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;tar -czPf &lt;/span>$BACKUPS_DIR&lt;span style="color:#e6db74">&amp;#34;&lt;/span>week/&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$BACKUP_NAME&lt;span style="color:#e6db74">.tgz &lt;/span>$BACKUPS_DIR$MONGO_DATABASE&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -d&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;just dump&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $MONGODUMP_PATH -d $MONGO_DATABASE --out $BACKUPS_DIR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;do nothing&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> shift
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;pre tabindex="0">&lt;code class="language-cronjob" data-lang="cronjob"># crontab -e
+10 3 * * * /bin/bash $HOME/bin/mongobackup.sh -d &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+20 3 * * 1 /bin/bash $HOME/bin/mongobackup.sh -w &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+30 3 1 * * /bin/bash $HOME/bin/mongobackup.sh -m &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+&lt;/code>&lt;/pre>&lt;p>每天早上3点按天／周／月分别保存&lt;/p></description></item><item><title>let's encrypt</title><link>https://xn--ynyo-2nad.com/posts/let-s-encrypt/</link><pubDate>Mon, 14 Dec 2015 23:35:49 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/let-s-encrypt/</guid><description>&lt;p>&lt;a href="https://letsencrypt.org">Let&amp;rsquo;s Encrypt&lt;/a> 已经公开测试，不需要再提交测试域名表单，直接就能申请&lt;br>
+小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦&lt;/p>
+&lt;p>照 &lt;a href="https://letsencrypt.readthedocs.org/en/latest/using.html">文档&lt;/a> 做一遍给域名签上证书还挺简单的&lt;/p>
+&lt;p>&lt;img src="images/ssl.jpg" alt="ssl">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 获取项目代码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/letsencrypt/letsencrypt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd letsencrypt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装依赖&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./letsencrypt-auto
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 获取证书&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./letsencrypt-auto certonly --standalone -d www.example.com -d example.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 配置 nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>server &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#ae81ff">443&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl on;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate_key /etc/letsencrypt/live/youdomain/privkey.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate /etc/letsencrypt/live/youdomain/fullchain.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;del>需要注意的是 dnspod 等国内服务解析域名有问题&lt;/del>&lt;br>
+我这里直接切回 domains.google.com 就行了&lt;br>
+使用 standalone 模式需要先停掉默认的 nginx&lt;br>
+文档里提到可以使用 webroot 模式不用停
+但我创建验证文件失败了 :(&lt;br>
+默认90天过期，建议 crontab 定时更新&lt;/p>
+&lt;p>###Update&lt;/p>
+&lt;p>使用 &lt;a href="https://github.com/Neilpang/acme.sh">acme.sh&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>An ACME protocol client written purely in Shell (Unix shell) language.&lt;/li>
+&lt;li>Fully ACME protocol implementation.&lt;/li>
+&lt;li>Simple, powerful and very easy to use. You only need 3 minutes to learn.&lt;/li>
+&lt;li>Bash, dash and sh compatible.&lt;/li>
+&lt;li>Simplest shell script for Let&amp;rsquo;s Encrypt free certificate client.&lt;/li>
+&lt;li>Purely written in Shell with no dependencies on python or Let&amp;rsquo;s Encrypt official client.&lt;/li>
+&lt;li>Just one script, to issue, renew and install your certificates automatically.&lt;/li>
+&lt;/ul>
+&lt;p>或者 &lt;a href="https://caddyserver.com">caddyserver&lt;/a>&lt;/p></description></item><item><title>simple crawler</title><link>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</link><pubDate>Sat, 17 Oct 2015 12:06:21 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</guid><description>&lt;p>半夜看了本&lt;a href="http://www.qidian.com/Book/3313422.aspx">小说&lt;/a>觉得翻页太累&lt;/p>
+&lt;p>首先要解决的问题是找一个质量还过得去的小说站
+然后写个&lt;a href="https://github.com/yanyaoer/crawler">脚本&lt;/a>去把它爬下来章节合并到一起&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">fs&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;fs&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">argv&lt;/span> } &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;process&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">request&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;request&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">cheerio&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;cheerio&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">iconv&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#34;iconv-lite&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">sanitize&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;sanitize-html&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">constructor&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Object.&lt;span style="color:#a6e22e">assign&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">path&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./chapter.json&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">html&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./reader.html&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">url&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">list&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;http://www.piaotian.net/html/6/6658/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">store&lt;/span>&lt;span style="color:#f92672">:&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#a6e22e">url&lt;/span>, &lt;span style="color:#a6e22e">callback&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">request&lt;/span>.&lt;span style="color:#a6e22e">get&lt;/span>(&lt;span style="color:#a6e22e">url&lt;/span>, {&lt;span style="color:#a6e22e">encoding&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>}, (&lt;span style="color:#a6e22e">error&lt;/span>, &lt;span style="color:#a6e22e">response&lt;/span>, &lt;span style="color:#a6e22e">body&lt;/span>)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">error&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">statusCode&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">200&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">$&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">cheerio&lt;/span>.&lt;span style="color:#a6e22e">load&lt;/span>(&lt;span style="color:#a6e22e">iconv&lt;/span>.&lt;span style="color:#a6e22e">decode&lt;/span>(&lt;span style="color:#a6e22e">body&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;GBK&amp;#39;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">callback&lt;/span>(&lt;span style="color:#a6e22e">$&lt;/span>, &lt;span style="color:#a6e22e">body&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">url&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">runchapter&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">store&lt;/span>.&lt;span style="color:#a6e22e">map&lt;/span>(&lt;span style="color:#a6e22e">d&lt;/span>=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">content&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">url&lt;/span>.&lt;span style="color:#a6e22e">list&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">href&lt;/span>, (&lt;span style="color:#a6e22e">$&lt;/span>, &lt;span style="color:#a6e22e">body&lt;/span>)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">iconv&lt;/span>.&lt;span style="color:#a6e22e">decode&lt;/span>(&lt;span style="color:#a6e22e">body&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;GBK&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">content&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">sanitize&lt;/span>(&lt;span style="color:#a6e22e">content&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">save&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;runchapter fail: &amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">id&lt;/span>, &lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">title&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">output&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">output&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//let content = this.store.slice(0, 2)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">store&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">map&lt;/span>(&lt;span style="color:#a6e22e">d&lt;/span>=&amp;gt; &lt;span style="color:#a6e22e">d&lt;/span>.&lt;span style="color:#a6e22e">content&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">join&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;&amp;lt;hr /&amp;gt;&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">html&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">`&amp;lt;html&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;head&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;meta charset=&amp;#34;utf8&amp;#34; /&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ul, table, div {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> display: none;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> hr {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> height: 1px;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> margin: 4rem 0;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> body {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> padding: 0 20%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> font:24px/1.5 &amp;#39;Songti Sc&amp;#39;;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;/style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;/head&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;body&amp;gt;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fs&lt;/span>.&lt;span style="color:#a6e22e">writeFileSync&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">html&lt;/span>, &lt;span style="color:#a6e22e">html&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf8&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">reload&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">url&lt;/span>.&lt;span style="color:#a6e22e">list&lt;/span>, (&lt;span style="color:#a6e22e">$&lt;/span>)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">store&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">$&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;.mainbody .centent ul li a&amp;#39;&lt;/span>).&lt;span style="color:#a6e22e">map&lt;/span>((&lt;span style="color:#a6e22e">id&lt;/span>, &lt;span style="color:#a6e22e">d&lt;/span>)=&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">el&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">$&lt;/span>(&lt;span style="color:#a6e22e">d&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">el&lt;/span>.&lt;span style="color:#a6e22e">attr&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;href&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">href&lt;/span>.&lt;span style="color:#a6e22e">endsWith&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;.html&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">store&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>({ &lt;span style="color:#a6e22e">id&lt;/span>, &lt;span style="color:#a6e22e">href&lt;/span>, &lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">el&lt;/span>.&lt;span style="color:#a6e22e">text&lt;/span>() })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">save&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">runchapter&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">config&lt;/span>(&lt;span style="color:#a6e22e">force&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">force&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">reload&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#a6e22e">esle&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">text&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">fs&lt;/span>.&lt;span style="color:#a6e22e">readFileSync&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">path&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf8&amp;#39;&lt;/span>).&lt;span style="color:#a6e22e">toString&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">store&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">JSON&lt;/span>.&lt;span style="color:#a6e22e">parse&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">runchapter&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">save&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fs&lt;/span>.&lt;span style="color:#a6e22e">writeFileSync&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">path&lt;/span>, &lt;span style="color:#a6e22e">JSON&lt;/span>.&lt;span style="color:#a6e22e">stringify&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">store&lt;/span>), &lt;span style="color:#e6db74">&amp;#39;utf8&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">init&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">force&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">argv&lt;/span>[&lt;span style="color:#ae81ff">2&lt;/span>] &lt;span style="color:#f92672">===&lt;/span> &lt;span style="color:#e6db74">&amp;#39;-f&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;run: &amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">argv&lt;/span>[&lt;span style="color:#ae81ff">2&lt;/span>], &lt;span style="color:#a6e22e">force&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">config&lt;/span>(&lt;span style="color:#a6e22e">force&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>().&lt;span style="color:#a6e22e">init&lt;/span>();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>于是就水出来一篇日志啦&lt;/p></description></item><item><title>send notification when task finish</title><link>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</link><pubDate>Sun, 11 Oct 2015 00:38:23 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</guid><description>&lt;p>终端里运行长时间任务(比如 &lt;code>make systemimage&lt;/code>)的时候经常会切换到其他环境做别的事情
+容易忘记查看之前的任务是否完成, 查到一些方法用在任务结束时发出通知&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#C-z 切到后台运行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fg; tput bel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Mac OS X&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#系统弹窗&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>osascript -e &lt;span style="color:#e6db74">&amp;#39;tell app &amp;#34;System Events&amp;#34; to display alert &amp;#34;Build Completed&amp;#34; message &amp;#34;The checkout and build have completed.&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>say &lt;span style="color:#e6db74">&amp;#34;Job finished&amp;#34;&lt;/span> &lt;span style="color:#75715e">#语音播报&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#notification center&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>osascript -e &lt;span style="color:#e6db74">&amp;#39;display notification &amp;#34;Job finished&amp;#34; with title &amp;#34;Alert&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo gem install terminal-notifier
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>terminal-notifier -message &lt;span style="color:#e6db74">&amp;#34;Job finished!&amp;#34;&lt;/span> -title &lt;span style="color:#e6db74">&amp;#34;Alert&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Ubuntu&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>notify-send &lt;span style="color:#e6db74">&amp;#34;Job finished!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># KDE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kdialog --passivepopup &lt;span style="color:#e6db74">&amp;#39;Job finished&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>还有 &lt;a href="https://iterm2.com/documentation-triggers.html">iterm2 trigger&lt;/a> 也能用来触发通知, 高亮文字&lt;/p></description></item><item><title>create CNAME with internationalized domain name</title><link>https://xn--ynyo-2nad.com/posts/cname-with-yanyao-com/</link><pubDate>Sun, 04 Oct 2015 20:52:56 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/cname-with-yanyao-com/</guid><description>&lt;p>前段时间买了个 &lt;a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">idn&lt;/a>: yányào.com 闲置了很长时间没动
+趁着十一长假无所事事的机会, 把玩了一下 &lt;a href="https://hexo.io">hexo&lt;/a> 挂到 yanyaoer.github.io&lt;/p>
+&lt;p>然后 CNAME 的时候掉坑了, 看到有人说30分钟生效傻傻等就不提了
+实际上这个域名的 CNAME 内容应该用编码后的字符串而不是 yányào.com&lt;/p>
+&lt;p>&lt;a href="https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4">https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span>diff --git a/CNAME b/CNAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>index 6cb647c..92d166c 100644
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">--- a/CNAME
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&lt;/span>&lt;span style="color:#a6e22e">+++ b/CNAME
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">&lt;/span>&lt;span style="color:#75715e">@@ -1 +1 @@
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">-yányào.com
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&lt;/span>&lt;span style="color:#a6e22e">+xn--ynyo-2nad.com
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>xtag-and-shadowdom</title><link>https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/</link><pubDate>Sun, 04 Oct 2015 12:20:52 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/xtag-and-shadowdom/</guid><description>&lt;p>最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱
+找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY&lt;/p>
+&lt;p>可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类
+inline 方式覆盖样式略嫌繁琐&lt;/p>
+&lt;h2 id="示例代码">示例代码&lt;/h2>
+&lt;h3 id="xtagjs">xtag.js&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">dom&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">shadow&lt;/span>(&lt;span style="color:#a6e22e">el&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">el&lt;/span>.&lt;span style="color:#a6e22e">createShadowRoot&lt;/span> &lt;span style="color:#f92672">?&lt;/span> &lt;span style="color:#a6e22e">el&lt;/span>.&lt;span style="color:#a6e22e">createShadowRoot&lt;/span>() &lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">el&lt;/span>.&lt;span style="color:#a6e22e">webkitCreateShadowRoot&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">attr&lt;/span>(&lt;span style="color:#a6e22e">el&lt;/span>, &lt;span style="color:#a6e22e">prefix&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Object.&lt;span style="color:#a6e22e">keys&lt;/span>(&lt;span style="color:#a6e22e">el&lt;/span>.&lt;span style="color:#a6e22e">dataset&lt;/span>).&lt;span style="color:#a6e22e">map&lt;/span>((&lt;span style="color:#a6e22e">d&lt;/span>)=&amp;gt; &lt;span style="color:#e6db74">`&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">prefix&lt;/span>&lt;span style="color:#e6db74">}${&lt;/span>&lt;span style="color:#a6e22e">d&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">=&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">el&lt;/span>.&lt;span style="color:#a6e22e">dataset&lt;/span>[&lt;span style="color:#a6e22e">d&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;`&lt;/span>).&lt;span style="color:#a6e22e">join&lt;/span>(&lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>document.&lt;span style="color:#a6e22e">registerElement&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;x-image&amp;#39;&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">prototype&lt;/span>&lt;span style="color:#f92672">:&lt;/span> Object.&lt;span style="color:#a6e22e">create&lt;/span>(&lt;span style="color:#a6e22e">HTMLElement&lt;/span>.&lt;span style="color:#a6e22e">prototype&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">createdCallback&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">value&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//xtag 嵌套时这里读不到attr, 放到 attach
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;onCreate::image&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">attachedCallback&lt;/span>&lt;span style="color:#f92672">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">value&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;onAttach::image&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">shadow&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">dom&lt;/span>.&lt;span style="color:#a6e22e">shadow&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">shadow&lt;/span>.&lt;span style="color:#a6e22e">innerHTML&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">`&amp;lt;style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> img { max-width: 100%; }
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;/style&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;lt;img &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">dom&lt;/span>.&lt;span style="color:#a6e22e">attr&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>)&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> /&amp;gt;`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">onclick&lt;/span> &lt;span style="color:#f92672">=&lt;/span> (&lt;span style="color:#a6e22e">e&lt;/span>) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// other x-tag;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="indexjs">index.js&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#e6db74">&amp;#39;babel/polyfill&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./xtag.js&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">BaseView&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">opt&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Object.&lt;span style="color:#a6e22e">assign&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">root&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">dom&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;#app&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, &lt;span style="color:#a6e22e">opt&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">mount&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;event::mount&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onCreate&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;event::create&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">onUpdate&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;event::update&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">BannerView&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> &lt;span style="color:#a6e22e">BaseView&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">init&lt;/span>(...&lt;span style="color:#a6e22e">args&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">mount&lt;/span>(...&lt;span style="color:#a6e22e">args&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">render&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">`&amp;lt;x-image data-src=&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> data-href=&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">redirect_url&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34; /&amp;gt;`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="links">links&lt;/h2>
+&lt;p>&lt;a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">http://www.html5rocks.com/en/tutorials/webcomponents/customelements/&lt;/a>
+&lt;a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/">http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/&lt;/a>&lt;/p></description></item><item><title>remote pbcopy with netcat</title><link>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</link><pubDate>Tue, 20 Jan 2015 11:45:53 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</guid><description>&lt;h2 id="quick-start">Quick start&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#f92672">(&lt;/span>true&lt;span style="color:#f92672">)&lt;/span>; &lt;span style="color:#66d9ef">do&lt;/span> nc -l &lt;span style="color:#ae81ff">2224&lt;/span> | pbcopy; &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#If your laptop is running linux, replacing pbcopy with xcopy should work:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#while (true); do nc -l 2224 | xcopy; done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;This text gets sent to clipboard&amp;#34;&lt;/span> | nc localhost &lt;span style="color:#ae81ff">2224&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;RemoteForward 2224 localhost:2224&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.ssh/config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh remote -t &lt;span style="color:#e6db74">&amp;#39;cat blablabla | nc -q0 localhost 2224&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="daemonizing-pbcopy">Daemonizing pbcopy&lt;/h2>
+&lt;p>&lt;code>launchctl load ~/Library/LaunchAgents/local.pbcopy.plist&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-plist" data-lang="plist">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;
+&amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple Computer//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt;
+&amp;lt;plist version=&amp;#34;1.0&amp;#34;&amp;gt;
+&amp;lt;dict&amp;gt;
+ &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+ &amp;lt;string&amp;gt;localhost.pbcopy&amp;lt;/string&amp;gt;
+ &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
+ &amp;lt;array&amp;gt;
+ &amp;lt;string&amp;gt;/usr/bin/pbcopy&amp;lt;/string&amp;gt;
+ &amp;lt;/array&amp;gt;
+ &amp;lt;key&amp;gt;inetdCompatibility&amp;lt;/key&amp;gt;
+ &amp;lt;dict&amp;gt;
+ &amp;lt;key&amp;gt;Wait&amp;lt;/key&amp;gt;
+ &amp;lt;false/&amp;gt;
+ &amp;lt;/dict&amp;gt;
+ &amp;lt;key&amp;gt;Sockets&amp;lt;/key&amp;gt;
+ &amp;lt;dict&amp;gt;
+ &amp;lt;key&amp;gt;Listeners&amp;lt;/key&amp;gt;
+ &amp;lt;dict&amp;gt;
+ &amp;lt;key&amp;gt;SockServiceName&amp;lt;/key&amp;gt;
+ &amp;lt;string&amp;gt;2224&amp;lt;/string&amp;gt;
+ &amp;lt;key&amp;gt;SockNodeName&amp;lt;/key&amp;gt;
+ &amp;lt;string&amp;gt;127.0.0.1&amp;lt;/string&amp;gt;
+ &amp;lt;/dict&amp;gt;
+ &amp;lt;/dict&amp;gt;
+&amp;lt;/dict&amp;gt;
+&amp;lt;/plist&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="remote-pbcopy">Remote pbcopy&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp pbcopy remote:/path_to/pbcopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod a+x path_to/pbcopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span> -n &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$SSH_CLIENT&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> SESSION_TYPE&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;remote&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[[&lt;/span> $SESSION_TYPE &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;remote&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cat | nc -q0 localhost &lt;span style="color:#ae81ff">2224&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cat | pbcopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="links">links&lt;/h2>
+&lt;p>&lt;a href="http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/">http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/&lt;/a>&lt;/p></description></item><item><title>forward email by postfix</title><link>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</link><pubDate>Mon, 06 Oct 2014 01:25:06 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo aptitude install postfix
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname -f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sudo vim /etc/postfix/main.cf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>myhostname &lt;span style="color:#f92672">=&lt;/span> example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>myorigin &lt;span style="color:#f92672">=&lt;/span> example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mydestination &lt;span style="color:#f92672">=&lt;/span> example1.com, example2.com, ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>virtual_alias_maps &lt;span style="color:#f92672">=&lt;/span> hash:/etc/postfix/virtual
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sudo vim /etc/postfix/virtual&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@example1.com name@forward.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@example2.com name@forward.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo postmap /etc/postfix/virtual
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /etc/init.d/postfix reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://wiki.debian.org/Postfix#Forward_Emails">https://wiki.debian.org/Postfix#Forward_Emails&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.linode.com/docs/email/postfix/basic-postfix-email-gateway-on-debian-6-squeeze">https://www.linode.com/docs/email/postfix/basic-postfix-email-gateway-on-debian-6-squeeze&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.debian-administration.org/article/243/Handling_mail_for_multiple_virtual_domains_with_postfix">https://www.debian-administration.org/article/243/Handling_mail_for_multiple_virtual_domains_with_postfix&lt;/a>&lt;/p></description></item><item><title>mitmproxy</title><link>https://xn--ynyo-2nad.com/posts/mitmproxy/</link><pubDate>Wed, 20 Aug 2014 12:05:38 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mitmproxy/</guid><description>&lt;p>&lt;a href="http://mitmproxy.org">mitmproxy&lt;/a> 是个命令行下查看/修改 http 请求的交互式工具&lt;/p>
+&lt;p>#截图
+&lt;img src="http://mitmproxy.org/doc/screenshots/mitmproxy.png" alt="screenshoot">
+&lt;img src="http://mitmproxy.org/doc/screenshots/mitmproxy-flowview.png" alt="screenshoot">&lt;/p>
+&lt;p>#安装&lt;/p>
+&lt;pre>&lt;code>sudo apt-get install python-dev libffi-dev
+pip install mitmproxy
+&lt;/code>&lt;/pre>
+&lt;p>#使用&lt;/p>
+&lt;p>&lt;strong>ubuntu 上启动 mitmproxy&lt;/strong>&lt;br>
+mitmproxy &amp;ndash;host&lt;/p>
+&lt;p>&lt;strong>手机 设置 -&amp;gt; WLAN -&amp;gt; 代理&lt;/strong>&lt;br>
+主机名: ubuntu 的 ip&lt;br>
+端口: 8080&lt;/p>
+&lt;p>然后访问网络就会在 mitmproxy 里看到请求记录(如截图)&lt;/p>
+&lt;p>#快捷键&lt;/p>
+&lt;p>j,k 上下移动&lt;br>
+enter 进入&lt;br>
+tab 切换 request/response&lt;/p>
+&lt;p>#参考
+&lt;a href="http://mitmproxy.org/doc/mitmproxy.html">http://mitmproxy.org/doc/mitmproxy.html&lt;/a>&lt;br>
+&lt;a href="http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/">http://blog.philippheckel.com/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/&lt;/a>&lt;/p></description></item><item><title>brick intro</title><link>https://xn--ynyo-2nad.com/posts/brick-intro/</link><pubDate>Wed, 28 Aug 2013 10:47:17 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/brick-intro/</guid><description>&lt;p>#Introducing Brick: Minimal-markup Web Components for Faster App Development
+#介绍 brick: 用于快速开发 webapp 的自定义标签组件&lt;/p>
+&lt;p>&lt;a href="https://hacks.mozilla.org/2013/08/introducing-brick-minimal-markup-web-components-for-faster-app-development/">https://hacks.mozilla.org/2013/08/introducing-brick-minimal-markup-web-components-for-faster-app-development/&lt;/a>&lt;/p>
+&lt;p>Those of you on the cutting HTML5 edge may have already heard of the exciting Web Components specification. If you haven’t, you’ll probably want to read up on what makes this so exciting, but long story short, Web Components promise to open up a new realm of development by letting web developers write custom, reusable HTML tags. Think of them as JavaScript plugins without the need for additional code initialization or boilerplate markup/styling.&lt;/p></description></item><item><title>my osx setup</title><link>https://xn--ynyo-2nad.com/posts/my-osx-setup/</link><pubDate>Sun, 09 Jun 2013 12:05:50 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/my-osx-setup/</guid><description>&lt;p>#setting&lt;/p>
+&lt;pre tabindex="0">&lt;code># Enable full keyboard access for all controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Disable menu bar transparency
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+
+# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Enable tap to click (Trackpad)
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# Enable Safari’s debug menu
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+# To pin the dock to the right bottom
+defaults write com.apple.dock pinning -string end
+defaults write com.apple.dock orientation -string right
+
+# Only Show Open Applications In The Dock
+defaults write com.apple.dock static-only -bool true
+
+defaults write com.apple.dock tilesize -int 24
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# disable dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean true
+&lt;/code>&lt;/pre>&lt;p>#&lt;a href="http://itunes.apple.com/us/app/xcode/">xcode&lt;/a> with &lt;a href="https://developer.apple.com/downloads">Command Line Tools&lt;/a>&lt;/p></description></item></channel></rss>
