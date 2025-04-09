@@ -1,7 +1,7 @@
 baseURL = "https://xn--ynyo-2nad.com/"
 title = "yányào.com"
 
-theme = 'hugo-bearblog-neo'
+theme = 'hugo-bearblog'
 
 languageCode = "en-US"
 
@@ -34,19 +34,9 @@ ignoreErrors = ["error-disable-taxonomy"]
 
 
 [[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
 name = "Posts"
 url = "/posts"
 weight = 2
-
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 3
 
 [[menu.main]]
 name = "RSS"
