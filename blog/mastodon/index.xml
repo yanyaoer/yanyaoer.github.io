@@ -27,4 +27,18 @@ tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># By default the memory limit in Node. js is 512 mb, &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># use command —- max-old-space-size to increase the memory limit&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ NODE_OPTIONS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;--max-old-space-size=4096&amp;#34;&lt;/span> RAILS_ENV&lt;span style="color:#f92672">=&lt;/span>production bundle exec rails assets:precompile
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>直接配置 localhost 发送邮件无效，先用 &lt;a href="https://sendgrid.com/">sendgrid&lt;/a> 免费版顶着, 一天 100 封邮件目前够用&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>直接配置 localhost 发送邮件无效，先用 &lt;a href="https://sendgrid.com/">sendgrid&lt;/a> 免费版顶着, 一天 100 封邮件目前够用&lt;/p>
+&lt;h2 id="迁移机器后重建-feed">迁移机器后重建 feed&lt;/h2>
+&lt;p>postgresql/redis 都换到了新机器, 之前因为 sidekiq 占用资源过多清理过 redis 数据, 相关 timeline 全都空了, 需要重建&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>RAILS_ENV&lt;span style="color:#f92672">=&lt;/span>production ./bin/tootctl feeds build
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>&lt;a href="https://github.com/tootsuite/mastodon">https://github.com/tootsuite/mastodon&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>&lt;a href="https://github.com/tootsuite/documentation/blob/master/content/en/admin/install.md">https://github.com/tootsuite/documentation/blob/master/content/en/admin/install.md&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>
