@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on yányào.com</title><link>https://xn--ynyo-2nad.com/posts/</link><description>Recent content in Posts on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 11 May 2025 17:50:56 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>poorman's ASR solution</title><link>https://xn--ynyo-2nad.com/posts/poormans-asr/</link><pubDate>Sun, 11 May 2025 17:50:56 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/poormans-asr/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
 &lt;p>大概20年h2期间，听闻feishu支持了会议自动转译字幕功能，but
-当时私有化部署的版本一直没有支持，于是私下找了语音助手团队的同学企图蹭服务用于自动生成会议纪要，&lt;strong>懒即是原动力&lt;/strong>
-再 but 一下，处于服务成本考量没有蹭成功，后来对应的同学也陆续离职就没下文了&lt;/p>
+当时私有化部署的版本一直没有支持，于是私下找了语音助手团队的同学企图蹭服务用于自动生成会议纪要，&lt;strong>懒即是原动力&lt;/strong>&lt;/p>
+&lt;p>再 but 一下，出于服务成本考量没有蹭成功，后来对应的同学也陆续离职就没下文了&lt;/p>
 &lt;p>23年大模型开始各种火热起来，于是借助 openai 的 whisper
 在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili
 视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的&lt;/p>
