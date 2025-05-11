@@ -44,10 +44,38 @@ sherpa-[ncnn|onnx]-microphone
 
 另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉
 
-在大佬的基础示例上，简单补充了内容的保存
+在大佬的基础示例上，简单补充点内容的保存
 
 ```python
+          result = result.lower().strip()
+          display.update_text(result)
++          log(result)
+          display.finalize_current_sentence()
+          display.display()
+        else:
+          sample_buffers = []
 
+        first_recognizer.reset(stream)
+
+
++ def log(result):
++   global file_handler
++   file_handler.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {result}\n")
++   file_handler.flush()
+
+
+if __name__ == "__main__":
++  from datetime import datetime
++
++  ts = datetime.now().strftime("%y%m%d%H%M%S")
++  file_path = Path(f"~/Desktop/asr/2pass.{ts}.txt").expanduser()
++  file_handler = open(file_path, "a")
+  try:
+    main()
+  except KeyboardInterrupt:
+    print("\nCaught Ctrl + C. Exiting")
++  finally:
++    file_handler.close()
 
 ```
 
