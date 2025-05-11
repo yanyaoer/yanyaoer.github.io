@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on yányào.com</title><link>https://xn--ynyo-2nad.com/posts/</link><description>Recent content in Posts on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 25 Jul 2024 14:52:12 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on yányào.com</title><link>https://xn--ynyo-2nad.com/posts/</link><description>Recent content in Posts on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 11 May 2025 17:50:56 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>poorman's ASR solution</title><link>https://xn--ynyo-2nad.com/posts/poormans-asr/</link><pubDate>Sun, 11 May 2025 17:50:56 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/poormans-asr/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+&lt;p>大概20年h2期间，听闻feishu支持了会议自动转译字幕功能，but
+当时私有化部署的版本一直没有支持，于是私下找了语音助手团队的同学企图蹭服务用于自动生成会议纪要，&lt;strong>懒即是原动力&lt;/strong>
+再 but 一下，处于服务成本考量没有蹭成功，后来对应的同学也陆续离职就没下文了&lt;/p>
+&lt;p>23年大模型开始各种火热起来，于是借助 openai 的 whisper
+在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili
+视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的&lt;/p>
+&lt;p>另外结合语音识别和 LLM 的发散，也试着搓了点语音助手的尝试&lt;/p>
+&lt;p>但是实时语音识别场景，用 whiper-stream / sense-voice
+这类方案还是会有识别不准确、内容丢失的问题存在，调整 step/length
+参数效果也不明显，vad 方案延迟也很高&amp;hellip;&lt;/p>
+&lt;h2 id="new-solution">New solution&lt;/h2>
+&lt;p>上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-ncnn/onnx 尝试了下 demo
+sherpa-[ncnn|onnx]-microphone
+流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量&lt;/p>
+&lt;p>于是联系维护者 @csukuangfj
+请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b
+站视频 &lt;a href="https://www.bilibili.com/video/BV1xcEMz8EsX/">https://www.bilibili.com/video/BV1xcEMz8EsX/&lt;/a>&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉&lt;/p>
+&lt;p>在大佬的基础示例上，简单补充点内容的保存&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> result&lt;span style="color:#f92672">.&lt;/span>lower()&lt;span style="color:#f92672">.&lt;/span>strip()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display&lt;span style="color:#f92672">.&lt;/span>update_text(result)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> log(result)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display&lt;span style="color:#f92672">.&lt;/span>finalize_current_sentence()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display&lt;span style="color:#f92672">.&lt;/span>display()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sample_buffers &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_recognizer&lt;span style="color:#f92672">.&lt;/span>reset(stream)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">log&lt;/span>(result):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#66d9ef">global&lt;/span> file_handler
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler&lt;span style="color:#f92672">.&lt;/span>write(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>datetime&lt;span style="color:#f92672">.&lt;/span>now()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74"> %H:%M:%S&amp;#39;&lt;/span>)&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> - &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>result&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler&lt;span style="color:#f92672">.&lt;/span>flush()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> ts &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>now()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%y%m&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">%H%M%S&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_path &lt;span style="color:#f92672">=&lt;/span> Path(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;~/Desktop/asr/2pass.&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ts&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.txt&amp;#34;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>expanduser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler &lt;span style="color:#f92672">=&lt;/span> open(file_path, &lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">KeyboardInterrupt&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">Caught Ctrl + C. Exiting&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#66d9ef">finally&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
 &lt;p>始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 &lt;code>pandoc&lt;/code> 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 &lt;code>latex&lt;/code> 相关设定内容。&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>wkhtmltopdf&lt;/code> 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈&lt;/li>
@@ -281,12 +331,12 @@ golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建�
 &lt;strong>按比例加注水量翻倍&lt;/strong>&lt;/p>
 &lt;h3 id="46-method-by-tetsu-kasuya">&amp;ldquo;4:6 method&amp;rdquo; by Tetsu Kasuya &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/h3>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wmCW8xSWGZY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wmCW8xSWGZY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
  &lt;/div>
 
 &lt;h3 id="the-ultimate-v60-technique-by-james-hoffmann">&amp;ldquo;The Ultimate V60 Technique&amp;rdquo; by James Hoffmann&lt;/h3>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AI4ynXzkSQo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AI4ynXzkSQo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
  &lt;/div>
 
 &lt;h2 id="家庭版">家庭版&lt;/h2>
