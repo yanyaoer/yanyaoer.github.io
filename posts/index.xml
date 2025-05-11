@@ -5,7 +5,14 @@
 &lt;p>23年大模型开始各种火热起来，于是借助 openai 的 whisper
 在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili
 视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的&lt;/p>
+&lt;ul>
+&lt;li>[scribe] &lt;a href="https://gist.github.com/yanyaoer/5cc7b0dd6729f306ad3cb740d501cabd">https://gist.github.com/yanyaoer/5cc7b0dd6729f306ad3cb740d501cabd&lt;/a>&lt;/li>
+&lt;/ul>
 &lt;p>另外结合语音识别和 LLM 的发散，也试着搓了点语音助手的尝试&lt;/p>
+&lt;ul>
+&lt;li>[voice assistant with computer-use] &lt;a href="https://gist.github.com/yanyaoer/752a73d2d6df5a2aa0de179a0f68e8a1">https://gist.github.com/yanyaoer/752a73d2d6df5a2aa0de179a0f68e8a1&lt;/a>&lt;/li>
+&lt;li>[hook for whisper llm-talk] &lt;a href="https://github.com/yanyaoer/whisper.cpp/commit/da85a1b4791e4a7eeb5adb31d47d4c5e53618234">https://github.com/yanyaoer/whisper.cpp/commit/da85a1b4791e4a7eeb5adb31d47d4c5e53618234&lt;/a>&lt;/li>
+&lt;/ul>
 &lt;p>但是实时语音识别场景，用 whiper-stream / sense-voice
 这类方案还是会有识别不准确、内容丢失的问题存在，调整 step/length
 参数效果也不明显，vad 方案延迟也很高&amp;hellip;&lt;/p>
@@ -17,38 +24,11 @@ sherpa-[ncnn|onnx]-microphone
 请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b
 站视频 &lt;a href="https://www.bilibili.com/video/BV1xcEMz8EsX/">https://www.bilibili.com/video/BV1xcEMz8EsX/&lt;/a>&lt;/p>
 &lt;!-- raw HTML omitted -->
-&lt;p>另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉&lt;/p>
-&lt;p>在大佬的基础示例上，简单补充点内容的保存&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span> result = result.lower().strip()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display.update_text(result)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ log(result)
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">&lt;/span> display.finalize_current_sentence()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display.display()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> else:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sample_buffers = []
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_recognizer.reset(stream)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ def log(result):
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ global file_handler
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler.write(f&amp;#34;{datetime.now().strftime(&amp;#39;%Y-%m-%d %H:%M:%S&amp;#39;)} - {result}\n&amp;#34;)
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler.flush()
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>if __name__ == &amp;#34;__main__&amp;#34;:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ from datetime import datetime
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ ts = datetime.now().strftime(&amp;#34;%y%m%d%H%M%S&amp;#34;)
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_path = Path(f&amp;#34;~/Desktop/asr/2pass.{ts}.txt&amp;#34;).expanduser()
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler = open(file_path, &amp;#34;a&amp;#34;)
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">&lt;/span> try:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> except KeyboardInterrupt:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&amp;#34;\nCaught Ctrl + C. Exiting&amp;#34;)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ finally:
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler.close()
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+&lt;ul>
+&lt;li>[Add real-time speech recognition example for SenseVoice. (#2197)] &lt;a href="https://github.com/k2-fsa/sherpa-onnx/commit/53518efd2fe70f49b86f180a4e5b49fdc374da82">https://github.com/k2-fsa/sherpa-onnx/commit/53518efd2fe70f49b86f180a4e5b49fdc374da82&lt;/a>&lt;/li>
+&lt;li>[Fix displaying streaming speech recognition results for Python. (#2196)] &lt;a href="https://github.com/k2-fsa/sherpa-onnx/commit/4a833a754743076d68252731c681511e2d9390bd">https://github.com/k2-fsa/sherpa-onnx/commit/4a833a754743076d68252731c681511e2d9390bd&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉&lt;/p></description></item><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
 &lt;p>始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 &lt;code>pandoc&lt;/code> 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 &lt;code>latex&lt;/code> 相关设定内容。&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>wkhtmltopdf&lt;/code> 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈&lt;/li>
