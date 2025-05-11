@@ -11,7 +11,7 @@
 这类方案还是会有识别不准确、内容丢失的问题存在，调整 step/length
 参数效果也不明显，vad 方案延迟也很高&mldr;
 New solution
-上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-ncnn/onnx 尝试了下 demo
+上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-[ncnn|onnx] 尝试了下 demo
 sherpa-[ncnn|onnx]-microphone
 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量
 于是联系维护者 @csukuangfj
@@ -53,7 +53,7 @@ if __name__ == "__main__":
 23年大模型开始各种火热起来，于是借助 openai 的 whisper 在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili 视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的
 另外结合语音识别和 LLM 的发散，也试着搓了点语音助手的尝试
 但是实时语音识别场景，用 whiper-stream / sense-voice 这类方案还是会有识别不准确、内容丢失的问题存在，调整 step/length 参数效果也不明显，vad 方案延迟也很高…
-New solution 上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-ncnn/onnx 尝试了下 demo sherpa-[ncnn|onnx]-microphone 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量
+New solution 上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-[ncnn|onnx] 尝试了下 demo sherpa-[ncnn|onnx]-microphone 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量
 于是联系维护者 @csukuangfj 请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b 站视频 https://www.bilibili.com/video/BV1xcEMz8EsX/
 另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉
 在大佬的基础示例上，简单补充点内容的保存
@@ -61,7 +61,7 @@ result = result.lower().strip() display.update_text(result) + log(result) displa
 23年大模型开始各种火热起来，于是借助 openai 的 whisper 在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili 视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的
 另外结合语音识别和 LLM 的发散，也试着搓了点语音助手的尝试
 但是实时语音识别场景，用 whiper-stream / sense-voice 这类方案还是会有识别不准确、内容丢失的问题存在，调整 step/length 参数效果也不明显，vad 方案延迟也很高…
-New solution 上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-ncnn/onnx 尝试了下 demo sherpa-[ncnn|onnx]-microphone 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量
+New solution 上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-[ncnn|onnx] 尝试了下 demo sherpa-[ncnn|onnx]-microphone 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量
 于是联系维护者 @csukuangfj 请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b 站视频 https://www.bilibili.com/video/BV1xcEMz8EsX/
 另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉
 在大佬的基础示例上，简单补充点内容的保存
@@ -69,7 +69,7 @@ result = result.lower().strip() display.update_text(result) + log(result) displa
 23年大模型开始各种火热起来，于是借助 openai 的 whisper 在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili 视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的
 另外结合语音识别和 LLM 的发散，也试着搓了点语音助手的尝试
 但是实时语音识别场景，用 whiper-stream / sense-voice 这类方案还是会有识别不准确、内容丢失的问题存在，调整 step/length 参数效果也不明显，vad 方案延迟也很高…
-New solution 上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-ncnn/onnx 尝试了下 demo sherpa-[ncnn|onnx]-microphone 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量
+New solution 上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-[ncnn|onnx] 尝试了下 demo sherpa-[ncnn|onnx]-microphone 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量
 于是联系维护者 @csukuangfj 请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b 站视频 https://www.bilibili.com/video/BV1xcEMz8EsX/
 另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉
 在大佬的基础示例上，简单补充点内容的保存
@@ -81,7 +81,7 @@ result = result.lower().strip() display.update_text(result) + log(result) displa
 在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili
 视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的</p><p>另外结合语音识别和 LLM 的发散，也试着搓了点语音助手的尝试</p><p>但是实时语音识别场景，用 whiper-stream / sense-voice
 这类方案还是会有识别不准确、内容丢失的问题存在，调整 step/length
-参数效果也不明显，vad 方案延迟也很高&mldr;</p><h2 id=new-solution>New solution</h2><p>上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-ncnn/onnx 尝试了下 demo
+参数效果也不明显，vad 方案延迟也很高&mldr;</p><h2 id=new-solution>New solution</h2><p>上周忽然想起了 kaldi 项目也蛮经典了，于是就试着用 sherpa-[ncnn|onnx] 尝试了下 demo
 sherpa-[ncnn|onnx]-microphone
 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量</p><p>于是联系维护者 @csukuangfj
 请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b
