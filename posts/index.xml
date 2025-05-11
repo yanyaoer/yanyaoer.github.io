@@ -19,36 +19,36 @@ sherpa-[ncnn|onnx]-microphone
 &lt;!-- raw HTML omitted -->
 &lt;p>另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉&lt;/p>
 &lt;p>在大佬的基础示例上，简单补充点内容的保存&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> result&lt;span style="color:#f92672">.&lt;/span>lower()&lt;span style="color:#f92672">.&lt;/span>strip()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display&lt;span style="color:#f92672">.&lt;/span>update_text(result)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> log(result)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display&lt;span style="color:#f92672">.&lt;/span>finalize_current_sentence()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display&lt;span style="color:#f92672">.&lt;/span>display()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sample_buffers &lt;span style="color:#f92672">=&lt;/span> []
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-diff" data-lang="diff">&lt;span style="display:flex;">&lt;span> result = result.lower().strip()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display.update_text(result)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ log(result)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">&lt;/span> display.finalize_current_sentence()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> display.display()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> else:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sample_buffers = []
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_recognizer&lt;span style="color:#f92672">.&lt;/span>reset(stream)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">log&lt;/span>(result):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#66d9ef">global&lt;/span> file_handler
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler&lt;span style="color:#f92672">.&lt;/span>write(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>datetime&lt;span style="color:#f92672">.&lt;/span>now()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74"> %H:%M:%S&amp;#39;&lt;/span>)&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> - &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>result&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler&lt;span style="color:#f92672">.&lt;/span>flush()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_recognizer.reset(stream)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;__main__&amp;#34;&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> datetime
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> ts &lt;span style="color:#f92672">=&lt;/span> datetime&lt;span style="color:#f92672">.&lt;/span>now()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%y%m&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">%H%M%S&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_path &lt;span style="color:#f92672">=&lt;/span> Path(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;~/Desktop/asr/2pass.&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>ts&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.txt&amp;#34;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>expanduser()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler &lt;span style="color:#f92672">=&lt;/span> open(file_path, &lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ def log(result):
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ global file_handler
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler.write(f&amp;#34;{datetime.now().strftime(&amp;#39;%Y-%m-%d %H:%M:%S&amp;#39;)} - {result}\n&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler.flush()
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>if __name__ == &amp;#34;__main__&amp;#34;:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ from datetime import datetime
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ ts = datetime.now().strftime(&amp;#34;%y%m%d%H%M%S&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_path = Path(f&amp;#34;~/Desktop/asr/2pass.{ts}.txt&amp;#34;).expanduser()
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler = open(file_path, &amp;#34;a&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">&lt;/span> try:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">KeyboardInterrupt&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">Caught Ctrl + C. Exiting&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#66d9ef">finally&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span> file_handler&lt;span style="color:#f92672">.&lt;/span>close()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> except KeyboardInterrupt:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&amp;#34;\nCaught Ctrl + C. Exiting&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ finally:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">+ file_handler.close()
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pandoc generate pdf from markdown</title><link>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</link><pubDate>Thu, 25 Jul 2024 14:52:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/pandoc-md2pdf/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
 &lt;p>始终不太习惯 word/wps 类工具编辑文本，再一次尝试用 &lt;code>pandoc&lt;/code> 来生成 pdf，算是初步搞明白一点玩法，本文略过 markdown 的部分主要记录 &lt;code>latex&lt;/code> 相关设定内容。&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>wkhtmltopdf&lt;/code> 也是一个选项，但是转 HTML 再生成 pdf 就没啥挑战了额哈哈&lt;/li>

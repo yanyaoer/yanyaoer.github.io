@@ -85,33 +85,33 @@ result = result.lower().strip() display.update_text(result) + log(result) displa
 sherpa-[ncnn|onnx]-microphone
 流式识别输出的整体效果已经很接近把音频文件喂给大模型的质量</p><p>于是联系维护者 @csukuangfj
 请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b
-站视频 <a href=https://www.bilibili.com/video/BV1xcEMz8EsX/>https://www.bilibili.com/video/BV1xcEMz8EsX/</a></p><p>另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉</p><p>在大佬的基础示例上，简单补充点内容的保存</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>          result <span style=color:#f92672>=</span> result<span style=color:#f92672>.</span>lower()<span style=color:#f92672>.</span>strip()
-</span></span><span style=display:flex><span>          display<span style=color:#f92672>.</span>update_text(result)
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>          log(result)
-</span></span><span style=display:flex><span>          display<span style=color:#f92672>.</span>finalize_current_sentence()
-</span></span><span style=display:flex><span>          display<span style=color:#f92672>.</span>display()
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>          sample_buffers <span style=color:#f92672>=</span> []
+站视频 <a href=https://www.bilibili.com/video/BV1xcEMz8EsX/>https://www.bilibili.com/video/BV1xcEMz8EsX/</a></p><p>另外也体验到 two-pass 双模型识别的效果，两种方式都能满足俺的使用场景🎉</p><p>在大佬的基础示例上，简单补充点内容的保存</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>          result = result.lower().strip()
+</span></span><span style=display:flex><span>          display.update_text(result)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+          log(result)
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>          display.finalize_current_sentence()
+</span></span><span style=display:flex><span>          display.display()
+</span></span><span style=display:flex><span>        else:
+</span></span><span style=display:flex><span>          sample_buffers = []
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        first_recognizer<span style=color:#f92672>.</span>reset(stream)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span> <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>log</span>(result):
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>   <span style=color:#66d9ef>global</span> file_handler
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>   file_handler<span style=color:#f92672>.</span>write(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>datetime<span style=color:#f92672>.</span>now()<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#39;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#39;</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74> - </span><span style=color:#e6db74>{</span>result<span style=color:#e6db74>}</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>   file_handler<span style=color:#f92672>.</span>flush()
+</span></span><span style=display:flex><span>        first_recognizer.reset(stream)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>  <span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>  ts <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>now()<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%y%m</span><span style=color:#e6db74>%d</span><span style=color:#e6db74>%H%M%S&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>  file_path <span style=color:#f92672>=</span> Path(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;~/Desktop/asr/2pass.</span><span style=color:#e6db74>{</span>ts<span style=color:#e6db74>}</span><span style=color:#e6db74>.txt&#34;</span>)<span style=color:#f92672>.</span>expanduser()
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>  file_handler <span style=color:#f92672>=</span> open(file_path, <span style=color:#e6db74>&#34;a&#34;</span>)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+ def log(result):
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+   global file_handler
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+   file_handler.write(f&#34;{datetime.now().strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)} - {result}\n&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+   file_handler.flush()
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>if __name__ == &#34;__main__&#34;:
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+  from datetime import datetime
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  ts = datetime.now().strftime(&#34;%y%m%d%H%M%S&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  file_path = Path(f&#34;~/Desktop/asr/2pass.{ts}.txt&#34;).expanduser()
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+  file_handler = open(file_path, &#34;a&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span>  try:
 </span></span><span style=display:flex><span>    main()
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>KeyboardInterrupt</span>:
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Caught Ctrl + C. Exiting&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>  <span style=color:#66d9ef>finally</span>:
-</span></span><span style=display:flex><span><span style=color:#f92672>+</span>    file_handler<span style=color:#f92672>.</span>close()
-</span></span></code></pre></div></content><p></p></main><footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a></footer></body></html>
+</span></span><span style=display:flex><span>  except KeyboardInterrupt:
+</span></span><span style=display:flex><span>    print(&#34;\nCaught Ctrl + C. Exiting&#34;)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>+  finally:
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+    file_handler.close()
+</span></span></span></code></pre></div></content><p></p></main><footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a></footer></body></html>
