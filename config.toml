@@ -1,7 +1,7 @@
 baseURL = "https://xn--ynyo-2nad.com/"
 languageCode = "en-us"
 title = "yányào.com"
-theme = "oranges"
+theme = "huglog"
 
 pygmentsstyle = "solarized-dark"
 pygmentscodefences = true

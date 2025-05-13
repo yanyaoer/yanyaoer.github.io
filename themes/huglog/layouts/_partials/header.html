@@ -1,0 +1,5 @@
+<header>
+  <a href={{ .Site.BaseURL }} class="title">
+    <h2>{{ site.Title }}</h2>
+  </a>
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}

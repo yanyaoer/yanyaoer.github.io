@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ .Content }}
+
+<ul class="blog-posts">
+  {{ range site.RegularPages }}
+  <li>
+    <span>
+      <i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </i>
+    </span>
+    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ if not .Data.Singular }}
+<small>
+  <div>
+    {{ range .Site.Taxonomies.tags }}
+    <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+    {{ end }}
+  </div>
+</small>
+{{ end }}
+{{ end }}
