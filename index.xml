@@ -23,7 +23,8 @@ sherpa-[ncnn|onnx]-microphone
 &lt;p>于是联系维护者 @csukuangfj
 请教怎么提升识别准确率，大佬过于卷周末还给造了新方案和输出优化，甚至还录了 b
 站视频 &lt;a href="https://www.bilibili.com/video/BV1xcEMz8EsX/">https://www.bilibili.com/video/BV1xcEMz8EsX/&lt;/a>&lt;/p>
-&lt;!-- raw HTML omitted -->
+&lt;iframe src="//player.bilibili.com/player.html?bvid=BV1xcEMz8EsX&amp;page=1" scrolling="no"
+ autoplay="0" border="0" frameborder="no" framespacing="0" allowfullscreen="true">&lt;/iframe>
 &lt;ul>
 &lt;li>[Add real-time speech recognition example for SenseVoice. (#2197)] &lt;a href="https://github.com/k2-fsa/sherpa-onnx/commit/53518efd2fe70f49b86f180a4e5b49fdc374da82">https://github.com/k2-fsa/sherpa-onnx/commit/53518efd2fe70f49b86f180a4e5b49fdc374da82&lt;/a>&lt;/li>
 &lt;li>[Fix displaying streaming speech recognition results for Python. (#2196)] &lt;a href="https://github.com/k2-fsa/sherpa-onnx/commit/4a833a754743076d68252731c681511e2d9390bd">https://github.com/k2-fsa/sherpa-onnx/commit/4a833a754743076d68252731c681511e2d9390bd&lt;/a>&lt;/li>

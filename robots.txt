@@ -1,2 +1,1 @@
-User-Agent: *
-Sitemap: https://xn--ynyo-2nad.com/sitemap.xml
+User-agent: *
