@@ -28,7 +28,8 @@ brew cask install zotero
 | --- | --- |
 | quicklook | https://github.com/mronkko/ZoteroQuickLook/releases |
 | markdown | https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/ |
-
+| papersgpt | https://github.com/papersgpt/papersgpt-for-zotero/releases |
+| pdf2zh | https://github.com/guaguastandup/zotero-pdf2zh/releases |
 
 ## subscription
 
