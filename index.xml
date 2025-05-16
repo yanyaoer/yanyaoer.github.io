@@ -173,6 +173,14 @@ PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-
  &lt;td>markdown&lt;/td>
  &lt;td>&lt;a href="https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/">https://addons.thunderbird.net/zh-cn/thunderbird/addon/markdown-here-xul/&lt;/a>&lt;/td>
  &lt;/tr>
+ &lt;tr>
+ &lt;td>papersgpt&lt;/td>
+ &lt;td>&lt;a href="https://github.com/papersgpt/papersgpt-for-zotero/releases">https://github.com/papersgpt/papersgpt-for-zotero/releases&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>pdf2zh&lt;/td>
+ &lt;td>&lt;a href="https://github.com/guaguastandup/zotero-pdf2zh/releases">https://github.com/guaguastandup/zotero-pdf2zh/releases&lt;/a>&lt;/td>
+ &lt;/tr>
  &lt;/tbody>
 &lt;/table>
 &lt;h2 id="subscription">subscription&lt;/h2>
