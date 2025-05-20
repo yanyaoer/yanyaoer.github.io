@@ -7,3 +7,7 @@ title = " ʕ•ᴥ•ʔ "
   And slowly read, and dream of the soft look  
   Your eyes had once, and of their shadows deep.  
   -- *By W.B. Yeats*
+
+## toy projects
+- https://github.com/yanyaoer/chat.swift | lightweight chat app for LLM
+- https://github.com/yanyaoer/mcp-video2text | mcp server for convert video to text
