@@ -1,6 +1,22 @@
 <!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Posts | yányào.com</title><link rel=stylesheet href=/css/main.min.6f828ddf68bbacf732eaa73b52e82f5d9de0e36e874ab957dc8b22dac66d9fa7.css integrity="sha256-b4KN32i7rPcy6qc7UugvXZ3g426HSrlX3Isi2sZtn6c=" crossorigin=anonymous></head><body><header><header><a href=https://xn--ynyo-2nad.com/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
-<a href=/index.xml>RSS</a></nav></header><main><h1>Posts</h1><h2><a href=/posts/poormans-asr/>poorman's ASR solution</a></h2><h2 id=intro>Intro</h2><p>大概20年h2期间，听闻feishu支持了会议自动转译字幕功能，but
+<a href=/index.xml>RSS</a></nav></header><main><h1>Posts</h1><h2><a href=/posts/vibe-coding-with-claude/>vibe coding with Claude</a></h2><h2 id=abstract>Abstract</h2><ul><li>项目探索: 熟悉陌生项目，节省摸索时间，减轻其他研发的负担</li><li>方案设计: 搜索代码库，提出实现方案，帮助理清思路提供决策参考</li><li>Debug和自动化: 分析日志，快速定位问题跑通测试，自行调用终端工具</li><li>开发效率：快速构建功能原型并迭代创意，避免过早陷入细节</li><li>编码重构: 生成单元测试、优化代码、语法检查和 linting，<strong>代码质量有保障</strong></li></ul><p><img src=/images/2025-08-03-17-02-22.png alt></p><ul><li>Claude Code 概述 - Anthropic</li><li><a href=https://www.anthropic.com/claude-code>https://www.anthropic.com/claude-code</a></li></ul><h2 id=sample-project>Sample Project</h2><ul><li>dab.rs - <a href=https://github.com/yanyaoer/dab.rs>https://github.com/yanyaoer/dab.rs</a>
+A Unix-style command-line music player built with Rust, featuring streaming playback, local caching, and a terminal user interface inspired by cmus</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>┌─ DAB Music Player ───────────────────────────────────────────────────────┐
+</span></span><span style=display:flex><span>│ ▶ Anthrax - Madhouse: The Very Best Of Anthrax - Madhouse  [02:25/04:17] │
+</span></span><span style=display:flex><span>├──────────────────────────────────────────────────────────────────────────┤
+</span></span><span style=display:flex><span>│ Favorite Albums (16) │ Enter: Play │ l: Album │ h: Discography │ a: Add  │
+</span></span><span style=display:flex><span>├──────────────────────────────────────────────────────────────────────────┤
+</span></span><span style=display:flex><span>│ Anthrax - Madhouse: The Very Best Of Anthrax                             │
+</span></span><span style=display:flex><span>│ Megadeth - Rust In Peace (Unknown year)                                  │
+</span></span><span style=display:flex><span>│ Jacqueline du Pré - The Heart of the Cello (Unknown year)                │
+</span></span><span style=display:flex><span>│ Antonio Vivaldi - Great Composers - Vivaldi (Unknown year)               │
+</span></span><span style=display:flex><span>│ Pantera - Cowboys From Hell (2010-04-17)                                 │
+</span></span><span style=display:flex><span>│ Judas Priest - Painkiller (1990-08-01)                                   │
+</span></span><span style=display:flex><span>│ Arch Enemy - Deceivers (2022-08-12)                                      │
+</span></span><span style=display:flex><span>│ My Dying Bride - 34.788%... Complete (1998-01-01)                        │
+</span></span><span style=display:flex><span>│ Amon Amarth - The Great Heathen Army (2022-08-05)                        │
+</span></span><span style=display:flex><span>└──────────────────────────────────────────────────────────────────────────┘
+</span></span></code></pre></div><p><img src=/images/2025-08-03-17-09-39.png alt></p><h2><a href=/posts/poormans-asr/>poorman's ASR solution</a></h2><h2 id=intro>Intro</h2><p>大概20年h2期间，听闻feishu支持了会议自动转译字幕功能，but
 当时私有化部署的版本一直没有支持，于是私下找了语音助手团队的同学企图蹭服务用于自动生成会议纪要，<strong>懒即是原动力</strong></p><p>再 but 一下，出于服务成本考量没有蹭成功，后来对应的同学也陆续离职就没下文了</p><p>23年大模型开始各种火热起来，于是借助 openai 的 whisper
 在本地陆续写了一些音频转文本的小任务，比如 yt-dlp 下载 bilibili
 视频后转音频再转文本，个人习惯上阅读的效率还是高于视频形式的</p><ul><li>[scribe] <a href=https://gist.github.com/yanyaoer/5cc7b0dd6729f306ad3cb740d501cabd>https://gist.github.com/yanyaoer/5cc7b0dd6729f306ad3cb740d501cabd</a></li></ul><p>另外结合语音识别和 LLM 的发散，也试着搓了点语音助手的尝试</p><ul><li>[voice assistant with computer-use] <a href=https://gist.github.com/yanyaoer/752a73d2d6df5a2aa0de179a0f68e8a1>https://gist.github.com/yanyaoer/752a73d2d6df5a2aa0de179a0f68e8a1</a></li><li>[hook for whisper llm-talk] <a href=https://github.com/yanyaoer/whisper.cpp/commit/da85a1b4791e4a7eeb5adb31d47d4c5e53618234>https://github.com/yanyaoer/whisper.cpp/commit/da85a1b4791e4a7eeb5adb31d47d4c5e53618234</a></li></ul><p>但是实时语音识别场景，用 whiper-stream / sense-voice

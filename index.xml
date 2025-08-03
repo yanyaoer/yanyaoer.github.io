@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ʕ•ᴥ•ʔ on yányào.com</title><link>https://xn--ynyo-2nad.com/</link><description>Recent content in ʕ•ᴥ•ʔ on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 11 May 2025 17:50:56 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/index.xml" rel="self" type="application/rss+xml"/><item><title>poorman's ASR solution</title><link>https://xn--ynyo-2nad.com/posts/poormans-asr/</link><pubDate>Sun, 11 May 2025 17:50:56 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/poormans-asr/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ʕ•ᴥ•ʔ on yányào.com</title><link>https://xn--ynyo-2nad.com/</link><description>Recent content in ʕ•ᴥ•ʔ on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 03 Aug 2025 17:28:00 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/index.xml" rel="self" type="application/rss+xml"/><item><title>vibe coding with Claude</title><link>https://xn--ynyo-2nad.com/posts/vibe-coding-with-claude/</link><pubDate>Sun, 03 Aug 2025 17:28:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/vibe-coding-with-claude/</guid><description>&lt;h2 id="abstract">Abstract&lt;/h2>
+&lt;ul>
+&lt;li>项目探索: 熟悉陌生项目，节省摸索时间，减轻其他研发的负担&lt;/li>
+&lt;li>方案设计: 搜索代码库，提出实现方案，帮助理清思路提供决策参考&lt;/li>
+&lt;li>Debug和自动化: 分析日志，快速定位问题跑通测试，自行调用终端工具&lt;/li>
+&lt;li>开发效率：快速构建功能原型并迭代创意，避免过早陷入细节&lt;/li>
+&lt;li>编码重构: 生成单元测试、优化代码、语法检查和 linting，&lt;strong>代码质量有保障&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://xn--ynyo-2nad.com/images/2025-08-03-17-02-22.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>Claude Code 概述 - Anthropic&lt;/li>
+&lt;li>&lt;a href="https://www.anthropic.com/claude-code">https://www.anthropic.com/claude-code&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="sample-project">Sample Project&lt;/h2>
+&lt;ul>
+&lt;li>dab.rs - &lt;a href="https://github.com/yanyaoer/dab.rs">https://github.com/yanyaoer/dab.rs&lt;/a>
+A Unix-style command-line music player built with Rust, featuring streaming playback, local caching, and a terminal user interface inspired by cmus&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>┌─ DAB Music Player ───────────────────────────────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ▶ Anthrax - Madhouse: The Very Best Of Anthrax - Madhouse [02:25/04:17] │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├──────────────────────────────────────────────────────────────────────────┤
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Favorite Albums (16) │ Enter: Play │ l: Album │ h: Discography │ a: Add │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├──────────────────────────────────────────────────────────────────────────┤
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Anthrax - Madhouse: The Very Best Of Anthrax │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Megadeth - Rust In Peace (Unknown year) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Jacqueline du Pré - The Heart of the Cello (Unknown year) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Antonio Vivaldi - Great Composers - Vivaldi (Unknown year) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Pantera - Cowboys From Hell (2010-04-17) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Judas Priest - Painkiller (1990-08-01) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Arch Enemy - Deceivers (2022-08-12) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ My Dying Bride - 34.788%... Complete (1998-01-01) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ Amon Amarth - The Great Heathen Army (2022-08-05) │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└──────────────────────────────────────────────────────────────────────────┘
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://xn--ynyo-2nad.com/images/2025-08-03-17-09-39.png" alt="">&lt;/p></description></item><item><title>poorman's ASR solution</title><link>https://xn--ynyo-2nad.com/posts/poormans-asr/</link><pubDate>Sun, 11 May 2025 17:50:56 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/poormans-asr/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
 &lt;p>大概20年h2期间，听闻feishu支持了会议自动转译字幕功能，but
 当时私有化部署的版本一直没有支持，于是私下找了语音助手团队的同学企图蹭服务用于自动生成会议纪要，&lt;strong>懒即是原动力&lt;/strong>&lt;/p>
 &lt;p>再 but 一下，出于服务成本考量没有蹭成功，后来对应的同学也陆续离职就没下文了&lt;/p>
