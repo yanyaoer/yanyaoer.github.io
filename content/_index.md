@@ -11,3 +11,4 @@ title = " ʕ•ᴥ•ʔ "
 ## toy projects
 - https://github.com/yanyaoer/chat.swift | lightweight chat app for LLM
 - https://github.com/yanyaoer/mcp-video2text | mcp server for convert video to text
+- https://github.com/yanyaoer/dab.rs | A Unix-style command-line audio player
