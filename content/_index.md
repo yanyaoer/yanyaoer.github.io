@@ -8,6 +8,9 @@ title = " ʕ•ᴥ•ʔ "
   Your eyes had once, and of their shadows deep.  
   -- *By W.B. Yeats*
 
+## reading
+- https://app.folo.is/share/users/43583669726352384
+
 ## toy projects
 - https://github.com/yanyaoer/chat.swift | lightweight chat app for LLM
 - https://github.com/yanyaoer/mcp-video2text | mcp server for convert video to text
