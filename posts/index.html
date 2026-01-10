@@ -1,6 +1,20 @@
-<!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Posts | yányào.com</title><link rel=stylesheet href=/css/main.min.6f828ddf68bbacf732eaa73b52e82f5d9de0e36e874ab957dc8b22dac66d9fa7.css integrity="sha256-b4KN32i7rPcy6qc7UugvXZ3g426HSrlX3Isi2sZtn6c=" crossorigin=anonymous></head><body><header><header><a href=https://xn--ynyo-2nad.com/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a>
+<!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Posts | yányào.com</title><link rel=stylesheet href=/css/main.min.32db9dad186b13882c883b2691ae6c3e8b7b4c6864770cc17a51ac0dfb9bb6c9.css integrity="sha256-MtudrRhrE4gsiDsmka5sPot7TGhkdwzBelGsDfubtsk=" crossorigin=anonymous></head><body><header><header><a href=https://xn--ynyo-2nad.com/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
-<a href=/index.xml>RSS</a></nav></header><main><h1>Posts</h1><h2><a href=/posts/vibe-coding-with-claude/>vibe coding with Claude</a></h2><h2 id=abstract>Abstract</h2><ul><li>项目探索: 熟悉陌生项目，节省摸索时间，减轻其他研发的负担</li><li>方案设计: 搜索代码库，提出实现方案，帮助理清思路提供决策参考</li><li>Debug和自动化: 分析日志，快速定位问题跑通测试，自行调用终端工具</li><li>开发效率：快速构建功能原型并迭代创意，避免过早陷入细节</li><li>编码重构: 生成单元测试、优化代码、语法检查和 linting，<strong>代码质量有保障</strong></li></ul><p><img src=/images/2025-08-03-17-02-22.png alt></p><ul><li>Claude Code 概述 - Anthropic</li><li><a href=https://www.anthropic.com/claude-code>https://www.anthropic.com/claude-code</a></li></ul><h2 id=sample-project>Sample Project</h2><ul><li>dab.rs - <a href=https://github.com/yanyaoer/dab.rs>https://github.com/yanyaoer/dab.rs</a>
+<a href=/index.xml>RSS</a></nav></header><main><h1>Posts</h1><h2><a href=/posts/sing-box-tun-network-diagnosis/>sing-box TUN 模式网络慢问题诊断与优化</a></h2><p>记录一次 sing-box TUN 模式下网络访问慢的诊断过程</p><h2 id=问题现象>问题现象</h2><ul><li>环境：macOS + sing-box TUN 模式</li><li>现象：能连接公网，但访问 Google 等网站非常慢或完全无法访问</li><li>国内网站访问正常</li></ul><h2 id=诊断过程>诊断过程</h2><h3 id=1-初步测试>1. 初步测试</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 测试国内网站 - 正常</span>
+</span></span><span style=display:flex><span>curl -w <span style=color:#e6db74>&#34;Total: %{time_total}s\n&#34;</span> -o /dev/null -s https://www.baidu.com
+</span></span><span style=display:flex><span><span style=color:#75715e># Total: 0.086s</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 测试 Google - 失败 (SSL 错误)</span>
+</span></span><span style=display:flex><span>curl -w <span style=color:#e6db74>&#34;Total: %{time_total}s\n&#34;</span> -o /dev/null -s https://www.google.com
+</span></span><span style=display:flex><span><span style=color:#75715e># exit code 60, SSL certificate problem</span>
+</span></span></code></pre></div><h3 id=2-dns-污染检测>2. DNS 污染检测</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 系统 DNS 返回错误 IP (Meta 的 IP，不是 Google)</span>
+</span></span><span style=display:flex><span>dig +short www.google.com
+</span></span><span style=display:flex><span><span style=color:#75715e># 31.13.94.36</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># sing-box DNS 返回正确 IP</span>
+</span></span><span style=display:flex><span>dig +short www.google.com @127.0.0.1
+</span></span><span style=display:flex><span><span style=color:#75715e># 142.250.194.164</span>
+</span></span></code></pre></div><p><strong>发现问题 1</strong>：系统 DNS 被 GFW 污染，返回了错误的 IP 地址。</p><h2><a href=/posts/vibe-coding-with-claude/>vibe coding with Claude</a></h2><h2 id=abstract>Abstract</h2><ul><li>项目探索: 熟悉陌生项目，节省摸索时间，减轻其他研发的负担</li><li>方案设计: 搜索代码库，提出实现方案，帮助理清思路提供决策参考</li><li>Debug和自动化: 分析日志，快速定位问题跑通测试，自行调用终端工具</li><li>开发效率：快速构建功能原型并迭代创意，避免过早陷入细节</li><li>编码重构: 生成单元测试、优化代码、语法检查和 linting，<strong>代码质量有保障</strong></li></ul><p><img src=/images/2025-08-03-17-02-22.png alt></p><ul><li>Claude Code 概述 - Anthropic</li><li><a href=https://www.anthropic.com/claude-code>https://www.anthropic.com/claude-code</a></li></ul><h2 id=sample-project>Sample Project</h2><ul><li>dab.rs - <a href=https://github.com/yanyaoer/dab.rs>https://github.com/yanyaoer/dab.rs</a>
 A Unix-style command-line music player built with Rust, featuring streaming playback, local caching, and a terminal user interface inspired by cmus</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>┌─ DAB Music Player ───────────────────────────────────────────────────────┐
 </span></span><span style=display:flex><span>│ ▶ Anthrax - Madhouse: The Very Best Of Anthrax - Madhouse  [02:25/04:17] │
 </span></span><span style=display:flex><span>├──────────────────────────────────────────────────────────────────────────┤
@@ -52,14 +66,14 @@ sherpa-[ncnn|onnx]-microphone
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e># foxcpp/maddy:v0.4.2</span>
 </span></span><span style=display:flex><span>podman run <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --name maddy <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -v /data/maddy:/data <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -p 25:25 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -p 143:143 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -p 587:587 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -p 993:993 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  -p 465:465 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  yanyaoer/maddy:master
+</span></span></span><span style=display:flex><span>  --name maddy <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>  -v /data/maddy:/data <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>  -p 25:25 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>  -p 143:143 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>  -p 587:587 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>  -p 993:993 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>  -p 465:465 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span>  yanyaoer/maddy:master
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e># add user</span>
@@ -177,7 +191,7 @@ tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;manifest&gt;
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>  &lt;remote  name=&#34;origin&#34; fetch=&#34;</span><span style=color:#e6db74>{ssh_url}</span><span style=color:#e6db74>&#34; /&gt;
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>  &lt;default revision=&#34;master&#34; remote=&#34;origin&#34; sync-c=&#34;true&#34; sync-j=&#34;4&#34; /&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74></span><span style=color:#e6db74>{content}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>{content}</span><span style=color:#e6db74>
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>&lt;/manifest&gt;&#34;&#34;&#34;</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
@@ -250,7 +264,7 @@ tornado
 bind -n S-up command-prompt -p &#39;docset:&#39; &#34;splitw -h -fb -l 80 dasht &#39;%%&#39;&#34;
 </code></pre><h2><a href=/posts/cloudflare-gost/>Cloudflare Gost</a></h2><p>从清明节开始，稳定运行好几年的 ss 服务器终于阵亡了，所有端口全挂。一直蹭公司的 vpn 查资料也挺到了五一，实在拖延够够的就再另外开了一台机器中转过去迁移数据，不过嘛年纪大了又开始犯懒，企图拯救获得资格认证的机器，通过一番网上冲浪学习到了目前(实测可用)能满足我需求的方案。简单来说就是：cloudflare[后文简称为 cf] + websockets over gost，实际的客户端通过 cdn 代理再接入服务</p><p>有几个需要注意的地方：</p><ul><li><p>gost 启动时绑定的 localhost 不直接对外访问，走了 caddy 的转发，而这一步和 cf 的 ssl 证书配置会造成不停的重定向跳转，需要将 cf 加密模式配置为 flexible</p></li><li><p>然后修改 caddy 的域名配置为 <a href=http://domain.com>http://domain.com</a> <a href=https://domain.com>https://domain.com</a> { &mldr; } 阻止 cf 和 caddy 之间的 http -> https</p></li><li><p>gost 服务端监听 ws 协议，本地的 gost 客户端转发 wss 协议连接 cf_domain:443</p></li><li><p>需要鉴权的方案使用 socks5+wss://username:password@domain:port</p></li><li><p>android 客户端的设置，因为使用了 ws 协议，所以需要将域名写入到插件的配置里，直接用域名变量无法解析</p></li></ul><p>具体配置参考官方文档，<strong>一切浪费的时间都是源于没认真仔细看文档</strong></p><ul><li><a href=https://github.com/haoel/haoel.github.io>https://github.com/haoel/haoel.github.io</a></li><li><a href=https://github.com/ginuerzh/gost>https://github.com/ginuerzh/gost</a></li><li><a href=https://github.com/xausky/ShadowsocksGostPlugin>https://github.com/xausky/ShadowsocksGostPlugin</a></li></ul><p><strong>update 2021-03-01</strong> 由于 shawdowsocks 的 android 客户端升级导致插件不可用，另外部署了 <a href=https://github.com/txthinking/brook>brook</a> wsserver 给手机使用</p><h2><a href=/posts/webpack-resolve-local-module/>webpack resolve local module</a></h2><p>最近的项目刚开始，设计的目录层级有点深<br>经常会在好几层本地路径之间互相引用</p><p><code>import Image from '../../../../components/image'</code></p><p>这层层叠叠的路径写起来实在丑陋<br>不由得想起 Python 从项目根目录引用模块<br>然后研究了一下 Node.js 里的几种简易实现</p><p>干脆利落的软连接: <code>ln -s node_modules src</code></p><p>修改环境变量: <code>NODE_PATH=. node app</code></p><p>从本地目录安装:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// package.json 
 </span></span></span><span style=display:flex><span><span style=color:#75715e>// 需要运行 npm install
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>{
+</span></span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;name&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;baz&#34;</span>,
 </span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;dependencies&#34;</span><span style=color:#f92672>:</span> {
 </span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;foo&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;file: ./src&#34;</span>,
@@ -361,7 +375,7 @@ resolve: {
 </span></span><span style=display:flex><span>systemctl status caddy.service
 </span></span></code></pre></div><p><a href=https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service>https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service</a></p><h2><a href=/posts/mongodb-backup/>mongodb backup</a></h2><p>有台机器准备2月份下架
 记一个 mongodb 备份小脚本 :)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e># vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8:</span>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8:</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>MONGO_DATABASE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;_name_&#34;</span>
 </span></span><span style=display:flex><span>
@@ -458,7 +472,7 @@ resolve: {
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>  <span style=color:#a6e22e>output</span>() {
 </span></span><span style=display:flex><span>    <span style=color:#75715e>//let content = this.store.slice(0, 2)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>content</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>store</span>
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>content</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>store</span>
 </span></span><span style=display:flex><span>      .<span style=color:#a6e22e>map</span>(<span style=color:#a6e22e>d</span>=&gt; <span style=color:#a6e22e>d</span>.<span style=color:#a6e22e>content</span>)
 </span></span><span style=display:flex><span>      .<span style=color:#a6e22e>join</span>(<span style=color:#e6db74>&#39;&lt;hr /&gt;&#39;</span>);
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>html</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`&lt;html&gt;
@@ -541,10 +555,10 @@ resolve: {
 实际上这个域名的 CNAME 内容应该用编码后的字符串而不是 yányào.com</p><p><a href=https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4>https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>diff --git a/CNAME b/CNAME
 </span></span><span style=display:flex><span>index 6cb647c..92d166c 100644
 </span></span><span style=display:flex><span><span style=color:#f92672>--- a/CNAME
-</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/CNAME
-</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -1 +1 @@
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>-yányào.com
-</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+xn--ynyo-2nad.com
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+++ b/CNAME
+</span></span></span><span style=display:flex><span><span style=color:#75715e>@@ -1 +1 @@
+</span></span></span><span style=display:flex><span><span style=color:#f92672>-yányào.com
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+xn--ynyo-2nad.com
 </span></span></span></code></pre></div><h2><a href=/posts/xtag-and-shadowdom/>xtag-and-shadowdom</a></h2><p>最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱
 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY</p><p>可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类
 inline 方式覆盖样式略嫌繁琐</p><h2 id=示例代码>示例代码</h2><h3 id=xtagjs>xtag.js</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dom</span> <span style=color:#f92672>=</span> {
@@ -561,7 +575,7 @@ inline 方式覆盖样式略嫌繁琐</p><h2 id=示例代码>示例代码</h2><h
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>createdCallback</span><span style=color:#f92672>:</span> {
 </span></span><span style=display:flex><span>      <span style=color:#a6e22e>value</span>() {
 </span></span><span style=display:flex><span>        <span style=color:#75715e>//xtag 嵌套时这里读不到attr, 放到 attach
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;onCreate::image&#39;</span>);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;onCreate::image&#39;</span>);
 </span></span><span style=display:flex><span>      }
 </span></span><span style=display:flex><span>    },
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>attachedCallback</span><span style=color:#f92672>:</span> {
@@ -715,4 +729,4 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # disable dashboard
 defaults write com.apple.dashboard mcx-disabled -boolean true
-</code></pre><p>#<a href=http://itunes.apple.com/us/app/xcode/>xcode</a> with <a href=https://developer.apple.com/downloads>Command Line Tools</a></p></main><footer><p>Copyright 2025. All rights reserved.</p></footer></body></html>
+</code></pre><p>#<a href=http://itunes.apple.com/us/app/xcode/>xcode</a> with <a href=https://developer.apple.com/downloads>Command Line Tools</a></p></main><footer><p>Copyright 2026. All rights reserved.</p></footer></body></html>

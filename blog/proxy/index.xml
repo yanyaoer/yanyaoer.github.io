@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Proxy on yányào.com</title><link>https://xn--ynyo-2nad.com/blog/proxy/</link><description>Recent content in Proxy on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 10 Jan 2026 23:00:00 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/blog/proxy/index.xml" rel="self" type="application/rss+xml"/><item><title>sing-box TUN 模式网络慢问题诊断与优化</title><link>https://xn--ynyo-2nad.com/posts/sing-box-tun-network-diagnosis/</link><pubDate>Sat, 10 Jan 2026 23:00:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/sing-box-tun-network-diagnosis/</guid><description>&lt;p&gt;记录一次 sing-box TUN 模式下网络访问慢的诊断过程&lt;/p&gt;
+&lt;h2 id="问题现象"&gt;问题现象&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;环境：macOS + sing-box TUN 模式&lt;/li&gt;
+&lt;li&gt;现象：能连接公网，但访问 Google 等网站非常慢或完全无法访问&lt;/li&gt;
+&lt;li&gt;国内网站访问正常&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="诊断过程"&gt;诊断过程&lt;/h2&gt;
+&lt;h3 id="1-初步测试"&gt;1. 初步测试&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 测试国内网站 - 正常&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -w &lt;span style="color:#e6db74"&gt;&amp;#34;Total: %{time_total}s\n&amp;#34;&lt;/span&gt; -o /dev/null -s https://www.baidu.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Total: 0.086s&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 测试 Google - 失败 (SSL 错误)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -w &lt;span style="color:#e6db74"&gt;&amp;#34;Total: %{time_total}s\n&amp;#34;&lt;/span&gt; -o /dev/null -s https://www.google.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# exit code 60, SSL certificate problem&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-dns-污染检测"&gt;2. DNS 污染检测&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 系统 DNS 返回错误 IP (Meta 的 IP，不是 Google)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dig +short www.google.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 31.13.94.36&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# sing-box DNS 返回正确 IP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dig +short www.google.com @127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 142.250.194.164&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;发现问题 1&lt;/strong&gt;：系统 DNS 被 GFW 污染，返回了错误的 IP 地址。&lt;/p&gt;</description></item></channel></rss>

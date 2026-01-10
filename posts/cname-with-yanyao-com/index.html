@@ -1,12 +1,12 @@
-<!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>create CNAME with internationalized domain name | yányào.com</title><link rel=stylesheet href=/css/main.min.6f828ddf68bbacf732eaa73b52e82f5d9de0e36e874ab957dc8b22dac66d9fa7.css integrity="sha256-b4KN32i7rPcy6qc7UugvXZ3g426HSrlX3Isi2sZtn6c=" crossorigin=anonymous></head><body><header><header><a href=https://xn--ynyo-2nad.com/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a>
+<!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>create CNAME with internationalized domain name | yányào.com</title><link rel=stylesheet href=/css/main.min.32db9dad186b13882c883b2691ae6c3e8b7b4c6864770cc17a51ac0dfb9bb6c9.css integrity="sha256-MtudrRhrE4gsiDsmka5sPot7TGhkdwzBelGsDfubtsk=" crossorigin=anonymous></head><body><header><header><a href=https://xn--ynyo-2nad.com/ class=title><h2>yányào.com</h2></a><nav><a href=/>Home</a>
 <a href=/posts>Posts</a>
 <a href=/index.xml>RSS</a></nav></header><main><h1>create CNAME with internationalized domain name</h1><time datetime=2015-10-04T20:52:56+00:00>October 4, 2015</time><p>前段时间买了个 <a href=https://en.wikipedia.org/wiki/Internationalized_domain_name>idn</a>: yányào.com 闲置了很长时间没动
 趁着十一长假无所事事的机会, 把玩了一下 <a href=https://hexo.io>hexo</a> 挂到 yanyaoer.github.io</p><p>然后 CNAME 的时候掉坑了, 看到有人说30分钟生效傻傻等就不提了
 实际上这个域名的 CNAME 内容应该用编码后的字符串而不是 yányào.com</p><p><a href=https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4>https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>diff --git a/CNAME b/CNAME
 </span></span><span style=display:flex><span>index 6cb647c..92d166c 100644
 </span></span><span style=display:flex><span><span style=color:#f92672>--- a/CNAME
-</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+++ b/CNAME
-</span></span></span><span style=display:flex><span><span style=color:#a6e22e></span><span style=color:#75715e>@@ -1 +1 @@
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>-yányào.com
-</span></span></span><span style=display:flex><span><span style=color:#f92672></span><span style=color:#a6e22e>+xn--ynyo-2nad.com
-</span></span></span></code></pre></div><div><div>Tags:</div><ul><li><a href=/blog/idn/>Idn</a></li><li><a href=/blog/cname/>Cname</a></li><li><a href=/blog/gh-pages/>Gh-Pages</a></li></ul></div></main><footer><p>Copyright 2025. All rights reserved.</p></footer></body></html>
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+++ b/CNAME
+</span></span></span><span style=display:flex><span><span style=color:#75715e>@@ -1 +1 @@
+</span></span></span><span style=display:flex><span><span style=color:#f92672>-yányào.com
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>+xn--ynyo-2nad.com
+</span></span></span></code></pre></div><div><div>Tags:</div><ul><li><a href=/blog/idn/>Idn</a></li><li><a href=/blog/cname/>Cname</a></li><li><a href=/blog/gh-pages/>Gh-Pages</a></li></ul></div></main><footer><p>Copyright 2026. All rights reserved.</p></footer></body></html>
