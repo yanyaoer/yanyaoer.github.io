@@ -1,5 +1,5 @@
 ---
-title: "Codex Plugin for Claude Code: 给 AI 编程加一道质检关卡"
+title: "Codex Plugin for Claude Code and Vibe coding lover"
 date: 2026-04-11T15:00:00+08:00
 tags: ["claude-code", "codex", "code-review", "ai"]
 ---
