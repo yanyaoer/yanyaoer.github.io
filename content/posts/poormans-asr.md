@@ -1,7 +1,6 @@
 ---
 title: "poorman's ASR solution"
 date: 2025-05-11T17:50:56+08:00
-lang: zh-CN
 ---
 
 

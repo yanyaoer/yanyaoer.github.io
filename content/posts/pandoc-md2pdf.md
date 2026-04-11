@@ -3,7 +3,6 @@ title: "Pandoc generate pdf from markdown"
 #title: \vspace{-5ex}Pandoc generate pdf from markdown\vspace{-5ex}
 #title: \vspace{-5ex}Sample title\vspace{-5ex}
 date: 2024-07-25T14:52:12+08:00
-lang: zh-CN
 mainfont: "PingFang SC"
 #monofont: "FantasqueSansM Nerd Font Mono"
 monofont: "Sarasa Mono SC"
