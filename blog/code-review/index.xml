@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code-Review on yányào.com</title><link>https://xn--ynyo-2nad.com/blog/code-review/</link><description>Recent content in Code-Review on yányào.com</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 11 Apr 2026 15:00:00 +0800</lastBuildDate><atom:link href="https://xn--ynyo-2nad.com/blog/code-review/index.xml" rel="self" type="application/rss+xml"/><item><title>Codex Plugin for Claude Code: 给 AI 编程加一道质检关卡</title><link>https://xn--ynyo-2nad.com/posts/codex-plugin-for-claude-code/</link><pubDate>Sat, 11 Apr 2026 15:00:00 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/codex-plugin-for-claude-code/</guid><description>&lt;p&gt;用 Claude Code 写代码效率高，但写完谁来 review？OpenAI 开源了 &lt;a href="https://github.com/openai/codex-plugin-cc"&gt;codex-plugin-cc&lt;/a&gt;，把 Codex 嵌到 Claude Code 里做代码审查。今天配了一下，过程比预期曲折。&lt;/p&gt;
+&lt;h2 id="起因"&gt;起因&lt;/h2&gt;
+&lt;p&gt;今天给项目加了 E2B sandbox 集成（代码执行沙箱），改了七八个文件。写完想 commit，但想先让 AI review 一下再提交。&lt;/p&gt;
+&lt;p&gt;之前在 &lt;a href="https://github.com/yanyaoer/research-devflow"&gt;research-devflow&lt;/a&gt; 里写过一个 &lt;code&gt;/review&lt;/code&gt; skill，用规则引擎扫描代码。但那个本质是 Claude 审查自己写的代码，总觉得差点意思。codex-plugin 用的是另一个 AI（Codex）来审查，相当于找了个外部 reviewer。&lt;/p&gt;
+&lt;h2 id="折腾-hook-的过程"&gt;折腾 Hook 的过程&lt;/h2&gt;
+&lt;p&gt;上手一个想法是在 plan 通过后自动触发 review。Claude Code 有个 hook 系统，可以在特定事件触发 shell 命令。我配了个 PostToolUse hook，监听 ExitPlanMode：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;PostToolUse&amp;#34;&lt;/span&gt;: [{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;matcher&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;ExitPlanMode&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;hooks&amp;#34;&lt;/span&gt;: [{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;echo &amp;#39;Run /codex:adversarial-review before implementing.&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;跑了一下，echo 的文字 Claude 确实&amp;quot;看到&amp;quot;了，但它不一定每次都执行对应操作。这个 hook 只能提醒，不能强制。&lt;/p&gt;
+&lt;p&gt;然后去翻 codex 插件的源码，发现它自带一个 &lt;code&gt;stop-review-gate-hook.mjs&lt;/code&gt;，做的事情比我想的精巧得多：&lt;/p&gt;</description></item></channel></rss>
