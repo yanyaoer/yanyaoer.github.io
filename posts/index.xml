@@ -7,7 +7,7 @@
 &lt;/ul&gt;
 &lt;h2 id="诊断过程"&gt;诊断过程&lt;/h2&gt;
 &lt;h3 id="1-初步测试"&gt;1. 初步测试&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 测试国内网站 - 正常&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 测试国内网站 - 正常&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -w &lt;span style="color:#e6db74"&gt;&amp;#34;Total: %{time_total}s\n&amp;#34;&lt;/span&gt; -o /dev/null -s https://www.baidu.com
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Total: 0.086s&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -15,7 +15,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -w &lt;span style="color:#e6db74"&gt;&amp;#34;Total: %{time_total}s\n&amp;#34;&lt;/span&gt; -o /dev/null -s https://www.google.com
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# exit code 60, SSL certificate problem&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="2-dns-污染检测"&gt;2. DNS 污染检测&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 系统 DNS 返回错误 IP (Meta 的 IP，不是 Google)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 系统 DNS 返回错误 IP (Meta 的 IP，不是 Google)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dig +short www.google.com
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 31.13.94.36&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -40,7 +40,7 @@
 &lt;li&gt;dab.rs - &lt;a href="https://github.com/yanyaoer/dab.rs"&gt;https://github.com/yanyaoer/dab.rs&lt;/a&gt;
 A Unix-style command-line music player built with Rust, featuring streaming playback, local caching, and a terminal user interface inspired by cmus&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;┌─ DAB Music Player ───────────────────────────────────────────────────────┐
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;┌─ DAB Music Player ───────────────────────────────────────────────────────┐
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ ▶ Anthrax - Madhouse: The Very Best Of Anthrax - Madhouse [02:25/04:17] │
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;├──────────────────────────────────────────────────────────────────────────┤
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ Favorite Albums (16) │ Enter: Play │ l: Album │ h: Discography │ a: Add │
@@ -93,10 +93,10 @@ sherpa-[ncnn|onnx]-microphone
 &lt;/ul&gt;
 &lt;h2 id="setup"&gt;Setup&lt;/h2&gt;
 &lt;p&gt;首先完整安装 latex 包&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ brew uninstall --cask basictex
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ brew uninstall --cask basictex
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ brew install --cask mactex
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="latex-template"&gt;Latex template&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;---
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;---
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;title&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Your article title here&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;date&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;2023-02-20&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;fontsize&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;12pt&lt;/span&gt;
@@ -172,7 +172,7 @@ PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-
 &lt;li&gt;配置文件相对简单&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="install"&gt;install&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir -p /data/maddy
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir -p /data/maddy
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# hard link caddy&amp;#39;s crt and key to maddy&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;domain&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;/&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;domain&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;.crt /data/maddy/&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;domain&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;.crt
@@ -270,7 +270,7 @@ PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;将码农常用的文档工具 gitbook 转为 pdf&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew cask install calibre
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew cask install calibre
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo npm install -g gitbook-cli
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -302,14 +302,14 @@ PlanB: 微波炉加热 + &lt;a href="https://www.ikea.cn/cn/zh/p/produkt-pu-luo-
 &lt;p&gt;现代 linux 发行版本(比如这里用的 ubuntu 20.04)，默认不带 cronjob 服务，改为 systemd 来管理各种服务，定时任务的写法稍微麻烦了些，先用当前 user 权限来 &lt;code&gt;$HOME/.config/systemd/user&lt;/code&gt; 写入定时任务配置&lt;/p&gt;</description></item><item><title>Deploy bitwarden_rs with podman</title><link>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</link><pubDate>Thu, 04 Jun 2020 19:05:12 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/bitwarden_rs_with_podman/</guid><description>&lt;p&gt;bitwarden_rs&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; 是个用 rust/rocket 编写的非官方 api 实现，
 &lt;a href="https://github.com/bitwarden/server"&gt;dotnet&lt;/a&gt; 版本有点儿不太适合手头的部署环境&lt;/p&gt;
 &lt;p&gt;这里用比较现代的 podman&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt; 来运行 docker 服务&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;8080&lt;/span&gt; -p 8080:8080 bitwardenrs/server:latest
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;podman run -d --name bitwarden -v /bw-data/:/data/:Z -e ROCKET_PORT&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;8080&lt;/span&gt; -p 8080:8080 bitwardenrs/server:latest
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;podman generate systemd --name bitwarden --files
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mv container-bitwarden.service /etc/systemd/system/
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl --user enable /etc/systemd/system/container-bitwarden.service
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl --user start container-bitwarden.service
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后用 nginx 或者 caddy 代理一下 8080 端口即可连接客户端&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install bitwarden-cli &lt;span style="color:#75715e"&gt;# npm install -g @bitwarden/cli&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install bitwarden-cli &lt;span style="color:#75715e"&gt;# npm install -g @bitwarden/cli&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;bw config server https://bw.myserver.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;update 2021-04-01&lt;/strong&gt; build bitwaden_rs from source&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;# install rust
@@ -329,10 +329,10 @@ cp target/release/bitwarden_rs /usr/local/bin/
 golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建私有对象存储服务&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;没有生产环境的使用经验，以下仅用于业余尝鲜&lt;/strong&gt; &lt;del&gt;六一节礼物&lt;/del&gt;&lt;/p&gt;
 &lt;h2 id="gnulinux-下载安装"&gt;GNU/Linux 下载安装&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;chmod +x /user/local/bin/minio
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="添加用户组和配置文件"&gt;添加用户、组和配置文件&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;groupadd --system minio
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;groupadd --system minio
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;useradd --system --gid minio --shell /usr/sbin/nologin --comment &lt;span style="color:#e6db74"&gt;&amp;#34;Minio file server&amp;#34;&lt;/span&gt; minio
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir -p /data/minio
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;chown -R minio:minio /data/minio
@@ -340,7 +340,7 @@ golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建�
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# replace minio.service with your own config, eg. User,Group&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://raw.githubusercontent.com/minio/minio-service/master/linux-systemd/minio.service -O /etc/systemd/system/minio.service
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="配置端口和密钥"&gt;配置端口和密钥&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# optional. run `uuidgen` to creates AK/SK&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# optional. run `uuidgen` to creates AK/SK&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; /tmp/minio
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;MINIO_VOLUMES=&amp;#34;/data/minio/&amp;#34;
@@ -350,7 +350,7 @@ golang 编写+单执行文件部署，非常适合用 k8s 编排复制来搭建�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;EOF&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="启动服务"&gt;启动服务&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl enable minio.service
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl enable minio.service
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl start minio.service
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://docs.min.io/docs/minio-client-complete-guide.html"&gt;客户端 mc&lt;/a&gt;
 使用说明参考官方文档好了，和 s3 命令行也没太多区别，
@@ -422,7 +422,7 @@ tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通
 不管是在 docker 里跑还是直接运行都会报 swap 分区不足，找到两个方案来解决:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# create swapfile &amp;lt;https://linuxize.com/post/create-a-linux-swap-file/&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# create swapfile &amp;lt;https://linuxize.com/post/create-a-linux-swap-file/&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo fallocate -l 2G /swapfile
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo chmod &lt;span style="color:#ae81ff"&gt;600&lt;/span&gt; /swapfile
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo mkswap /swapfile
@@ -433,13 +433,13 @@ tokyo+cloudflare，没错我又套了 cdn，实在是海外线路到北京联通
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# optional: low value is better for production&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo sysctl vm.swappiness&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;10&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="邮件配置"&gt;邮件配置&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# By default the memory limit in Node. js is 512 mb, &lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# By default the memory limit in Node. js is 512 mb, &lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# use command —- max-old-space-size to increase the memory limit&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ NODE_OPTIONS&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;--max-old-space-size=4096&amp;#34;&lt;/span&gt; RAILS_ENV&lt;span style="color:#f92672"&gt;=&lt;/span&gt;production bundle exec rails assets:precompile
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接配置 localhost 发送邮件无效，先用 &lt;a href="https://sendgrid.com/"&gt;sendgrid&lt;/a&gt; 免费版顶着, 一天 100 封邮件目前够用&lt;/p&gt;</description></item><item><title>Gitlab Repo</title><link>https://xn--ynyo-2nad.com/posts/gitlab-repo/</link><pubDate>Sat, 09 May 2020 19:34:06 +0800</pubDate><guid>https://xn--ynyo-2nad.com/posts/gitlab-repo/</guid><description>&lt;p&gt;gitlab 里面已经有十来个 group，几百个 project，虽然不一定会每个项目都参与，
 但是为了快速同步代码，又捡起了 android 开发常用的 repo 命令来管理多项目代码。
 这里使用了 gitlab graphql 接口来遍历项目生成分组的 manifest 文件&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/usr/bin/env python&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; argparse
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; json
@@ -566,7 +566,7 @@ bind -n S-up command-prompt -p &amp;#39;docset:&amp;#39; &amp;#34;splitw -h -fb 
 &lt;p&gt;干脆利落的软连接: &lt;code&gt;ln -s node_modules src&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;修改环境变量: &lt;code&gt;NODE_PATH=. node app&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;从本地目录安装:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// package.json 
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// package.json 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// 需要运行 npm install
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;baz&amp;#34;&lt;/span&gt;,
@@ -593,7 +593,7 @@ resolve: {
 &lt;img src="https://mdn.mozillademos.org/files/7977/wave.png" alt="wave"&gt;&lt;/p&gt;
 &lt;p&gt;ref:
 &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API"&gt;https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;html&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;head&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;meta&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;charset&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
@@ -606,7 +606,7 @@ resolve: {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;script&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;index.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;script&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;body&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;html&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;window.&lt;span style="color:#a6e22e"&gt;AudioContext&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; window.&lt;span style="color:#a6e22e"&gt;AudioContext&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; window.&lt;span style="color:#a6e22e"&gt;webkitAudioContext&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; window.&lt;span style="color:#a6e22e"&gt;mozAudioContext&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;window.&lt;span style="color:#a6e22e"&gt;AudioContext&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; window.&lt;span style="color:#a6e22e"&gt;AudioContext&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; window.&lt;span style="color:#a6e22e"&gt;webkitAudioContext&lt;/span&gt; &lt;span style="color:#f92672"&gt;||&lt;/span&gt; window.&lt;span style="color:#a6e22e"&gt;mozAudioContext&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;window.&lt;span style="color:#a6e22e"&gt;onload&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt;(){
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -681,7 +681,7 @@ resolve: {
 &lt;p&gt;Caddy is a unique web server with a modern feature set. Think nginx or Apache, but written in Go. With Caddy, you can serve your websites over HTTP/2. It can act as a reverse proxy and load balancer. Front your PHP apps with it. You can even deploy your site with git push. Cool, right?&lt;a href="https://blog.gopheracademy.com/caddy-a-look-inside/"&gt;2&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="download-and-install-systemd"&gt;Download and install systemd&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget -O &lt;span style="color:#e6db74"&gt;&amp;#39;caddy.tar.gz&amp;#39;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;https://caddyserver.com/download/build?os=linux&amp;amp;arch=amd64&amp;amp;features=git%2Cipfilter&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget -O &lt;span style="color:#e6db74"&gt;&amp;#39;caddy.tar.gz&amp;#39;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;https://caddyserver.com/download/build?os=linux&amp;amp;arch=amd64&amp;amp;features=git%2Cipfilter&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar zxf caddy.tar.gz
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir /opt/caddy
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir /var/run/caddy/
@@ -696,7 +696,7 @@ resolve: {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;systemctl status caddy.service
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service"&gt;https://github.com/caddyserver/examples/blob/master/systemd%2Fcaddy.service&lt;/a&gt;&lt;/p&gt;</description></item><item><title>mongodb backup</title><link>https://xn--ynyo-2nad.com/posts/mongodb-backup/</link><pubDate>Tue, 22 Dec 2015 13:30:24 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/mongodb-backup/</guid><description>&lt;p&gt;有台机器准备2月份下架
 记一个 mongodb 备份小脚本 :)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;MONGO_DATABASE&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;_name_&amp;#34;&lt;/span&gt;
@@ -735,7 +735,7 @@ resolve: {
 小项目以后都能用这玩意开 https 不用花钱买证书哦啦啦&lt;/p&gt;
 &lt;p&gt;照 &lt;a href="https://letsencrypt.readthedocs.org/en/latest/using.html"&gt;文档&lt;/a&gt; 做一遍给域名签上证书还挺简单的&lt;/p&gt;
 &lt;p&gt;&lt;img src="images/ssl.jpg" alt="ssl"&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 获取项目代码&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 获取项目代码&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/letsencrypt/letsencrypt
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd letsencrypt
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -744,7 +744,7 @@ resolve: {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 获取证书&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./letsencrypt-auto certonly --standalone -d www.example.com -d example.com
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 配置 nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 配置 nginx&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;server &lt;span style="color:#f92672"&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; listen &lt;span style="color:#ae81ff"&gt;443&lt;/span&gt; ;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ssl on;
@@ -771,7 +771,7 @@ resolve: {
 &lt;p&gt;或者 &lt;a href="https://caddyserver.com"&gt;caddyserver&lt;/a&gt;&lt;/p&gt;</description></item><item><title>simple crawler</title><link>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</link><pubDate>Sat, 17 Oct 2015 12:06:21 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/simple-nodejs-crawler/</guid><description>&lt;p&gt;半夜看了本&lt;a href="http://www.qidian.com/Book/3313422.aspx"&gt;小说&lt;/a&gt;觉得翻页太累&lt;/p&gt;
 &lt;p&gt;首先要解决的问题是找一个质量还过得去的小说站
 然后写个&lt;a href="https://github.com/yanyaoer/crawler"&gt;脚本&lt;/a&gt;去把它爬下来章节合并到一起&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;fs&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;fs&amp;#34;&lt;/span&gt;;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;fs&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;fs&amp;#34;&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; { &lt;span style="color:#a6e22e"&gt;argv&lt;/span&gt; } &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;process&amp;#34;&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;request&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;cheerio&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;cheerio&amp;#34;&lt;/span&gt;;
@@ -876,7 +876,7 @@ resolve: {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;().&lt;span style="color:#a6e22e"&gt;init&lt;/span&gt;();
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;于是就水出来一篇日志啦&lt;/p&gt;</description></item><item><title>send notification when task finish</title><link>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</link><pubDate>Sun, 11 Oct 2015 00:38:23 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/send-notification-after-task-end/</guid><description>&lt;p&gt;终端里运行长时间任务(比如 &lt;code&gt;make systemimage&lt;/code&gt;)的时候经常会切换到其他环境做别的事情
 容易忘记查看之前的任务是否完成, 查到一些方法用在任务结束时发出通知&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#C-z 切到后台运行&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#C-z 切到后台运行&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;fg; tput bel
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Mac OS X&lt;/span&gt;
@@ -900,7 +900,7 @@ resolve: {
 &lt;p&gt;然后 CNAME 的时候掉坑了, 看到有人说30分钟生效傻傻等就不提了
 实际上这个域名的 CNAME 内容应该用编码后的字符串而不是 yányào.com&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4"&gt;https://github.com/yanyaoer/yanyaoer.github.io/commit/7c0e4e6863904442d368e3ad5c822f8f189bb7fc#diff-adc4bfdb0829dae99e3699393e3fbaa4&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-diff" data-lang="diff"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;diff --git a/CNAME b/CNAME
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-diff" data-lang="diff"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;diff --git a/CNAME b/CNAME
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;index 6cb647c..92d166c 100644
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;--- a/CNAME
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;+++ b/CNAME
@@ -913,7 +913,7 @@ resolve: {
 inline 方式覆盖样式略嫌繁琐&lt;/p&gt;
 &lt;h2 id="示例代码"&gt;示例代码&lt;/h2&gt;
 &lt;h3 id="xtagjs"&gt;xtag.js&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;dom&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;let&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;dom&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;shadow&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;el&lt;/span&gt;) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;el&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;createShadowRoot&lt;/span&gt; &lt;span style="color:#f92672"&gt;?&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;el&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;createShadowRoot&lt;/span&gt;() &lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;el&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;webkitCreateShadowRoot&lt;/span&gt;();
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
@@ -949,7 +949,7 @@ inline 方式覆盖样式略嫌繁琐&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// other x-tag;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="indexjs"&gt;index.js&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;babel/polyfill&amp;#39;&lt;/span&gt;;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;babel/polyfill&amp;#39;&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;./xtag.js&amp;#39;&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;BaseView&lt;/span&gt; {
@@ -981,7 +981,7 @@ inline 方式覆盖样式略嫌繁琐&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="links"&gt;links&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/"&gt;http://www.html5rocks.com/en/tutorials/webcomponents/customelements/&lt;/a&gt;
 &lt;a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/"&gt;http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-301/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>remote pbcopy with netcat</title><link>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</link><pubDate>Tue, 20 Jan 2015 11:45:53 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/remote-pbcopy-with-netcat/</guid><description>&lt;h2 id="quick-start"&gt;Quick start&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; &lt;span style="color:#f92672"&gt;(&lt;/span&gt;true&lt;span style="color:#f92672"&gt;)&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;do&lt;/span&gt; nc -l &lt;span style="color:#ae81ff"&gt;2224&lt;/span&gt; | pbcopy; &lt;span style="color:#66d9ef"&gt;done&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; &lt;span style="color:#f92672"&gt;(&lt;/span&gt;true&lt;span style="color:#f92672"&gt;)&lt;/span&gt;; &lt;span style="color:#66d9ef"&gt;do&lt;/span&gt; nc -l &lt;span style="color:#ae81ff"&gt;2224&lt;/span&gt; | pbcopy; &lt;span style="color:#66d9ef"&gt;done&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#If your laptop is running linux, replacing pbcopy with xcopy should work:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#while (true); do nc -l 2224 | xcopy; done&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
@@ -1019,7 +1019,7 @@ inline 方式覆盖样式略嫌繁琐&lt;/p&gt;
 &amp;lt;/dict&amp;gt;
 &amp;lt;/plist&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id="remote-pbcopy"&gt;Remote pbcopy&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scp pbcopy remote:/path_to/pbcopy
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scp pbcopy remote:/path_to/pbcopy
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;chmod a+x path_to/pbcopy
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash&lt;/span&gt;
@@ -1032,7 +1032,7 @@ inline 方式覆盖样式略嫌繁琐&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; cat | pbcopy
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;fi&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="links"&gt;links&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/"&gt;http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>forward email by postfix</title><link>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</link><pubDate>Mon, 06 Oct 2014 01:25:06 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</guid><description>&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo aptitude install postfix
+&lt;p&gt;&lt;a href="http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/"&gt;http://brettterpstra.com/2014/02/19/remote-pbcopy-on-os-x-systems/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>forward email by postfix</title><link>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</link><pubDate>Mon, 06 Oct 2014 01:25:06 +0000</pubDate><guid>https://xn--ynyo-2nad.com/posts/postfix-forward-mail/</guid><description>&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo aptitude install postfix
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hostname -f
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;

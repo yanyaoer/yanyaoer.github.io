@@ -10,7 +10,7 @@
 &lt;li&gt;配置文件相对简单&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="install"&gt;install&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir -p /data/maddy
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir -p /data/maddy
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# hard link caddy&amp;#39;s crt and key to maddy&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ln var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;domain&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;/&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;domain&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;.crt /data/maddy/&lt;span style="color:#e6db74"&gt;${&lt;/span&gt;domain&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;.crt

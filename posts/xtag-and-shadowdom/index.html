@@ -2,7 +2,7 @@
 <a href=/posts>Posts</a>
 <a href=/index.xml>RSS</a></nav></header><main><h1>xtag-and-shadowdom</h1><time datetime=2015-10-04T12:20:52+00:00>October 4, 2015</time><p>最近在做的项目重构, 原本打算用 reactjs, 写了一些实验代码后心累无爱
 找了个 domdiff 配合自定义标签和 shadowdom 的独有作用域也是爽 YY</p><p>可惜的是测试红米上的 android webview 版本(32?)不支持 ::shadow 伪类
-inline 方式覆盖样式略嫌繁琐</p><h2 id=示例代码>示例代码</h2><h3 id=xtagjs>xtag.js</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dom</span> <span style=color:#f92672>=</span> {
+inline 方式覆盖样式略嫌繁琐</p><h2 id=示例代码>示例代码</h2><h3 id=xtagjs>xtag.js</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>dom</span> <span style=color:#f92672>=</span> {
 </span></span><span style=display:flex><span>  <span style=color:#a6e22e>shadow</span>(<span style=color:#a6e22e>el</span>) {
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>el</span>.<span style=color:#a6e22e>createShadowRoot</span> <span style=color:#f92672>?</span> <span style=color:#a6e22e>el</span>.<span style=color:#a6e22e>createShadowRoot</span>() <span style=color:#f92672>:</span> <span style=color:#a6e22e>el</span>.<span style=color:#a6e22e>webkitCreateShadowRoot</span>();
 </span></span><span style=display:flex><span>  },
@@ -37,7 +37,7 @@ inline 方式覆盖样式略嫌繁琐</p><h2 id=示例代码>示例代码</h2><h
 </span></span><span style=display:flex><span>});
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// other x-tag;
-</span></span></span></code></pre></div><h3 id=indexjs>index.js</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;babel/polyfill&#39;</span>;
+</span></span></span></code></pre></div><h3 id=indexjs>index.js</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;babel/polyfill&#39;</span>;
 </span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;./xtag.js&#39;</span>;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>BaseView</span> {
